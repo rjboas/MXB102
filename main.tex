@@ -1,3 +1,4 @@
+%!TEX program = xelatex
 \documentclass{article}
 \usepackage[a4paper]{geometry}
 % \usepackage{showframe}
@@ -97,23 +98,23 @@ frametitlefont=\bf\large}
 	\begin{tabular}{c >{$}c<{$} | c}
 			\textbf{Name} & \text{\textbf{Symbol}} & \textbf{Truth Table} \\
 			\midrule
-		    Negation (NOT) & \neg & 
+		    Negation (NOT) & \neg &
 		    \begingroup
 		    \renewcommand{\arraystretch}{1}
 		    \begin{tabular}{c|c}
 		        $P$ & $\neg{P}$ \\
-		        \midrule 
+		        \midrule
 		        {\sffamily{T}} & {\sffamily{F}} \\
 		        {\sffamily{F}} & {\sffamily{T}}
 		    \end{tabular}
 		    \endgroup
 		    \\
-		    Conjunction (AND) & \land & 
+		    Conjunction (AND) & \land &
 		    \begingroup
 		    \renewcommand{\arraystretch}{1}
 		    \begin{tabular}{c c|c}
 		        $P$ & $Q$ & $P\land Q$ \\
-		        \midrule 
+		        \midrule
 		        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
 		        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
 		        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
@@ -121,25 +122,25 @@ frametitlefont=\bf\large}
 		    \end{tabular}
 		    \endgroup
 		    \\
-		    Disjunction (OR) & \lor & 
+		    Disjunction (OR) & \lor &
 		    \begingroup
 		    \renewcommand{\arraystretch}{1}
 		    \begin{tabular}{c c|c}
 		        $P$ & $Q$ & $P\lor Q$ \\
-		        \midrule 
+		        \midrule
 		        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
 		        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{T}} \\
 		        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
 		        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
 		    \end{tabular}
 		    \endgroup
-		    \\ 
-		    Conditional (IF-THEN) & \implies & 
+		    \\
+		    Conditional (IF-THEN) & \implies &
 		    \begingroup
 		    \renewcommand{\arraystretch}{1}
 		    \begin{tabular}{c c|c}
 		        $P$ & $Q$ & $P\implies Q$ \\
-		        \midrule 
+		        \midrule
 		        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
 		        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
 		        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
@@ -147,12 +148,12 @@ frametitlefont=\bf\large}
 		    \end{tabular}
 		    \endgroup
 		    \\
-		    Equivalence (IFF) & \iff \text{ or } \equiv & 
+		    Equivalence (IFF) & \iff \text{ or } \equiv &
 		    \begingroup
 		    \renewcommand{\arraystretch}{1}
 		    \begin{tabular}{c c|c}
 		        $P$ & $Q$ & $P\iff Q$ \\
-		        \midrule 
+		        \midrule
 		        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
 		        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
 		        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
@@ -339,7 +340,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A relation is functional if
     $\forall x \in S \text{ and } \forall y,\: z \in T
         : (xRy \, \land \, yRz) \implies y=z$
-    
+
     (N.B. This functional property corresponds to the vertical line test.)
 \end{definition}
 \begin{definition}[Left-total]\ \\
@@ -358,12 +359,12 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 	\item[Injective (one-to-one)]
 		$\forall x,\: z \in S : \forall y \in T
 		: (xRy \,\land\, zRy) \implies x = z$
-		
+
 		Put in words, every element in the codomain ($T$)
 		is being mapped to by \textit{at most} one element from the domain ($S$).
 	\item[Surjective (onto)]
 		$\forall y \in T : \exists x \in S : xRy$
-		
+
 		Put in words, every element in the codomain ($T$)
 		is being mapped to by \textit{at least} one element from the domain ($S$).
 	\item[Bijective]
@@ -407,7 +408,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     Let $R$ be an equivalence relation on $S$ and $x \in S$.
     The equivalence class of $x$ is $[x] = \{y \in S : xRy\}$,
     i.e. the set of all elements in $S$ that are related to $x$.
-    
+
     $x$ is a representative of the equivalence class $[x]$.
     There may be different representations of the same equivalence class.
 \end{definition}
@@ -454,11 +455,32 @@ N.B. The definition of rings and fields has been excluded from this document for
 \begin{definition}[Cardinality]
     The cardinality of $X$ is $\#X$ or $|X|$.
     If there is a bijection between two sets $X$ and $Y$,
-    then $|X| = |Y|$ or, equivalently $\#X=\#Y$.
+    then $\#X=\#Y$ or, equivalently $|X| = |Y|$.
 \end{definition}
 %
 \begin{definition}[$\N_{<n}$]
     The subset of $\N$ containing all naturals less than $n$.
+\end{definition}
+%
+\begin{definition}[Finite and infinite sets]
+    If a set $X$ is such that $\#X=\#\N_{<n}$,
+    then the number of elements in $X$ is $n$ and $X$ is a finite set.
+    If there is no $n$ such that there is a bijection between $X$ and $\N_{<n}$,
+    then $X$ is an infinite set.
+\end{definition}
+%
+\begin{definition}[Countable and uncountable infinities]
+    If there exists a bijection between an infinite set $X$ and $\N$,
+    then $X$ is countably infinite, else uncountably infinite.
+\end{definition}
+%
+\begin{theorem}$\#\N = \#\Z$\end{theorem}
+\begin{theorem}$\#(\N\cross\N) = \#\N$\end{theorem}
+\begin{theorem}$\#\Q = \#\N$\end{theorem}
+\begin{theorem}[Cantor]$\#\N \ne \#\R$\end{theorem}
+%
+\begin{definition}[Power set]
+    The power set of $X$ ($\mathbb{P}(X)$) is the set of all subsets of $X$, including $\emptyset$.
 \end{definition}
 %
 \section{Proofs}
