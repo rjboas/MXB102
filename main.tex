@@ -431,7 +431,22 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 %
 N.B. The definition of rings and fields has been excluded from this document for brevity (of writing)
 %
-a
+\begin{definition}[Integers]
+    The integers ($\Z$) is the smallest ring containing the natural numbers.
+    N.B. The integers is the closure of the natural numbers in respect to the ring axioms
+\end{definition}
+%
+\begin{definition}[Real numbers (infinite decimal ver.)]
+    Let $D = \Z \cross \{\text{sequences of digits 0..9}\}$.
+    Define an equivalence relation on $D$ such that
+    $x_0 . x_1 x_2 \dots x_{k-1} x_k 000 \dots
+    = x_0 . x_1 x_2 \dots x_{k-1} (x_k -1)999 \dots$.
+    The real numbers ($\R$) is the set of the equivalence classes of D using the equivalence relation above.
+\end{definition}
+%
+\begin{definition}[Irrational numbers]
+    The irrational numbers ($\I$ or $\overline{\Q}$) is $\R\backslash\Q$.
+\end{definition}
 %
 \section{Proofs}
 \subsection{Proof Layout}
