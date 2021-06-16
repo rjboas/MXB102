@@ -508,13 +508,29 @@ An infinite sequence on $X$ is a function $a$ with domain $\N_{> 0}$ and codomai
 For infinite sequences we write $a_n$ and the sequence can be represented as $\left\{a_n\right\}_{n=1}^\infty$, where $n$ is the index of the sequence.
 %
 \subsection{Convergence}
-A sequence $\left\{a_n\right\}_{n=1}^\infty$ converges to $a\in \R$ if
-\begin{equation*}
-    \forall \epsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : \abs{a_n - a} < \epsilon
-\end{equation*}
-where $\lim_{n \rightarrow \infty}a_n = a$.
+\begin{theorem}
+	A sequence $\left\{a_n\right\}_{n=1}^\infty$ converges to $a\in \R$ if
+	\begin{equation*}
+		\forall \epsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : \abs{a_n - a} < \epsilon
+	\end{equation*}
+	where $\lim_{n \rightarrow \infty}a_n = a$.
+\end{theorem}
 %
-\subsection{Monotonicity}
+\begin{theorem}
+	A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $+\infty$ if
+	\begin{equation*}
+		\forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : a_n > N
+	\end{equation*}
+	where $\lim_{n \rightarrow \infty}a_n = \infty$.
+\end{theorem}
+%
+\begin{theorem}
+	A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $-\infty$ if
+	\begin{equation*}
+		\forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : a_n < M
+	\end{equation*}
+	where $\lim_{n \rightarrow \infty}a_n = -\infty$.
+\end{theorem}
 
 %
 \section{Series}
