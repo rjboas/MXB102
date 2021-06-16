@@ -264,7 +264,7 @@ frametitlefont=\bf\large}
 \subsection{Cartesian Product}
 \begin{definition}[Cartesian product]
 	The Cartesian product of two sets $S$ and $T$ is the set
-	$S\cross T$ consisting of all ordered pairs $(x, y)$ where
+	$S\times T$ consisting of all ordered pairs $(x, y)$ where
 	$x \in S$ and $y \in T$.
 \end{definition}
 %
@@ -299,7 +299,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 %
 \section{Relations}
 \begin{definition}[Binary relation]
-	A binary relation $R$ on $S$ is the subset $S\cross S$.
+	A binary relation $R$ on $S$ is the subset $S\times S$.
 	If $a, \: b \in S$ and  $(a, \: b) \in R$,
 	then $aRb$ (``$a$ is related to $b$ under $R$")
 \end{definition}
@@ -307,13 +307,13 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{figure}[H]
 \begin{mdframed}[style=exampledefault,frametitle={Relation properties}]
 \begin{description}[style=sameline]
-	\item[Reflexive]
+	\item[Reflexive:]
 		$\forall x \in S : xRx$
-	\item[Symmetric]
+	\item[Symmetric:]
 		$\forall x,\: y \in S : xRy \implies yRx$
-	\item[Antisymmetric]
+	\item[Antisymmetric:]
 		$\forall_\text{distinct} \: x,\: y \in S : xRy \implies \neg (yRx)$
-	\item[Transitive]
+	\item[Transitive:]
 		$\forall x,\: y, \: z \in S : (xRy \land yRz) \implies xRz$
 \end{description}
 \end{mdframed}
@@ -322,14 +322,14 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{adjustwidth}{-10pt}{-10pt}
 \begin{multicols}{2}
 \begin{definition}[Equivalence relation]\ \\
-    A relation is an equivalence relation which is
-    reflexive, symmetric, and transitive,
+    A relation is an equivalence relation if it is
+    reflexive, symmetric, and transitive.
 \end{definition}
 \begin{definition}[Function (rule ver.)]\ \\
     A function $f$ is a rule which maps
     from some set $S$ (the domain)
     to some set $T$ (the codomain)
-    (i.e. $ f: S \to T$) where each $x \in S$ maps to a unique $f(x) \in T$
+    (i.e. $ f: S \to T$) where each $x \in S$ maps to a unique $f(x) \in T$.
 \end{definition}
 \begin{definition}[Image of a function]\ \\
     The image of a function $f: S \to T$ is the set $f(S)$,
@@ -337,17 +337,17 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{definition}
 \begin{definition}[Functional]\ \\
     A relation is functional if
-    $\forall x \in S \text{ and } \forall y,\: z \in T
-        : (xRy \, \land \, yRz) \implies y=z$
+    $\forall x \in S \land \forall y,\: z \in T
+        : (xRy \, \land \, yRz) \implies y=z$.
     
     (N.B. This functional property corresponds to the vertical line test.)
 \end{definition}
 \begin{definition}[Left-total]\ \\
     A relation is left-total if
-    $\forall x \in S : \exists y \in T : xRy$
+    $\forall x \in S : \exists y \in T : xRy$.
 \end{definition}
 \begin{definition}[Function (relation ver.)]\ \\
-    A function $f$ is some relation which is functional and left-total.
+    A function $f$ is some relation that is functional and left-total.
 \end{definition}
 \end{multicols}
 \end{adjustwidth}
@@ -355,26 +355,26 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{figure}[H]
 \begin{mdframed}[style=exampledefault,frametitle={Function properties}]
 \begin{description}[style=sameline]
-	\item[Injective (one-to-one)]
+	\item[Injective (one-to-one):]
 		$\forall x,\: z \in S : \forall y \in T
 		: (xRy \,\land\, zRy) \implies x = z$
 		
 		Put in words, every element in the codomain ($T$)
 		is being mapped to by \textit{at most} one element from the domain ($S$).
-	\item[Surjective (onto)]
+	\item[Surjective (onto):]
 		$\forall y \in T : \exists x \in S : xRy$
 		
 		Put in words, every element in the codomain ($T$)
 		is being mapped to by \textit{at least} one element from the domain ($S$).
-	\item[Bijective]
+	\item[Bijective:]
 		$R$ is injective and surjective.
 \end{description}
 \end{mdframed}
 \end{figure}
 %
 \begin{definition}[Equal functions]
-    Two functions are equal if they have the same domain and codomain,
-    and that for all $x$ in the domain $f(x) = g(x)$.
+    Two functions are equal if they have the same domain and codomain
+    for all $x$, so that $f(x) = g(x)$.
 \end{definition}
 %
 \begin{definition}[Function composition]
@@ -412,10 +412,10 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     There may be different representations of the same equivalence class.
 \end{definition}
 %
-\section{Numbers}
+\section{Number Sets}
 %
 \begin{definition}[Rational numbers]
-    Define an equivalence relation $\sim$ on $\Z \cross (\N\backslash\{0\}$
+    Define an equivalence relation $\sim$ on $\Z \times (\N\backslash\{0\}$
     as $(a,\: b) \sim (c,\: d) \iff ad=bc$.
     The equivalence classes of $\sim$ are rational numbers.
     $[(a,\: b)] = \frac{a}{b}$.
@@ -434,15 +434,16 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 N.B. The definition of rings and fields has been excluded from this document for brevity (of writing)
 %
 \begin{definition}[Integers]
-    The integers ($\Z$) is the smallest ring containing the natural numbers.
-    N.B. The integers is the closure of the natural numbers in respect to the ring axioms
+    The set of integers ($\Z$) is the smallest ring containing the natural numbers.
+    N.B. The integers are the closure of the natural numbers with respect to the ring axioms.
 \end{definition}
 %
 \begin{definition}[Real numbers (infinite decimal ver.)]
-    Let $D = \Z \cross \{\text{sequences of digits 0..9}\}$.
+    Let $D = \Z \times \{\text{sequence of digits $0\ldots 9$}\}$.
     Define an equivalence relation on $D$ such that
-    $x_0 . x_1 x_2 \dots x_{k-1} x_k 000 \dots
-    = x_0 . x_1 x_2 \dots x_{k-1} (x_k -1)999 \dots$.
+    \begin{equation*}
+		x_0 . x_1 x_2 \dots x_{k-1} x_k 000 \ldots = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)999 \ldots
+	\end{equation*}.
     The real numbers ($\R$) is the set of the equivalence classes of D using the equivalence relation above.
 \end{definition}
 %
@@ -452,7 +453,7 @@ N.B. The definition of rings and fields has been excluded from this document for
 %
 \section{Cardinality}
 \begin{definition}[Cardinality]
-    The cardinality of $X$ is $\#X$ or $|X|$.
+    The cardinality of $X$ ($\#X$ or $|X|$), is the number of elements in $X$.
     If there is a bijection between two sets $X$ and $Y$,
     then $|X| = |Y|$ or, equivalently $\#X=\#Y$.
 \end{definition}
@@ -465,7 +466,7 @@ N.B. The definition of rings and fields has been excluded from this document for
 \subsection{Proof Layout}
 \begin{enumerate}
     \item State the proof method that will be used.
-    \item If the proof method has conditions, show that these conditions have been satisfied before using the proof method.
+    \item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
     \item Label all important statements required by the proof, such as assumptions.
     \item Apply the proof method.
     \item Conclude by stating the proof method.
@@ -559,8 +560,32 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\end{equation*}
 	where $\lim_{n \rightarrow \infty}a_n = -\infty$.
 \end{theorem}
-
 %
+\begin{theorem}[Triangle Inequality]
+	$\abs{a+b}\leq\abs{a}+\abs{b}$.
+\end{theorem}
+%
+\begin{theorem}
+	A sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ iff the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
+\end{theorem}
+%
+\begin{theorem}[Squeeze Theorem for Sequences]
+	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leq b_n \leq c_n$ for all $n>n_0$. If $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}c_n=d$, then .
+\end{theorem}
+%
+\subsection{Limits of Sequences}
+\begin{theorem}
+	Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$, respectively, and let $c\in\R$ be a constant, then,
+	\begin{enumerate}[label=\alph*)]
+		\item $\lim_{n\rightarrow\infty}c=c$.
+		\item $\lim_{n\rightarrow\infty}ca_n=ca$.
+		\item $\lim_{n\rightarrow\infty}\left( a_n + b_n \right)=a+b$.
+		\item $\lim_{n\rightarrow\infty}\left( a_n - b_n \right)=a-b$.
+		\item $\lim_{n\rightarrow\infty}\left( a_nb_n \right)=ab$.
+		\item $\lim_{n\rightarrow\infty}\left( \frac{a_n}{b_n} \right)=\frac{a}{b}$, ($b\neq 0$).
+	\end{enumerate}
+\end{theorem}
+
 \section{Series}
 
 %
