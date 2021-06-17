@@ -317,22 +317,22 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{figure}[H]
 \begin{mdframed}[style=exampledefault,frametitle={Relation Properties}]
 \begin{description}[style=sameline]
-	\item[Reflexive:]
+	\item[Reflexive]
 		$\forall x \in S : xRx$
-	\item[Symmetric:]
+	\item[Symmetric]
 		$\forall x,\: y \in S : xRy \implies yRx$
-	\item[Antisymmetric:]
+	\item[Antisymmetric]
 		$\forall_\text{distinct} \: x,\: y \in S : xRy \implies \neg (yRx)$
-	\item[Transitive:]
+	\item[Transitive]
 		$\forall x,\: y, \: z \in S : (xRy \land yRz) \implies xRz$
 \end{description}
-\end{mdframed}
-\end{figure}
-%
 \begin{definition}[Equivalence relation]
     A relation is an equivalence relation if it is
     reflexive, symmetric, and transitive.
 \end{definition}
+\end{mdframed}
+\end{figure}
+%
 \begin{definition}[Functions as rules]
     A function $f$ is a rule which maps
     from some set $S$ (the domain)
@@ -360,23 +360,23 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{definition}
 %
 \begin{figure}[H]
-\begin{mdframed}[style=exampledefault,frametitle={Function properties}]
-\begin{description}[style=sameline]
-	\item[Injective (one-to-one):]
-		$\forall x,\: z \in S : \forall y \in T
-		: (xRy \,\land\, zRy) \implies x = z$
+	\begin{mdframed}[style=exampledefault,frametitle={Function Properties}]
+	\begin{description}[style=sameline]
+		\item[Injective (one-to-one)]
+			$\forall x,\: z \in S : \forall y \in T
+			: (xRy \,\land\, zRy) \implies x = z$
 
-		Put in words, every element in the codomain ($T$)
-		is being mapped to by \textit{at most} one element from the domain ($S$).
-	\item[Surjective (onto):]
-		$\forall y \in T : \exists x \in S : xRy$
+			Put in words, every element in the codomain ($T$)
+			is being mapped to by \textit{at most} one element from the domain ($S$).
+		\item[Surjective (onto)]
+			$\forall y \in T : \exists x \in S : xRy$
 
-		Put in words, every element in the codomain ($T$)
-		is being mapped to by \textit{at least} one element from the domain ($S$).
-	\item[Bijective:]
-		$R$ is injective and surjective.
-\end{description}
-\end{mdframed}
+			Put in words, every element in the codomain ($T$)
+			is being mapped to by \textit{at least} one element from the domain ($S$).
+		\item[Bijective]
+			$R$ is injective and surjective.
+	\end{description}
+	\end{mdframed}
 \end{figure}
 %
 \begin{definition}[Equal functions]
@@ -439,11 +439,11 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{definition}
 %
 \section{Algebraic Structures}
-\begin{definition}[Commutativite ring with identity]
-	A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
-\end{definition}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Ring Axioms}]
+		\begin{definition}[Commutativite ring with identity]
+			A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
+		\end{definition}
 		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
 			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
 			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
@@ -467,7 +467,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     The set of integers ($\Z$) is the smallest ring containing the natural numbers.
 \end{definition}
 \begin{note}
-    The integers are the closure of the natural numbers with respect to the ring axioms.
+    The integers are the closure of the natural numbers in regards to the ring axioms.
 \end{note}
 %
 \begin{definition}[Real numbers]
@@ -483,15 +483,19 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     The irrational numbers ($\I$ or $\overline{\Q}$) are defined as $\R\backslash\Q$.
 \end{definition}
 %
-\begin{definition}[Field]
-	Let $S$ be a set that satisfies the ring axioms. $S$ is also a field if it satisfies the following axiom.
+\begin{figure}[H]
+\begin{mdframed}[style=exampledefault,frametitle={Field Axioms}]
+	\begin{definition}[Field]
+	A field is a set $S$ which is a commutative ring with identity so that it satisfies all ring axioms and also the following axiom.
+	\end{definition}
 	\begin{enumerate}
 		\item [(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
 	\end{enumerate}
-	\begin{note}
-		$\Q$, $\R$, and $\C$ are rings.
-	\end{note}
-\end{definition}
+\end{mdframed}
+\begin{note}
+	$\Q$, $\R$, and $\C$ are rings.
+\end{note}
+\end{figure}
 %
 \section{Cardinality}
 \begin{definition}[Cardinality]
@@ -545,7 +549,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 %
 \subsection{Direct Proof}
 \begin{enumerate}
-    \item Use a definition (even/odd numbers).
+    \item Use a definition, i.e. even/odd numbers.
     \item Show LHS = RHS.
     \item For an equivalence ($\iff$) statement, show that both forward ($\implies$) and backward ($\impliedby$) directions are true.
 \end{enumerate}
@@ -602,6 +606,7 @@ For the conditional statement: ``If $P$, then $Q$".
     \item For rational numbers assume that $(a,b)$ is fully simplified, so that $a$ and $b$ are co-prime.
     \item When using strong induction, remember that $P(k), \ldots, P(n_0)$ are assumed to be true.
     \item $a^b=e^{\ln{a^b}}=e^{b\ln{a}}$.
+    \item $a^k = a^k + b - b$.
 \end{enumerate}
 %
 \section{Sequences}
@@ -613,25 +618,22 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{theorem}
 	A sequence $\left\{a_n\right\}_{n=1}^\infty$ converges to $a\in \R$ if
 	\begin{equation*}
-		\forall \varepsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : \abs{a_n - a} < \varepsilon
+		\lim_{n \to \infty}a_n = a \iff \forall \varepsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : \abs{a_n - a} < \varepsilon
 	\end{equation*}
-	where $\lim_{n \to \infty}a_n = a$.
 \end{theorem}
 %
 \begin{theorem}
 	A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $+\infty$ if
 	\begin{equation*}
-		\forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n > N
+		\lim_{n \to \infty}a_n = +\infty \iff \forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n > N
 	\end{equation*}
-	where $\lim_{n \to \infty}a_n = \infty$.
 \end{theorem}
 %
 \begin{theorem}
 	A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $-\infty$ if
 	\begin{equation*}
-		\forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n < M
+		\lim_{n \to \infty}a_n = -\infty \iff \forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n < M
 	\end{equation*}
-	where $\lim_{n \to \infty}a_n = -\infty$.
 \end{theorem}
 %
 \begin{theorem}[Triangle inequality]
@@ -647,7 +649,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Limit laws}]
+	\begin{mdframed}[style=exampledefault,frametitle={Limit Laws for Sequences}]
 		\begin{theorem}
 			Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$ respectively, and let $c\in\R$ be a constant, then
 			\begin{enumerate}[label=\normalfont\alph*)]
@@ -663,25 +665,17 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{figure}
 %
 \subsection{Cauchy Sequences}
+
 \subsection{Monotonicity}
-\begin{definition}
-    A sequence $\{a_n\}^\infty_{n=1}$ is
-    \begin{description}[style=sameline]
-        \item[Strictly increasing] if $a_n < a_{n+1}$ for all $n$
-        \item[Increasing] if $a_n \leqslant a_{n+1}$ for all $n$
-        \item[Strictly decreasing] if $a_n > a_{n+1}$ for all $n$
-        \item[Decreasing] if $a_n \geqslant a_{n+1}$ for all $n$
-    \end{description}
-\end{definition}
 %
 \begin{definition}[Monotone]
-    A sequence is (stricly) monotone if it is
+    A sequence is (strictly) monotone if it is
     (strictly) increasing or (strictly) decreasing.
 \end{definition}
 %
 \begin{definition}[Eventually]
     If after removing a finite number of terms from the beginning from a sequence
-    it has a certain property, the the original sequence has that property eventually.
+    it has a certain property, the original sequence has that property eventually.
 \end{definition}
 %
 \begin{definition}[Bounded]
@@ -692,53 +686,122 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     Every bounded eventually monotone sequence converges.
 \end{theorem}
 %
-\subsubsection{Monotonicity Tests}
-\begin{mdframed}[style=exampledefault]
-    \begin{theorem}[Difference test]
-    A sequence $\{a_n\}^\infty_{n=1}$ is
-    \begin{mdframed}[style=exampledefault]
-        \begin{description}[style=sameline]
-            \item[Strictly increasing] if $a_{n+1} - a_n > 0$ for all $n$
-            \item[Increasing] if $a_{n+1} - a_n \geqslant 0$ for all $n$
-            \item[Strictly decreasing] if $a_{n+1} - a_n < 0$ for all $n$
-            \item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
-        \end{description}
-    \end{mdframed}
-    \end{theorem}
-    \begin{theorem}[Ratio test]
-    A sequence $\{a_n\}^\infty_{n=1}$ for which all $a_n$ are all positive is
-    \begin{mdframed}[style=exampledefault]
-        \begin{description}[style=sameline]
-            \item[Strictly increasing] if $a_{n+1} \div a_n > 1$ for all $n$
-            \item[Increasing] if $a_{n+1} \div a_n \geqslant 1$ for all $n$
-            \item[Strictly decreasing] if $a_{n+1} \div a_n < 1$ for all $n$
-            \item[Decreasing] if $a_{n+1} \div a_n \leqslant 1$ for all $n$
-        \end{description}
-        \begin{note}
-            If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
-            then $a_n\to0$ as $n\to\infty$.
-        \end{note}
-    \end{mdframed}
-    \end{theorem}
-    \begin{theorem}[Derivative test]
-        If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
-        $a(x)$ is differentiable for $x\in\R_{\geqslant1}$,
-        then $\{a_n\}^\infty_{n=1}$ is
-    \begin{mdframed}[style=exampledefault]
-        \begin{description}[style=sameline]
-            \item[Strictly increasing] if $a'(x) > 0$ for all $x\in\R_{\geqslant1}$
-            \item[Increasing] if $a'(x) \geqslant 0$ for all $x\in\R_{\geqslant1}$
-            \item[Strictly decreasing] if $a'(x) < 0$ for all $x\in\R_{\geqslant1}$
-            \item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant1}$
-        \end{description}
-    \end{mdframed}
-    \end{theorem}
-\end{mdframed}
+\subsection{Monotonicty Tests}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Difference Test}]
+		\begin{theorem}[Difference test]
+			A sequence $\{a_n\}^\infty_{n=1}$ is
+		\end{theorem}
+		\begin{description}[style=sameline]
+			\item[Strictly increasing] if $a_{n+1} - a_n > 0$ for all $n$
+			\item[Increasing] if $a_{n+1} - a_n \geqslant 0$ for all $n$
+			\item[Strictly decreasing] if $a_{n+1} - a_n < 0$ for all $n$
+			\item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
+		\end{description}
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Ratio Test}]
+		\begin{theorem}[Ratio test]
+			A sequence $\{a_n\}^\infty_{n=1}$ where all $a_n$ are positive is
+		\end{theorem}
+		\begin{description}[style=sameline]
+			\item[Strictly increasing] if $a_{n+1} \div a_n > 1$ for all $n$
+			\item[Increasing] if $a_{n+1} \div a_n \geqslant 1$ for all $n$
+			\item[Strictly decreasing] if $a_{n+1} \div a_n < 1$ for all $n$
+			\item[Decreasing] if $a_{n+1} \div a_n \leqslant 1$ for all $n$
+		\end{description}
+	\end{mdframed}
+	\begin{note}
+		If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
+		then $a_n\to0$ as $n\to\infty$.
+	\end{note}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Derivative Test}]
+		\begin{theorem}[Derivative test]
+			If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
+			$a(x)$ is differentiable for $x\in\R_{\geqslant1}$,
+			then $\{a_n\}^\infty_{n=1}$ is
+		\end{theorem}
+		\begin{description}[style=sameline]
+			\item[Strictly increasing] if $a'(x) > 0$ for all $x\in\R_{\geqslant 1}$
+			\item[Increasing] if $a'(x) \geqslant 0$ for all $x\in\R_{\geqslant 1}$
+			\item[Strictly decreasing] if $a'(x) < 0$ for all $x\in\R_{\geqslant 1}$
+			\item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant 1}$
+		\end{description}
+	\end{mdframed}
+\end{figure}
 %
 \section{Series}
+\subsection{Infinite Series}
+\begin{definition}[Infinite Series]
+	An infinite series is an expansion that can be written as
+	\begin{equation*}
+		\sum_{i=1}^\infty a_i = a_1 + a_2 + a_3 + \cdots
+	\end{equation*}
+	The numbers $a_i$ are the terms of the series.
+\end{definition}
+\begin{definition}[Partial Sums]
+	The sequence of partial sums $\{s_n\}_{n=1}^\infty$ is defined as
+	\begin{equation*}
+		s_n = \sum_{i=1}^n a_i
+	\end{equation*} 
+	where $s_n$ is the $n$th partial sum of the infinite series.
+\end{definition}
+\begin{definition}[Convergence of series]
+	The infinite series $\sum_{i=1}^\infty a_i$ converges to $A$ if the associated sequence of partial sums $\{s_n\}_{n=1}^\infty$ converges to $A$.
+\end{definition}
+\begin{definition}[Divergence of series]
+	The infinite series $\sum_{i=1}^\infty a_i$ diverges to $\pm\infty$, if the associated sequence of partial sums $\{s_n\}_{n=1}^\infty$ diverges to $\pm\infty$.
+\end{definition}
 %
 \subsection{Convergence Tests}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Divergence Test}]
 
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={$p$-Series}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Geometric Series}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Alternating Series}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Telescoping Series}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Comparison Test}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Limit Comparison Test}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Ratio Test}]
+
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Root Test}]
+
+	\end{mdframed}
+\end{figure}
 %
 \section{Limits of Functions}
 \subsection{Limits of Functions on $\mathbb{R}$}
@@ -751,7 +814,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{definition}
 %
 \begin{figure}[H]
-\begin{mdframed}[style=exampledefault,frametitle={Limit laws}]
+\begin{mdframed}[style=exampledefault,frametitle={Limit Laws for Functions}]
     \begin{theorem} The limit of a sum equals the sum of the limits, i.e.
         \begin{equation*}
               \lim_{x\to x_0}\left(f(x)+g(x)\right)
