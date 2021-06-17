@@ -717,36 +717,31 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{definition}[Limit of $\pm\infty$ ($\varepsilon$-$\delta$ ver.)]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
-
-    $f(x)$ has the limit $+\infty$ at $x_0$
-    $\left(\displaystyle\lim_{x\to x_0} f(x) = +\infty\right)$ if
-    $ \forall M \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-    \implies f(x) > M $
-
-    $f(x)$ has the limit $-\infty$ at $x_0$
-    $\left(\displaystyle\lim_{x\to x_0} f(x) = -\infty\right)$ if
-        $\forall N \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-            \implies f(x) < N$
+	\begin{equation*}
+		\lim_{x\to x_0} f(x) = +\infty \iff \forall M \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta \implies f(x) > M
+	\end{equation*}
+	\begin{equation*}
+    \lim_{x\to x_0} f(x) = -\infty \iff \forall N \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta \implies f(x) < N
+	\end{equation*}
 \end{definition}
 %
 \begin{definition}[Limits towards infinity]
     Let a function $f(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the positive $x$ direction.
-    $\displaystyle \lim_{x\to\infty} f(x) = L$ if
-    $\forall \varepsilon>0: \exists M \in I: x>M
-        \implies \abs{f(x)-L}<\varepsilon$
-
+	\begin{equation*}
+		\lim_{x\to\infty} f(x) = L \iff \forall \varepsilon>0: \exists M \in I: x>M \implies \abs{f(x)-L}<\varepsilon
+	\end{equation*}
     Let a function $g(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the negative $x$ direction.
-    $\displaystyle \lim_{x\to-\infty} g(x) = L$ if
-    $\forall \varepsilon>0: \exists N \in I: x<N
-        \implies \abs{g(x)-L}<\varepsilon$
+	\begin{equation*}
+		\lim_{x\to-\infty} g(x) = L \iff \forall \varepsilon>0: \exists N \in I: x<N \implies \abs{g(x)-L}<\varepsilon
+	\end{equation*}
 \end{definition}
 %
 \begin{theorem}
-    $\displaystyle\lim_{x\to x_0} f(x)$ exists iff
+    $\displaystyle\lim_{x\to x_0} f(x)$ exists if and only if
     $\displaystyle\lim_{x\to {x_0}^+} f(x)$ and $\displaystyle\lim_{x\to {x_0}^-} f(x)$
-    exist and are equal
+    exist and are equal.
 \end{theorem}
 %
 \begin{theorem}[Squeeze theorem (function ver.)]
