@@ -649,7 +649,23 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 
         These are trivially extended to
         division (if the divisor is non-zero),
-        subtraction, exponentiation, and moving constants in or outside of a limit.
+        subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
+        \begin{equation*}
+          \lim_{x\to x_0}\left(f(x) - g(x)\right)
+        = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
+        \end{equation*}
+        \begin{equation*}
+        \lim_{x\to x_0}\frac{f(x)}{g(x)}
+        = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
+        \end{equation*}
+        \begin{equation*}
+        \lim_{x\to x_0}\left(f(x)\right)^n
+        = \left(\lim_{x\to x_0}f(x)\right)^n
+        \end{equation*}
+        \begin{equation*}
+        \lim_{x\to x_0} c \cdot f(x)
+        = c \cdot \lim_{x\to x_0}f(x)
+        \end{equation*}
 \end{mdframed}
 \end{figure}
 %
