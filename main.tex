@@ -1,20 +1,13 @@
 %!TEX program = xelatex
 \documentclass{article}
-\usepackage[a4paper]{geometry}
-% \usepackage{showframe}
 
-\title{MXB102 2021 Semester 1 Exam Notes}
-\author{
-    Rohan Boas \\
-    Tarang Janawalkar \\
-    Oliver Strong
-}
-\date{\today}
+\usepackage{geometry}
+\geometry{a4paper}
 
 \usepackage{multicol}
 \usepackage{changepage}
+\usepackage{physics}
 
-% \usepackage{mathabx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -23,24 +16,19 @@
 \usepackage{mdframed}
 \mdfsetup{skipabove=\topskip,skipbelow=\topskip}
 \mdfdefinestyle{exampledefault}{%
-rightline=true,
-innerleftmargin=10,innerrightmargin=10,
-leftmargin=20,rightmargin=20,
-topline=false,bottomline=false,
-frametitlefont=\bf\large}
+	rightline=true,
+	innerleftmargin=10,innerrightmargin=10,
+	leftmargin=20,rightmargin=20,
+	topline=false,bottomline=false,
+	frametitlefont=\bf\large
+}
 
 % Tables and figures
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{float}
 
-\usepackage{physics}
-
 \usepackage{enumitem}
-
-\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
-\setmathfont{Latin Modern Math}
-\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
 
 % Headers and footers
 \usepackage{fancyhdr}
@@ -48,49 +36,64 @@ frametitlefont=\bf\large}
 \pagestyle{fancy}
 \fancyhf{}
 
+\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
 %% Headers
 \fancyhead[L]{2021 Semester 1}
 \fancyhead[C]{MXB102 Exam Notes}
 \fancyhead[R]{\thepage}
 
-\setlength{\tabcolsep}{10pt} % Default value: 6pt
-\renewcommand{\arraystretch}{1.5} % Default value: 1
-
-\let\oldemptyset\emptyset
-\let\emptyset\varnothing
-
-\DeclareMathOperator{\setunion}{\cup} % defined for clarity/consistency
-\DeclareMathOperator{\setintersection}{\cap}
-
-\newcommand{\quo}[1]{\text{``}#1\text{"}}
-
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
-\numberwithin{theorem}{section}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\numberwithin{definition}{section}
-
-\theoremstyle{remark}
-\newtheorem{note}{Note}[section]
-\numberwithin{note}{section}
-
-\newtheorem*{statement}{Statement}
-% Usage:
-% \begin{statement}
-% \end{statement}
-% \begin{proof}[Direct Proof]    % (Proof type here)
-% \leavevmode
-% % proof body
-% \end{proof}
-
+% Number Sets
 \newcommand*{\N}{\mathbb{N}}
 \newcommand*{\Z}{\mathbb{Z}}
 \newcommand*{\Q}{\mathbb{Q}}
 \newcommand*{\I}{\mathbb{I}}
 \newcommand*{\R}{\mathbb{R}}
 \newcommand*{\C}{\mathbb{C}}
+
+% Table Cell Stretch
+\setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+
+% Set symbols 
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\DeclareMathOperator{\setunion}{\cup} % defined for clarity/consistency
+\DeclareMathOperator{\setintersection}{\cap}
+
+% Quotation in math mode
+\newcommand{\quo}[1]{\text{``}#1\text{"}}
+
+\newcommand{\contradiction}{
+	{\hbox{
+	\setbox0=\hbox{$\mkern-3mu{\times}\mkern-3mu$}
+	\setbox1=\hbox to0pt{\hss\copy0\hss}
+	\copy0\raisebox{0.5\wd0}{\copy1}\raisebox{-0.5\wd0}{\box1}\box0}}
+}
+
+%% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\numberwithin{theorem}{subsection}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\numberwithin{definition}{subsection}
+
+\theoremstyle{remark}
+\newtheorem{note}{Note}[section]
+\numberwithin{note}{section}
+
+\newtheorem*{statement}{Statement}
+
+%% Title page
+\title{\textbf{Abstract Mathematical Reasoning} \\ {\large Exam Notes} \\ {\normalsize 2021, Semester 1}}
+\author{
+    Rohan Boas \and Tarang Janawalkar \and Oliver Strong
+}
+\date{}
 
 \begin{document}
 
@@ -253,14 +256,14 @@ frametitlefont=\bf\large}
 	\end{enumerate}
 \end{definition}
 %
-\subsubsection{Other properties}
+\subsubsection{Properties of Natural Numbers}
 \begin{description}[style=nextline]
 	\item[Commutativity of addition]
 		$\mathrm{ \quo{a} + \quo{b} = \quo{b} + \quo{a}}$
 	\item[Associativity of addition]
 		$\mathrm{(\quo{a} + \quo{b}) + \quo{c} = \quo{a} + (\quo{b} + \quo{c})}$
 	\item[Commutativity of multiplication]
-		$\mathrm{\quo{a} .  \quo{b} = \quo{b} .  \quo{a}}$
+		$\mathrm{\quo{a} \cdot \quo{b} = \quo{b} \cdot \quo{a}}$
 	\item[Associativity of multiplication]
 		$\mathrm{(\quo{a} \cdot \quo{b}) \cdot \quo{c} = \quo{a} \cdot (\quo{b} \cdot \quo{c})}$
 	\item[Distributivity of multiplication over addition]
@@ -272,7 +275,7 @@ frametitlefont=\bf\large}
 \end{description}
 %
 \subsection{Cartesian Product}
-\begin{definition}[Cartesian product]
+\begin{definition}[Cartesian Product]
 	The Cartesian product of two sets $S$ and $T$ is the set
 	$S\times T$ consisting of all ordered pairs $(x, y)$ where
 	$x \in S$ and $y \in T$.
@@ -315,7 +318,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{definition}
 %
 \begin{figure}[H]
-\begin{mdframed}[style=exampledefault,frametitle={Relation properties}]
+\begin{mdframed}[style=exampledefault,frametitle={Relation Properties}]
 \begin{description}[style=sameline]
 	\item[Reflexive:]
 		$\forall x \in S : xRx$
@@ -333,13 +336,13 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A relation is an equivalence relation if it is
     reflexive, symmetric, and transitive.
 \end{definition}
-\begin{definition}[Function (rule ver.)]
+\begin{definition}[Function]
     A function $f$ is a rule which maps
     from some set $S$ (the domain)
     to some set $T$ (the codomain)
-    (i.e. $ f: S \to T$) where each $x \in S$ maps to a unique $f(x) \in T$.
+    (i.e. $f: S \to T$) where each $x \in S$ maps to a unique $f(x) \in T$.
 \end{definition}
-\begin{definition}[Image of a function]
+\begin{definition}[Image]
     The image of a function $f: S \to T$ is the set $f(S)$,
     which is equal to $\{f(x):x \in S\}$.
 \end{definition}
@@ -351,11 +354,11 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{note}
     The functional property corresponds to the vertical line test.
 \end{note}
-\begin{definition}[Left-total]\ \\
+\begin{definition}[Left-total]
     A relation is left-total if
     $\forall x \in S : \exists y \in T : xRy$.
 \end{definition}
-\begin{definition}[Function (relation ver.)]\ \\
+\begin{definition}[Function (relation ver.)]
     A function $f$ is some relation that is functional and left-total.
 \end{definition}
 %
@@ -385,8 +388,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{definition}
 %
 \begin{definition}[Function composition]
-    The composition of two functions, $f:X \to Y$ and $g:Y \to Z$,
-    is denoted $g \circ f$ which maps from $X$ to $Z$ and is defined as
+    The composition of two functions $f:X \to Y$ and $g:Y \to Z$,
+    denoted $g \circ f$, maps $X$ to $Z$, and is defined as
     $(g \circ f)(x) = g(f(x))$.
 \end{definition}
 %
@@ -410,6 +413,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A function $f$ has an inverse if and only if $f$ is bijective.
 \end{theorem}
 %
+\section{Number Sets}
+\subsection{Rational Numbers}
 \begin{definition}[Equivalence class]
     Let $R$ be an equivalence relation on $S$ and $x \in S$.
     The equivalence class of $x$ is $[x] = \{y \in S : xRy\}$,
@@ -418,8 +423,6 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     $x$ is a representative of the equivalence class $[x]$.
     There may be different representations of the same equivalence class.
 \end{definition}
-%
-\section{Number Sets}
 %
 \begin{definition}[Rational numbers]
     Define an equivalence relation $\sim$ on $\Z \times (\N\backslash\{0\}$
@@ -438,7 +441,27 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     $(a,\: b) \cdot (c,\: d) = (ac,\: bd)$
 \end{definition}
 %
-\marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
+\section{Algebraic Structures}
+\begin{definition}[Commutativite ring with identity]
+	A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
+\end{definition}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Ring Axioms}]
+		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$
+			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$
+			\item [(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$
+			\item [(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$
+			\item [(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0")
+			\item [(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$
+			\item [(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$
+			\item [(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$
+			\item [(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1")
+			\item [(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$
+		\end{enumerate}
+	\end{mdframed}
+\end{figure}
+% \marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
 %
 \begin{definition}[Integers]
     The set of integers ($\Z$) is the smallest ring containing the natural numbers.
@@ -447,17 +470,17 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     The integers are the closure of the natural numbers with respect to the ring axioms.
 \end{note}
 %
-\begin{definition}[Real numbers (infinite decimal ver.)]
+\begin{definition}[Real numbers]
     Let $D = \Z \times \{\text{sequence of digits $0\ldots 9$}\}$.
     Define an equivalence relation on $D$ such that
     \begin{equation*}
-		x_0 . x_1 x_2 \dots x_{k-1} x_k 000 \ldots = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)999 \ldots
+		x_0 . x_1 x_2 \dots x_{k-1} x_k \overbrace{000} = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)\overbar{999}
 	\end{equation*}
     The real numbers ($\R$) is the set of the equivalence classes of D using the equivalence relation above.
 \end{definition}
 %
 \begin{definition}[Irrational numbers]
-    The irrational numbers ($\I$ or $\overline{\Q}$) is $\R\backslash\Q$.
+    The irrational numbers ($\I$ or $\overline{\Q}$) are defined as $\R\backslash\Q$.
 \end{definition}
 %
 \section{Cardinality}
@@ -486,22 +509,29 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{theorem}$\#\N = \#\Z$\end{theorem}
 \begin{theorem}$\#(\N\times\N) = \#\N$\end{theorem}
 \begin{theorem}$\#\Q = \#\N$\end{theorem}
-\begin{theorem}[Cantor]$\#\N \ne \#\R$\end{theorem}
+\begin{theorem}$\#\N \ne \#\R$\end{theorem}
 %
 \begin{definition}[Power set]
     The power set of $X$, $\mathscr{P}(X)$, is the set of all subsets of $X$,
     including $\emptyset$ and $X$.
 \end{definition}
+\begin{theorem}
+	The cardinatility of $\mathscr{X}$ is $2^{\abs{X}}$.
+\end{theorem}
 %
 \section{Proofs}
-\subsection{Proof Layout}
-\begin{enumerate}
-    \item State the proof method that will be used.
-    \item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
-    \item Label all important statements required by the proof, such as assumptions.
-    \item Apply the proof method.
-    \item Conclude by stating the proof method.
-\end{enumerate}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Proof Structure}]
+		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+			\item State the proof method that will be used.
+			\item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
+			\item Clearly define assumptions, state definitions, and label statements, as required by the proof.
+			\item Apply the proof method.
+			\item Write a sentence summarising the proof method.
+			\item Conclude the proof with $QED$, $\square$, or $\blacksquare$.
+		\end{enumerate}
+	\end{mdframed}
+\end{figure}
 %
 \subsection{Direct Proof}
 \begin{enumerate}
@@ -516,7 +546,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     \item Make a sequence of logical statements that follow from the assumption.
     \item Arrive at a contradiction.
     \item Since we arrive at a contradiction, the original assumption must have been wrong.
-    \item Thus the statement is true.
+    \item Hence the original statement must be true.
+	\item The $\contradiction$ symbol is often used to show a contradiction.
 \end{enumerate}
 %
 \subsection{Contrapositive}
@@ -556,14 +587,14 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 %
 \subsection{Useful Techniques}
 \begin{enumerate}
-    \item Use the definition of the numbers, i.e., even and odd numbers.
+    \item Use the definition of the numbers, i.e. even and odd numbers.
     \item For rational numbers assume that $(a,b)$ is fully simplified, so that $a$ and $b$ are co-prime.
-    \item When using strong induction, remember that $P(k-1), \ldots, P(n_0)$ are assumed to be true.
+    \item When using strong induction, remember that $P(k), \ldots, P(n_0)$ are assumed to be true.
     \item $a^b=e^{\ln{a^b}}=e^{b\ln{a}}$.
 \end{enumerate}
 %
 \section{Sequences}
-An infinite sequence on $X$ is a function $a$ with domain $\N_{> 0}$ and codomain $X$. That is, $a:\N_{> 0}\rightarrow X$.
+An infinite sequence on $X$ is a function $a$ with domain $\N_{> 0}$ and codomain $X$. That is, $a:\N_{> 0}\to X$.
 
 For infinite sequences we write $a_n$ and the sequence can be represented as $\left\{a_n\right\}_{n=1}^\infty$, where $n$ is the index of the sequence.
 %
@@ -573,7 +604,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\begin{equation*}
 		\forall \varepsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : \abs{a_n - a} < \varepsilon
 	\end{equation*}
-	where $\lim_{n \rightarrow \infty}a_n = a$.
+	where $\lim_{n \to \infty}a_n = a$.
 \end{theorem}
 %
 \begin{theorem}
@@ -581,7 +612,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\begin{equation*}
 		\forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n > N
 	\end{equation*}
-	where $\lim_{n \rightarrow \infty}a_n = \infty$.
+	where $\lim_{n \to \infty}a_n = \infty$.
 \end{theorem}
 %
 \begin{theorem}
@@ -589,7 +620,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\begin{equation*}
 		\forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n < M
 	\end{equation*}
-	where $\lim_{n \rightarrow \infty}a_n = -\infty$.
+	where $\lim_{n \to \infty}a_n = -\infty$.
 \end{theorem}
 %
 \begin{theorem}[Triangle Inequality]
@@ -597,28 +628,32 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{theorem}
-	A sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ iff the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
+	A sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ if and only if the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
 \end{theorem}
 %
 \begin{theorem}[Squeeze Theorem for Sequences]
-	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leqslant b_n \leqslant c_n$ for all $n>n_0$. If $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}c_n=d$, then .
+	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leqslant b_n \leqslant c_n$ for all $n>n_0$. If $\lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=d$, then .
 \end{theorem}
 %
-\subsection{Limits of Sequences}
-\begin{theorem}
-	Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$, respectively, and let $c\in\R$ be a constant, then,
-	\begin{enumerate}[label=\normalfont\alph*)]
-		\item $\lim_{n\rightarrow\infty}c=c$.
-		\item $\lim_{n\rightarrow\infty}ca_n=ca$.
-		\item $\lim_{n\rightarrow\infty}\left( a_n + b_n \right)=a+b$.
-		\item $\lim_{n\rightarrow\infty}\left( a_n - b_n \right)=a-b$.
-		\item $\lim_{n\rightarrow\infty}\left( a_nb_n \right)=ab$.
-		\item $\lim_{n\rightarrow\infty}\left( \frac{a_n}{b_n} \right)=\frac{a}{b}$, ($b\neq 0$).
-	\end{enumerate}
-\end{theorem}
-
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Limits of Sequences}]
+		\begin{theorem}
+			Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$, respectively, and let $c\in\R$ be a constant, then,
+			\begin{enumerate}[label=\normalfont\alph*)]
+				\item $\lim_{n\to\infty}c=c$.
+				\item $\lim_{n\to\infty}ca_n=ca$.
+				\item $\lim_{n\to\infty}\left( a_n + b_n \right)=a+b$.
+				\item $\lim_{n\to\infty}\left( a_n - b_n \right)=a-b$.
+				\item $\lim_{n\to\infty}\left( a_nb_n \right)=ab$.
+				\item $\lim_{n\to\infty}\left( \frac{a_n}{b_n} \right)=\frac{a}{b}$, ($b\neq 0$).
+			\end{enumerate}
+		\end{theorem}
+	\end{mdframed}
+\end{figure}
+%
+\subsection{Cauchy Sequences}
+\subsection{Monotonicity}
 \section{Series}
-
 %
 \subsection{Convergence Tests}
 
@@ -628,9 +663,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
     $f(x)$ has the limit $L \in \R$ at $x_0$ if
-    \[ \forall\varepsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-    \implies \abs{f(x)-L}<\varepsilon \]
-    \[ \lim_{x\to x_0} f(x) = L \]
+    $\forall\varepsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+    \implies \abs{f(x)-L}<\varepsilon$
+    $\lim_{x\to x_0} f(x) = L$
 \end{definition}
 %
 \begin{figure}[H]
@@ -675,28 +710,28 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
 
     $f(x)$ has the limit $+\infty$ at $x_0$
-    \(\left(\displaystyle\lim_{x\to x_0} f(x) = +\infty\right)\) if
-    \[ \forall M \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-    \implies f(x) > M \]
+    $\left(\displaystyle\lim_{x\to x_0} f(x) = +\infty\right)$ if
+    $ \forall M \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+    \implies f(x) > M $
 
     $f(x)$ has the limit $-\infty$ at $x_0$
-    \(\left(\displaystyle\lim_{x\to x_0} f(x) = -\infty\right)\) if
-        \[ \forall N \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-            \implies f(x) < N \]
+    $\left(\displaystyle\lim_{x\to x_0} f(x) = -\infty\right)$ if
+        $\forall N \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+            \implies f(x) < N$
 \end{definition}
 %
 \begin{definition}[Limits towards infinity]
     Let a function $f(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the positive $x$ direction.
     $\displaystyle \lim_{x\to\infty} f(x) = L$ if
-    \[ \forall \varepsilon>0: \exists M \in I: x>M
-        \implies \abs{f(x)-L}<\varepsilon \]
+    $\forall \varepsilon>0: \exists M \in I: x>M
+        \implies \abs{f(x)-L}<\varepsilon$
 
     Let a function $g(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the negative $x$ direction.
     $\displaystyle \lim_{x\to-\infty} g(x) = L$ if
-    \[ \forall \varepsilon>0: \exists N \in I: x<N
-        \implies \abs{g(x)-L}<\varepsilon \]
+    $\forall \varepsilon>0: \exists N \in I: x<N
+        \implies \abs{g(x)-L}<\varepsilon$
 \end{definition}
 %
 \begin{theorem}
@@ -730,7 +765,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{definition}[Function continuity (sequence ver.)]
     A function $f(x):I\to\R$ is continuous at $c \in I$ if
     for every sequence $\{a_n\}^{\infty}_{n=1}$ in $I$ that converges to $c$
-    $\{f(a_n)\}^{\infty}_{n=1}$ converges to $f(c)$
+    $\{f(a_n)\}^{\infty}_{n=1}$ converges to $f(c)$.
 \end{definition}
 %
 \begin{note}
@@ -778,7 +813,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     or $\displaystyle \lim_{x\to x_0}f(x)=\pm\infty$
         and $\displaystyle \lim_{x\to x_0}g(x)=\pm\infty$,
     then
-    \[ \lim_{x\to x_0}\frac{f(x)}{g(x)} = \lim_{x\to x_0}\frac{f'(x)}{g'(x)} \]
+    $\lim_{x\to x_0}\frac{f(x)}{g(x)} = \lim_{x\to x_0}\frac{f'(x)}{g'(x)}$
     (as long as the limit exists or is $\pm\infty$).
 \end{theorem}
 %
