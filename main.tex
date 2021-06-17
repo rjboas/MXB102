@@ -616,5 +616,80 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 
 %
 \section{Limits of Functions}
+\begin{definition}[Finite limit ($\epsilon$-$\delta$ ver.)]
+    Let a function $f(x)$ be defined for all $x$ in an open interval $I$
+    (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
+    $f(x)$ has the limit $L \in \R$ at $x_0$ if
+    \[ \forall\epsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+    \implies \abs{f(x)-L}<\epsilon \]
+    \[ \lim_{x\to x_0} f(x) = L \]
+\end{definition}
+%
+\begin{figure}[H]
+\begin{mdframed}[style=exampledefault,frametitle={Limit laws}]
+    \begin{theorem} The limit of a sum equals the sum of the limits, i.e.
+        \begin{equation*}
+              \lim_{x\to x_0}\left(f(x)+g(x)\right)
+            = \left(\lim_{x\to x_0}f(x)\right) + \left(\lim_{x\to x_0}g(x)\right)
+        \end{equation*}
+    \end{theorem}
+    \begin{theorem} The limit of a product equals the product of the limits, i.e.
+        \begin{equation*}
+          \lim_{x\to x_0}\left(f(x)\cdot g(x)\right)
+        = \left(\lim_{x\to x_0}f(x)\right) \cdot \left(\lim_{x\to x_0}g(x)\right)
+        \end{equation*}
+    \end{theorem}
+
+        These are trivially extended to
+        division (if the divisor is non-zero),
+        subtraction, exponentiation, and moving constants in or outside of a limit.
+\end{mdframed}
+\end{figure}
+%
+\begin{definition}[Limit of $\pm\infty$ ($\epsilon$-$\delta$ ver.)]
+    Let a function $f(x)$ be defined for all $x$ in an open interval $I$
+    (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
+
+    $f(x)$ has the limit $+\infty$ at $x_0$
+    \(\left(\displaystyle\lim_{x\to x_0} f(x) = +\infty\right)\) if
+    \[ \forall M \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+    \implies f(x) > M \]
+
+    $f(x)$ has the limit $-\infty$ at $x_0$
+    \(\left(\displaystyle\lim_{x\to x_0} f(x) = -\infty\right)\) if
+        \[ \forall N \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+            \implies f(x) < N \]
+\end{definition}
+%
+\begin{definition}[Limits towards infinity]
+    Let a function $f(x)$ be defined for all $x$ in an infinite open interval $I$
+    extending in the positive $x$ direction.
+    $\displaystyle \lim_{x\to\infty} f(x) = L$ if
+    \[ \forall \epsilon>0: \exists M \in I: x>M
+        \implies \abs{f(x)-L}<\epsilon \]
+
+    Let a function $g(x)$ be defined for all $x$ in an infinite open interval $I$
+    extending in the negative $x$ direction.
+    $\displaystyle \lim_{x\to-\infty} g(x) = L$ if
+    \[ \forall \epsilon>0: \exists N \in I: x<N
+        \implies \abs{g(x)-L}<\epsilon \]
+\end{definition}
+%
+\begin{theorem}
+    $\displaystyle\lim_{x\to x_0} f(x)$ exists iff
+    $\displaystyle\lim_{x\to {x_0}^+} f(x)$ and $\displaystyle\lim_{x\to {x_0}^-} f(x)$
+    exist and are equal
+\end{theorem}
+%
+\begin{theorem}[Squeeze theorem (function ver.)]
+    Let an interval $I$ contain $x_0$.
+    If $f,\:g,\:,h : I \to \R$ are functions such that
+    $\forall x \in I\backslash\{x_0\},\; f(x)\le g(x)\le h(x)$
+    and
+    $\displaystyle\lim_{x\to x_0} f(x) = \lim_{x\to x_0} h(x) = L$,
+    then
+    $\displaystyle\lim_{x\to x_0} g(x) = L$.
+    N.B. This holds for left- and right- handed and limits to $\pm\infty$.
+\end{theorem}
 
 \end{document}
