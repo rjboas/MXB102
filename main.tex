@@ -189,10 +189,6 @@
 	A paradox is a statement that is always false.
 \end{definition}
 %
-\begin{definition}[Transitive]
-	An operation is transitive if   that is always false.
-\end{definition}
-%
 \begin{definition}[Converse]
 	The converse of the statement $P\implies Q$	is the statement $Q\implies P$.
 \end{definition}
@@ -449,18 +445,21 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Ring Axioms}]
 		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
-			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$
-			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$
-			\item [(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$
-			\item [(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$
-			\item [(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0")
-			\item [(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$
-			\item [(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$
-			\item [(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$
-			\item [(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1")
-			\item [(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$
+			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
+			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
+			\item [(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
+			\item [(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
+			\item [(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
+			\item [(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
+			\item [(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
+			\item [(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
+			\item [(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
+			\item [(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
 		\end{enumerate}
 	\end{mdframed}
+	\begin{note}
+		$\Z$, $\Q$, $\R$, and $\C$ are rings.
+	\end{note}
 \end{figure}
 % \marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
 %
@@ -475,13 +474,23 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     Let $D = \Z \times \{\text{sequence of digits $0\ldots 9$}\}$.
     Define an equivalence relation on $D$ such that
     \begin{equation*}
-		x_0 . x_1 x_2 \dots x_{k-1} x_k \overbrace{000} = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)\overbar{999}
+		x_0 . x_1 x_2 \dots x_{k-1} x_k \overline{000} = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)\overline{999}
 	\end{equation*}
     The real numbers ($\R$) is the set of the equivalence classes of D using the equivalence relation above.
 \end{definition}
 %
 \begin{definition}[Irrational numbers]
     The irrational numbers ($\I$ or $\overline{\Q}$) are defined as $\R\backslash\Q$.
+\end{definition}
+%
+\begin{definition}[Field]
+	Let $S$ be a set that satisfies the ring axioms. $S$ is also a field if it satisfies the following axiom.
+	\begin{enumerate}
+		\item [(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
+	\end{enumerate}
+	\begin{note}
+		$\Q$, $\R$, and $\C$ are rings.
+	\end{note}
 \end{definition}
 %
 \section{Cardinality}
@@ -526,7 +535,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
 			\item State the proof method that will be used.
 			\item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
-			\item Clearly define assumptions, state definitions, and label statements, as required by the proof.
+			\item Clearly state any assumptions and definitions required by the proof.
 			\item Apply the proof method.
 			\item Write a sentence summarising the proof method.
 			\item Conclude the proof with QED, $\square$, or $\blacksquare$.
@@ -753,7 +762,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{note}
-   The squeeze theorem holds for left- and right- handed and limits to $\pm\infty$.
+   The squeeze theorem holds for left- and right-handed and limits to $\pm\infty$.
 \end{note}
 %
 \begin{definition}[Function continuity ($\varepsilon$-$\delta$ ver.)]
@@ -820,7 +829,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{note}
-    The L'Ho\^pital rule also holds for left- and right- handed and limits to $\pm\infty$.
+    The L'Ho\^pital rule also holds for left- and right-handed and limits to $\pm\infty$.
 \end{note}
 
 \end{document}
