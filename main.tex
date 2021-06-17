@@ -253,7 +253,7 @@ frametitlefont=\bf\large}
 	\item[Commutativity of addition]
 		$\mathrm{ \quo{a} + \quo{b} = \quo{b} + \quo{a}}$
 	\item[Associativity of addition]
-		$\mathrm{(\quo{a} + \quo{b}) + ``c`` = \quo{a} + (\quo{b} + ``c``)}$
+		$\mathrm{(\quo{a} + \quo{b}) + \quo{c} = \quo{a} + (\quo{b} + \quo{c})}$
 	\item[Commutativity of multiplication]
 		$\mathrm{\quo{a} .  \quo{b} = \quo{b} .  \quo{a}}$
 	\item[Associativity of multiplication]
@@ -546,8 +546,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \subsection{Strong Induction}
 \begin{enumerate}
     \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geq n_0}$".
-    \item Prove the base case is true: $P(n)$ is true for $n=n_0$.
-    \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n\leq k$".
+    \item Prove the base cases are true: $P(n)$ is true for $n=n_0,\:$.
+    \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n_0\leq n\leq k$".
     \item Write the inductive step: ``$P(n)$ is true for $n=k+1$".
     \item Prove the inductive step is true, usually a direct proof. Remember to utilise the inductive hypothesis.
     \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(n_0),\: \ldots,\: P(k)$ is true, then the principle of strong mathematical induction implies $P(n)$ is true for all $n\in \N_{\geq n_0}$.
@@ -600,13 +600,13 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{theorem}[Squeeze Theorem for Sequences]
-	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leq b_n \leq c_n$ for all $n>n_0$. If $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}c_n=d$, then .
+	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leq b_n \leq c_n$ for all $n>n_0$. If $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}c_n=d$, then $\lim_{n\rightarrow\infty}b_n=d$.
 \end{theorem}
 %
 \subsection{Limits of Sequences}
 \begin{theorem}
 	Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$, respectively, and let $c\in\R$ be a constant, then,
-	\begin{enumerate}[label=\alph*)]
+	\begin{enumerate}[label=\normalfont\alph*)]
 		\item $\lim_{n\rightarrow\infty}c=c$.
 		\item $\lim_{n\rightarrow\infty}ca_n=ca$.
 		\item $\lim_{n\rightarrow\infty}\left( a_n + b_n \right)=a+b$.
@@ -706,7 +706,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 %
 \begin{theorem}[Squeeze theorem (function ver.)]
     Let an interval $I$ contain $x_0$.
-    If $f,\:g,\:,h : I \to \R$ are functions such that
+    If $f,\:g,\:h : I \to \R$ are functions such that
     $\forall x \in I\backslash\{x_0\},\; f(x)\le g(x)\le h(x)$
     and
     $\displaystyle\lim_{x\to x_0} f(x) = \lim_{x\to x_0} h(x) = L$,
