@@ -85,7 +85,7 @@
 
 \theoremstyle{remark}
 \newtheorem{note}{Note}[section]
-\numberwithin{note}{section}
+\numberwithin{note}{subsection}
 
 \newtheorem*{statement}{Statement}
 
@@ -664,6 +664,77 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 %
 \subsection{Cauchy Sequences}
 \subsection{Monotonicity}
+\begin{definition}
+    A sequence $\{a_n\}^\infty_{n=1}$ is
+    \begin{description}[style=sameline]
+        \item[Strictly increasing] if $a_n < a_{n+1}$ for all $n$
+        \item[Increasing] if $a_n \leqslant a_{n+1}$ for all $n$
+        \item[Strictly decreasing] if $a_n > a_{n+1}$ for all $n$
+        \item[Decreasing] if $a_n \geqslant a_{n+1}$ for all $n$
+    \end{description}
+\end{definition}
+%
+\begin{definition}[Monotone]
+    A sequence is (stricly) monotone if it is
+    (strictly) increasing or (strictly) decreasing.
+\end{definition}
+%
+\begin{definition}[Eventually]
+    If after removing a finite number of terms from the beginning from a sequence
+    it has a certain property, the the original sequence has that property eventually.
+\end{definition}
+%
+\begin{definition}[Bounded]
+    An infinite sequence is bounded if $L \leqslant a_n \leqslant K$ for all $n$.
+\end{definition}
+%
+\begin{theorem}
+    Every bounded eventually monotone sequence converges.
+\end{theorem}
+%
+\subsubsection{Monotonicity Tests}
+\begin{mdframed}[style=exampledefault]
+    \begin{theorem}[Difference test]
+    A sequence $\{a_n\}^\infty_{n=1}$ is
+    \begin{mdframed}[style=exampledefault]
+        \begin{description}[style=sameline]
+            \item[Strictly increasing] if $a_{n+1} - a_n > 0$ for all $n$
+            \item[Increasing] if $a_{n+1} - a_n \geqslant 0$ for all $n$
+            \item[Strictly decreasing] if $a_{n+1} - a_n < 0$ for all $n$
+            \item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
+        \end{description}
+    \end{mdframed}
+    \end{theorem}
+    \begin{theorem}[Ratio test]
+    A sequence $\{a_n\}^\infty_{n=1}$ for which all $a_n$ are all positive is
+    \begin{mdframed}[style=exampledefault]
+        \begin{description}[style=sameline]
+            \item[Strictly increasing] if $a_{n+1} \div a_n > 1$ for all $n$
+            \item[Increasing] if $a_{n+1} \div a_n \geqslant 1$ for all $n$
+            \item[Strictly decreasing] if $a_{n+1} \div a_n < 1$ for all $n$
+            \item[Decreasing] if $a_{n+1} \div a_n \leqslant 1$ for all $n$
+        \end{description}
+        \begin{note}
+            If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
+            then $a_n\to0$ as $n\to\infty$.
+        \end{note}
+    \end{mdframed}
+    \end{theorem}
+    \begin{theorem}[Derivative test]
+        If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
+        $a(x)$ is differentiable for $x\in\R_{\geqslant1}$,
+        then $\{a_n\}^\infty_{n=1}$ is
+    \begin{mdframed}[style=exampledefault]
+        \begin{description}[style=sameline]
+            \item[Strictly increasing] if $a'(x) > 0$ for all $x\in\R_{\geqslant1}$
+            \item[Increasing] if $a'(x) \geqslant 0$ for all $x\in\R_{\geqslant1}$
+            \item[Strictly decreasing] if $a'(x) < 0$ for all $x\in\R_{\geqslant1}$
+            \item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant1}$
+        \end{description}
+    \end{mdframed}
+    \end{theorem}
+\end{mdframed}
+%
 \section{Series}
 %
 \subsection{Convergence Tests}
