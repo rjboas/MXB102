@@ -526,7 +526,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     including $\emptyset$ and $X$.
 \end{definition}
 \begin{theorem}
-    The cardinatility of $\mathscr{P}(X)$ is $2^{\abs{X}}$.
+    The cardinality of $\mathscr{P}(X)$ is $2^{\abs{X}}$.
 \end{theorem}
 %
 \section{Proofs}
@@ -535,7 +535,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
 			\item State the proof method that will be used.
 			\item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
-			\item Clearly state any assumptions and definitions required by the proof.
+			\item Clearly state any assumptions and definitions as required by the proof.
 			\item Apply the proof method.
 			\item Write a sentence summarising the proof method.
 			\item Conclude the proof with QED, $\square$, or $\blacksquare$.
@@ -639,7 +639,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{theorem}
-	A sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ if and only if the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
+	The sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ if and only if the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
 \end{theorem}
 %
 \begin{theorem}[Squeeze theorem for sequences]
@@ -647,9 +647,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Limits of Sequences}]
+	\begin{mdframed}[style=exampledefault,frametitle={Limit laws}]
 		\begin{theorem}
-			Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$, respectively, and let $c\in\R$ be a constant, then,
+			Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$ respectively, and let $c\in\R$ be a constant, then
 			\begin{enumerate}[label=\normalfont\alph*)]
 				\item $\lim_{n\to\infty}c=c$.
 				\item $\lim_{n\to\infty}ca_n=ca$.
@@ -670,13 +670,13 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 
 %
 \section{Limits of Functions}
-\begin{definition}[Finite limit ($\varepsilon$-$\delta$ ver.)]
+\subsection{Limits of Functions on $\mathbb{R}$}
+\begin{definition}[Finite limits using the $\varepsilon$-$\delta$ definition]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
-    $f(x)$ has the limit $L \in \R$ at $x_0$ if
-    $\forall\varepsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-    \implies \abs{f(x)-L}<\varepsilon$
-    $\lim_{x\to x_0} f(x) = L$
+    \begin{equation*}
+		\lim_{x\to x_0} f(x) = L \iff \forall\varepsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta \implies \abs{f(x)-L}<\varepsilon
+	\end{equation*}
 \end{definition}
 %
 \begin{figure}[H]
@@ -693,30 +693,29 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
         = \left(\lim_{x\to x_0}f(x)\right) \cdot \left(\lim_{x\to x_0}g(x)\right)
         \end{equation*}
     \end{theorem}
-
-        These are trivially extended to
-        division (if the divisor is non-zero),
-        subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
-        \begin{equation*}
-          \lim_{x\to x_0}\left(f(x) - g(x)\right)
-        = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
-        \end{equation*}
-        \begin{equation*}
-        \lim_{x\to x_0}\frac{f(x)}{g(x)}
-        = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
-        \end{equation*}
-        \begin{equation*}
-        \lim_{x\to x_0}\left(f(x)\right)^n
-        = \left(\lim_{x\to x_0}f(x)\right)^n
-        \end{equation*}
-        \begin{equation*}
-        \lim_{x\to x_0} c \cdot f(x)
-        = c \cdot \lim_{x\to x_0}f(x)
-        \end{equation*}
+	These are trivially extended to
+	division (if the divisor is non-zero),
+	subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
+	\begin{equation*}
+		\lim_{x\to x_0}\left(f(x) - g(x)\right)
+	= \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
+	\end{equation*}
+	\begin{equation*}
+	\lim_{x\to x_0}\frac{f(x)}{g(x)}
+	= \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
+	\end{equation*}
+	\begin{equation*}
+	\lim_{x\to x_0}\left(f(x)\right)^n
+	= \left(\lim_{x\to x_0}f(x)\right)^n
+	\end{equation*}
+	\begin{equation*}
+	\lim_{x\to x_0} c \cdot f(x)
+	= c \cdot \lim_{x\to x_0}f(x)
+	\end{equation*}
 \end{mdframed}
 \end{figure}
 %
-\begin{definition}[Limit of $\pm\infty$ ($\varepsilon$-$\delta$ ver.)]
+\begin{definition}[Limits towards $\pm\infty$ using the $\varepsilon$-$\delta$ definition]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
 	\begin{equation*}
@@ -727,7 +726,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\end{equation*}
 \end{definition}
 %
-\begin{definition}[Limits towards infinity]
+\begin{definition}[Limits towards $\pm\infty$]
     Let a function $f(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the positive $x$ direction.
 	\begin{equation*}
@@ -760,17 +759,17 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
    The squeeze theorem holds for left- and right-handed and limits to $\pm\infty$.
 \end{note}
 %
-\begin{definition}[Function continuity ($\varepsilon$-$\delta$ ver.)]
-    A function $f(x):I\to\R$ is continuous at $c \in I$ if
-    $\forall\varepsilon>0: \exists\delta>0: \forall x\in I:
-        0<\abs{x-c}<\delta \implies \abs{f(x)-f(c)}<\varepsilon$.
-
+\begin{definition}[Function continuity using the $\varepsilon$-$\delta$ definition]
+    A function $f(x):I\to\R$ is continuous at $c \in I$, if
+	\begin{equation*}
+		\forall\varepsilon>0: \exists\delta>0: \forall x\in I:0<\abs{x-c}<\delta \implies \abs{f(x)-f(c)}<\varepsilon
+	\end{equation*}
     $f(x)$ is continuous on $I$ if $f(x)$ is continuous for all $x \in I$.
 \end{definition}
 %
-\begin{definition}[Function continuity (sequence ver.)]
-    A function $f(x):I\to\R$ is continuous at $c \in I$ if
-    for every sequence $\{a_n\}^{\infty}_{n=1}$ in $I$ that converges to $c$
+\begin{definition}[Function continuity as a sequence]
+    A function $f(x):I\to\R$ is continuous at $c \in I$, if
+    for every sequence $\{a_n\}^{\infty}_{n=1}$ in $I$ that converges to $c$,
     $\{f(a_n)\}^{\infty}_{n=1}$ converges to $f(c)$.
 \end{definition}
 %
@@ -812,10 +811,10 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     $h \circ g$ is continuous at $c$.
 \end{theorem}
 %
-\begin{theorem}[L'Ho\^pital rule]
+\begin{theorem}[L'H\^opital rule]
     For two differentiable (and therefore continuous) functions $f(x)$ and $g(x)$
-    except for possibly at $x_0$,
-    if $\displaystyle \lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0$,
+    except possibly at $x_0$.
+    If $\displaystyle \lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0$,
     or $\displaystyle \lim_{x\to x_0}f(x)=\pm\infty$
         and $\displaystyle \lim_{x\to x_0}g(x)=\pm\infty$,
     then
@@ -824,7 +823,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{note}
-    The L'Ho\^pital rule also holds for left- and right-handed and limits to $\pm\infty$.
+    L'H\^opital's rule also holds for left- and right-handed, and limits that approach $\pm\infty$.
 \end{note}
 
 \end{document}
