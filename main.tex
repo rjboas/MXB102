@@ -5,9 +5,9 @@
 
 \title{MXB102 2021 Semester 1 Exam Notes}
 \author{
-    Rohan Boas    {\small (n11031743)} \\
-    Oliver Strong {\small (n11037580)} \\
-    Tarang Janawalkar {\small (n11032201)}
+    Rohan Boas \\
+    Tarang Janawalkar \\
+    Oliver Strong
 }
 \date{\today}
 
@@ -298,8 +298,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     $x > y \iff \exists a \in \N\backslash\{0\} : x=y+a$
 \end{definition}
 %
-\begin{definition}[Greater than or equal to ($\ge$)]
-    $x \ge y \iff \exists a \in \N : x=y+a$
+\begin{definition}[Greater than or equal to ($\geqslant$)]
+    $x \geqslant y \iff \exists a \in \N : x=y+a$
 \end{definition}
 %
 \section{Relations}
@@ -324,23 +324,21 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{mdframed}
 \end{figure}
 %
-\begin{adjustwidth}{-10pt}{-10pt}
-\begin{multicols}{2}
-\begin{definition}[Equivalence relation]\ \\
+\begin{definition}[Equivalence relation]
     A relation is an equivalence relation if it is
     reflexive, symmetric, and transitive.
 \end{definition}
-\begin{definition}[Function (rule ver.)]\ \\
+\begin{definition}[Function (rule ver.)]
     A function $f$ is a rule which maps
     from some set $S$ (the domain)
     to some set $T$ (the codomain)
     (i.e. $ f: S \to T$) where each $x \in S$ maps to a unique $f(x) \in T$.
 \end{definition}
-\begin{definition}[Image of a function]\ \\
+\begin{definition}[Image of a function]
     The image of a function $f: S \to T$ is the set $f(S)$,
     which is equal to $\{f(x):x \in S\}$.
 \end{definition}
-\begin{definition}[Functional]\ \\
+\begin{definition}[Functional]
     A relation is functional if
     $\forall x \in S \land \forall y,\: z \in T
         : (xRy \, \land \, yRz) \implies y=z$.
@@ -355,8 +353,6 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{definition}[Function (relation ver.)]\ \\
     A function $f$ is some relation that is functional and left-total.
 \end{definition}
-\end{multicols}
-\end{adjustwidth}
 %
 \begin{figure}[H]
 \begin{mdframed}[style=exampledefault,frametitle={Function properties}]
@@ -488,7 +484,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{theorem}[Cantor]$\#\N \ne \#\R$\end{theorem}
 %
 \begin{definition}[Power set]
-    The power set of $X$ ($\mathbb{P}(X)$) is the set of all subsets of $X$,
+    The power set of $X$, $\mathscr{P}(X)$, is the set of all subsets of $X$,
     including $\emptyset$ and $X$.
 \end{definition}
 %
@@ -535,22 +531,22 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 %
 \subsection{Induction}
 \begin{enumerate}
-    \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geq n_0}$".
+    \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geqslant n_0}$".
     \item Prove the base case is true: $P(n)$ is true for $n=n_0$.
     \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n=k$".
     \item Write the inductive step: ``$P(n)$ is true for $n=k+1$".
     \item Prove the inductive step is true, usually a direct proof. Remember to utilise the inductive hypothesis.
-    \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(k)$ is true, then the principle of mathematical induction implies $P(n)$ is true for all $n\in \N_{\geq n_0}$.
+    \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(k)$ is true, then the principle of mathematical induction implies $P(n)$ is true for all $n\in \N_{\geqslant n_0}$.
 \end{enumerate}
 %
 \subsection{Strong Induction}
 \begin{enumerate}
-    \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geq n_0}$".
+    \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geqslant n_0}$".
     \item Prove the base case is true: $P(n)$ is true for $n=n_0$.
-    \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n\leq k$".
+    \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n\leqslant k$".
     \item Write the inductive step: ``$P(n)$ is true for $n=k+1$".
     \item Prove the inductive step is true, usually a direct proof. Remember to utilise the inductive hypothesis.
-    \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(n_0),\: \ldots,\: P(k)$ is true, then the principle of strong mathematical induction implies $P(n)$ is true for all $n\in \N_{\geq n_0}$.
+    \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(n_0),\: \ldots,\: P(k)$ is true, then the principle of strong mathematical induction implies $P(n)$ is true for all $n\in \N_{\geqslant n_0}$.
 \end{enumerate}
 %
 \subsection{Useful Techniques}
@@ -570,7 +566,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{theorem}
 	A sequence $\left\{a_n\right\}_{n=1}^\infty$ converges to $a\in \R$ if
 	\begin{equation*}
-		\forall \epsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : \abs{a_n - a} < \epsilon
+		\forall \varepsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : \abs{a_n - a} < \varepsilon
 	\end{equation*}
 	where $\lim_{n \rightarrow \infty}a_n = a$.
 \end{theorem}
@@ -578,7 +574,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{theorem}
 	A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $+\infty$ if
 	\begin{equation*}
-		\forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : a_n > N
+		\forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n > N
 	\end{equation*}
 	where $\lim_{n \rightarrow \infty}a_n = \infty$.
 \end{theorem}
@@ -586,13 +582,13 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{theorem}
 	A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $-\infty$ if
 	\begin{equation*}
-		\forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geq n_0 : a_n < M
+		\forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n < M
 	\end{equation*}
 	where $\lim_{n \rightarrow \infty}a_n = -\infty$.
 \end{theorem}
 %
 \begin{theorem}[Triangle Inequality]
-	$\abs{a+b}\leq\abs{a}+\abs{b}$.
+	$\abs{a+b}\leqslant\abs{a}+\abs{b}$.
 \end{theorem}
 %
 \begin{theorem}
@@ -600,7 +596,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \begin{theorem}[Squeeze Theorem for Sequences]
-	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leq b_n \leq c_n$ for all $n>n_0$. If $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}c_n=d$, then .
+	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leqslant b_n \leqslant c_n$ for all $n>n_0$. If $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}c_n=d$, then .
 \end{theorem}
 %
 \subsection{Limits of Sequences}
@@ -623,12 +619,12 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 
 %
 \section{Limits of Functions}
-\begin{definition}[Finite limit ($\epsilon$-$\delta$ ver.)]
+\begin{definition}[Finite limit ($\varepsilon$-$\delta$ ver.)]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
     $f(x)$ has the limit $L \in \R$ at $x_0$ if
-    \[ \forall\epsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
-    \implies \abs{f(x)-L}<\epsilon \]
+    \[ \forall\varepsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta
+    \implies \abs{f(x)-L}<\varepsilon \]
     \[ \lim_{x\to x_0} f(x) = L \]
 \end{definition}
 %
@@ -669,7 +665,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{mdframed}
 \end{figure}
 %
-\begin{definition}[Limit of $\pm\infty$ ($\epsilon$-$\delta$ ver.)]
+\begin{definition}[Limit of $\pm\infty$ ($\varepsilon$-$\delta$ ver.)]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
 
@@ -688,14 +684,14 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     Let a function $f(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the positive $x$ direction.
     $\displaystyle \lim_{x\to\infty} f(x) = L$ if
-    \[ \forall \epsilon>0: \exists M \in I: x>M
-        \implies \abs{f(x)-L}<\epsilon \]
+    \[ \forall \varepsilon>0: \exists M \in I: x>M
+        \implies \abs{f(x)-L}<\varepsilon \]
 
     Let a function $g(x)$ be defined for all $x$ in an infinite open interval $I$
     extending in the negative $x$ direction.
     $\displaystyle \lim_{x\to-\infty} g(x) = L$ if
-    \[ \forall \epsilon>0: \exists N \in I: x<N
-        \implies \abs{g(x)-L}<\epsilon \]
+    \[ \forall \varepsilon>0: \exists N \in I: x<N
+        \implies \abs{g(x)-L}<\varepsilon \]
 \end{definition}
 %
 \begin{theorem}
@@ -707,7 +703,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \begin{theorem}[Squeeze theorem (function ver.)]
     Let an interval $I$ contain $x_0$.
     If $f,\:g,\:,h : I \to \R$ are functions such that
-    $\forall x \in I\backslash\{x_0\},\; f(x)\le g(x)\le h(x)$
+    $\forall x \in I\backslash\{x_0\},\; f(x)\leqslant g(x)\leqslant h(x)$
     and
     $\displaystyle\lim_{x\to x_0} f(x) = \lim_{x\to x_0} h(x) = L$,
     then
@@ -718,10 +714,10 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
    The squeeze theorem holds for left- and right- handed and limits to $\pm\infty$.
 \end{note}
 %
-\begin{definition}[Function continuity ($\epsilon$-$\delta$ ver.)]
+\begin{definition}[Function continuity ($\varepsilon$-$\delta$ ver.)]
     A function $f(x):I\to\R$ is continuous at $c \in I$ if
-    $\forall\epsilon>0: \exists\delta>0: \forall x\in I:
-        0<\abs{x-c}<\delta \implies \abs{f(x)-f(c)}<\epsilon$.
+    $\forall\varepsilon>0: \exists\delta>0: \forall x\in I:
+        0<\abs{x-c}<\delta \implies \abs{f(x)-f(c)}<\varepsilon$.
 
     $f(x)$ is continuous on $I$ if $f(x)$ is continuous for all $x \in I$.
 \end{definition}
