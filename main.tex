@@ -72,6 +72,10 @@ frametitlefont=\bf\large}
 \newtheorem{definition}{Definition}[section]
 \numberwithin{definition}{section}
 
+\theoremstyle{remark}
+\newtheorem{note}{Note}[section]
+\numberwithin{note}{section}
+
 \newtheorem*{statement}{Statement}
 % Usage:
 % \begin{statement}
@@ -340,9 +344,10 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A relation is functional if
     $\forall x \in S \land \forall y,\: z \in T
         : (xRy \, \land \, yRz) \implies y=z$.
-
-    (N.B. This functional property corresponds to the vertical line test.)
 \end{definition}
+\begin{note}
+    The functional property corresponds to the vertical line test.
+\end{note}
 \begin{definition}[Left-total]\ \\
     A relation is left-total if
     $\forall x \in S : \exists y \in T : xRy$.
@@ -432,19 +437,21 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     $(a,\: b) \cdot (c,\: d) = (ac,\: bd)$
 \end{definition}
 %
-N.B. The definition of rings and fields has been excluded from this document for brevity (of writing)
+\marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
 %
 \begin{definition}[Integers]
     The set of integers ($\Z$) is the smallest ring containing the natural numbers.
-    N.B. The integers are the closure of the natural numbers with respect to the ring axioms.
 \end{definition}
+\begin{note}
+    The integers are the closure of the natural numbers with respect to the ring axioms.
+\end{note}
 %
 \begin{definition}[Real numbers (infinite decimal ver.)]
     Let $D = \Z \times \{\text{sequence of digits $0\ldots 9$}\}$.
     Define an equivalence relation on $D$ such that
     \begin{equation*}
 		x_0 . x_1 x_2 \dots x_{k-1} x_k 000 \ldots = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)999 \ldots
-	\end{equation*}.
+	\end{equation*}
     The real numbers ($\R$) is the set of the equivalence classes of D using the equivalence relation above.
 \end{definition}
 %
@@ -689,7 +696,77 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     $\displaystyle\lim_{x\to x_0} f(x) = \lim_{x\to x_0} h(x) = L$,
     then
     $\displaystyle\lim_{x\to x_0} g(x) = L$.
-    N.B. This holds for left- and right- handed and limits to $\pm\infty$.
 \end{theorem}
+%
+\begin{note}
+   The squeeze theorem holds for left- and right- handed and limits to $\pm\infty$.
+\end{note}
+%
+\begin{definition}[Function continuity ($\epsilon$-$\delta$ ver.)]
+    A function $f(x):I\to\R$ is continuous at $c \in I$ if
+    $\forall\epsilon>0: \exists\delta>0: \forall x\in I:
+        0<\abs{x-c}<\delta \implies \abs{f(x)-f(c)}<\epsilon$.
+
+    $f(x)$ is continuous on $I$ if $f(x)$ is continuous for all $x \in I$.
+\end{definition}
+%
+\begin{definition}[Function continuity (sequence ver.)]
+    A function $f(x):I\to\R$ is continuous at $c \in I$ if
+    for every sequence $\{a_n\}^{\infty}_{n=1}$ in $I$ that converges to $c$
+    $\{f(a_n)\}^{\infty}_{n=1}$ converges to $f(c)$
+\end{definition}
+%
+\begin{note}
+    ``$f(x)$ is continuous at $c$'' is equivalent to
+    ``$\displaystyle \lim_{x\to c} f(x) = f(c)$''.
+\end{note}
+%
+\begin{note}
+    Polynomials are continuous everywhere.
+\end{note}
+%
+\begin{note}
+    $\sin$ and $\cos$ are continuous everywhere.
+\end{note}
+%
+\begin{theorem}
+    For a function $f$ continuous at $L$
+    and another function $g$ where $\displaystyle \lim_{x\to c}g(x) = L$,
+    $\displaystyle \lim_{x\to c} (f \circ g)(x) = f(L)$.
+\end{theorem}
+\begin{note}
+    The above theorem still applies when $c$ is $c^\pm$ or $\pm\infty$.
+\end{note}
+%
+\begin{theorem}
+    For two functions $f$ and $g$ that are continuous at $c$,
+    \begin{enumerate}[label=\normalfont\alph*)]
+        \item $f(x) + g(x)$ is continuous at $c$;
+        \item $f(x) - g(x)$ is continuous at $c$;
+        \item $f(x) \cdot g(x)$ is continuous at $c$; and
+        \item $\dfrac{f(x)}{g(x)}$ is continuous at $c$ when $g(c)\ne0$.
+    \end{enumerate}
+\end{theorem}
+%
+\begin{theorem}
+    For a function $g(x)$ which is continuous at $c$ and
+    a function $h(x)$ which is continuous at $g(c)$,
+    $h \circ g$ is continuous at $c$.
+\end{theorem}
+%
+\begin{theorem}[L'Ho\^pital rule]
+    For two differentiable (and therefore continuous) functions $f(x)$ and $g(x)$
+    except for possibly at $x_0$,
+    if $\displaystyle \lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0$,
+    or $\displaystyle \lim_{x\to x_0}f(x)=\pm\infty$
+        and $\displaystyle \lim_{x\to x_0}g(x)=\pm\infty$,
+    then
+    \[ \lim_{x\to x_0}\frac{f(x)}{g(x)} = \lim_{x\to x_0}\frac{f'(x)}{g'(x)} \]
+    (as long as the limit exists or is $\pm\infty$).
+\end{theorem}
+%
+\begin{note}
+    The L'Ho\^pital rule also holds for left- and right- handed and limits to $\pm\infty$.
+\end{note}
 
 \end{document}
