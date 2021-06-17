@@ -445,16 +445,16 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 			A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
 		\end{definition}
 		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
-			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
-			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
-			\item [(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
-			\item [(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
-			\item [(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
-			\item [(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
-			\item [(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
-			\item [(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
-			\item [(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
-			\item [(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
+			\item[(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
+			\item[(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
+			\item[(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
+			\item[(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
+			\item[(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
+			\item[(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
+			\item[(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
+			\item[(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
+			\item[(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
+			\item[(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
 		\end{enumerate}
 	\end{mdframed}
 	\begin{note}
@@ -489,7 +489,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 	A field is a set $S$ which is a commutative ring with identity so that it satisfies all ring axioms and also the following axiom.
 	\end{definition}
 	\begin{enumerate}
-		\item [(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
+		\item[(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
 	\end{enumerate}
 \end{mdframed}
 \begin{note}
@@ -759,50 +759,184 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \subsection{Convergence Tests}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Divergence Test}]
-
+		\begin{equation*}
+			\text{Does $\lim_{i\to\infty}a_i\neq0$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Diverges} \\
+				\text{NO} & \text{Inconclusive}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={$p$-Series}]
-
+		\begin{description}[style=sameline]
+			\item[Form] $\displaystyle \sum_{i=1}^\infty \frac{1}{i^p}$.
+		\end{description}
+		\begin{equation*}
+			\text{Is $p>1$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Geometric Series}]
-
+		\begin{description}[style=sameline]
+			\item[Form] $\displaystyle \sum_{i=0}^\infty a r^i$ or $\displaystyle \sum_{i=1}^\infty a r^{i-1}$.
+		\end{description}
+		\begin{equation*}
+			\text{Is $\abs{r}<1$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges to $\frac{a}{1-r}$} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
+	\begin{note}
+		The sequence of partial sums is given by $\displaystyle s_n=a\frac{1-r^{n+1}}{1-r}$.
+	\end{note}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Alternating Series}]
-
+		\begin{description}[style=sameline]
+			\item[Form] $\displaystyle \sum_{i=i_0}^\infty \left( -1 \right)^i b_i$ or $\displaystyle \sum_{i=i_0}^\infty \left( -1 \right)^{i+1} b_i$.
+			\item[Conditions] $b_i>0$.
+		\end{description}
+		\begin{equation*}
+			\text{Is $b_{i+1}\leqslant b_i$ \& $\lim_{n\to\infty}b_i=0$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{Inconclusive}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Telescoping Series}]
-
+		\begin{description}[style=sameline]
+			\item[Conditions] Subsequent terms cancel out previous terms in the sum.
+		\end{description}
+		\begin{equation*}
+			\text{Does $\lim_{n\to\infty}s_n=s$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges to $s$} \\
+				\text{NO} & \text{$\sum a_i$ Diverges to $s$}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Comparison Test}]
-
+		\begin{description}[style=sameline]
+			\item[Conditions] Pick $b_i$.
+		\end{description}
+		If $\displaystyle \sum_{i=i_0}^\infty$ converges
+		\begin{equation*}
+			\text{Is $0\leqslant a_i \leqslant b_i$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{Inconclusive}
+			\end{cases}
+		\end{equation*}
+		If $\displaystyle \sum_{i=i_0}^\infty$ diverges
+		\begin{equation*}
+			\text{Is $0\leqslant b_i \leqslant a_i$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Diverges} \\
+				\text{NO} & \text{Inconclusive}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Limit Comparison Test}]
-
+		\begin{description}[style=sameline]
+			\item[Conditions] Pick $b_i$ so that $\displaystyle \lim_{i\to\infty}\frac{a_i}{b_i}=c>0$ \& $a_i,\:b_n>0$.
+		\end{description}
+		\begin{equation*}
+			\text{Does $\sum_{i=i_0}^\infty b_i$ converge?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
+	\end{mdframed}
+\end{figure}
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault,frametitle={Integral Test}]
+		\begin{description}[style=sameline]
+			\item[Conditions] Let $a_i=f(i)$, and $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
+		\end{description}
+		\begin{equation*}
+			\text{Does $\int_a^\infty$ converge?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum_i=a^\infty a_i$ Converges} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Ratio Test}]
-
+		\begin{description}[style=sameline]
+			\item[Conditions] $\displaystyle \lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}}\neq 1$.
+		\end{description}
+		\begin{equation*}
+			\text{Is $\lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}} < 1$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
 	\end{mdframed}
 \end{figure}
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Root Test}]
+		\begin{description}[style=sameline]
+			\item[Conditions] $\displaystyle \lim_{i\to\infty}\sqrt[n]{\abs{a_i}}\neq 1$.
+		\end{description}
+		\begin{equation*}
+			\text{Is $\lim_{i\to\infty}\sqrt[n]{\abs{a_i}} < 1$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
+	\end{mdframed}
+\end{figure}
+%
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault]
+		\begin{theorem}
+			Similar to sequences, we can add and subtract convergent infinite series.
+		\end{theorem}
+		
+		\begin{enumerate}
+			\item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
+			\item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum f_i \pm g_i$ is divergent.
+			\item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$. 
+			\begin{enumerate}
+				\item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
+				\item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
+			\end{enumerate}
+		\end{enumerate}
 
 	\end{mdframed}
 \end{figure}
 %
+\begin{definition}[Absolute Convergence]
+	An infinite series $\sum a_i$ converges (or diverges) absolutely if the series of absolute values $\sum a_i$ also converges (or diverges).
+\end{definition}
+\begin{theorem}
+	If an infinite series is absolutely convergent, then it is also convergent. 
+\end{theorem}
+%
+\begin{definition}[Conditional Convergence]
+	A convergent infinite series that diverges absolutely, converges conditionally. 
+\end{definition}
 \section{Limits of Functions}
 \subsection{Limits of Functions on $\mathbb{R}$}
 \begin{definition}[Finite limits using the $\varepsilon$-$\delta$ definition]
