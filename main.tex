@@ -254,7 +254,7 @@
 \end{definition}
 %
 \subsubsection{Properties of Natural Numbers}
-\begin{description}[style=nextline]
+\begin{description}[style=sameline]
 	\item[Commutativity of addition]
 		$\mathrm{ \quo{a} + \quo{b} = \quo{b} + \quo{a}}$
 	\item[Associativity of addition]
@@ -665,7 +665,15 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{figure}
 %
 \subsection{Cauchy Sequences}
-
+\begin{definition}[Cauchy sequence]
+	A sequence $\{a_n\}_{n=1}^\infty$ on $\R$ is a Cauchy sequence if
+	\begin{equation*}
+		\forall \varepsilon > 0:\exists n_0\in\N_{>0}:\forall n,\: m \geqslant n_0:\abs{a_n-a_m}<\varepsilon
+	\end{equation*}
+\end{definition}
+\begin{theorem}
+	A sequence on $\R$ is convergent if and only if is a Cauchy sequence.
+\end{theorem}
 \subsection{Monotonicity}
 %
 \begin{definition}[Monotone]
