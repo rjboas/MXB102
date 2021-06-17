@@ -448,18 +448,21 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault,frametitle={Ring Axioms}]
 		\begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
-			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$
-			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$
-			\item [(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$
-			\item [(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$
-			\item [(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0")
-			\item [(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$
-			\item [(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$
-			\item [(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$
-			\item [(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1")
-			\item [(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$
+			\item [(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
+			\item [(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
+			\item [(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
+			\item [(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
+			\item [(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
+			\item [(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
+			\item [(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
+			\item [(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
+			\item [(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
+			\item [(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
 		\end{enumerate}
 	\end{mdframed}
+	\begin{note}
+		$\Z$, $\Q$, $\R$, and $\C$ are rings.
+	\end{note}
 \end{figure}
 % \marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
 %
@@ -481,6 +484,16 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 %
 \begin{definition}[Irrational numbers]
     The irrational numbers ($\I$ or $\overline{\Q}$) are defined as $\R\backslash\Q$.
+\end{definition}
+%
+\begin{definition}[Field]
+	Let $S$ be a set that satisfies the ring axioms. $S$ is also a field if it satisfies the following axiom.
+	\begin{enumerate}
+		\item [(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
+	\end{enumerate}
+	\begin{note}
+		$\Q$, $\R$, and $\C$ are rings.
+	\end{note}
 \end{definition}
 %
 \section{Cardinality}
