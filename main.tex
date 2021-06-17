@@ -57,7 +57,7 @@
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.5} % Default value: 1
 
-% Set symbols 
+% Set symbols
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 \DeclareMathOperator{\setunion}{\cup} % defined for clarity/consistency
@@ -67,6 +67,7 @@
 \newcommand{\quo}[1]{\text{``}#1\text{"}}
 
 \newcommand{\contradiction}{
+    \hspace{-1em}
 	{\hbox{
 	\setbox0=\hbox{$\mkern-3mu{\times}\mkern-3mu$}
 	\setbox1=\hbox to0pt{\hss\copy0\hss}
@@ -271,7 +272,7 @@
 \end{description}
 %
 \subsection{Cartesian Product}
-\begin{definition}[Cartesian Product]
+\begin{definition}[Cartesian product]
 	The Cartesian product of two sets $S$ and $T$ is the set
 	$S\times T$ consisting of all ordered pairs $(x, y)$ where
 	$x \in S$ and $y \in T$.
@@ -332,7 +333,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A relation is an equivalence relation if it is
     reflexive, symmetric, and transitive.
 \end{definition}
-\begin{definition}[Function]
+\begin{definition}[Functions as rules]
     A function $f$ is a rule which maps
     from some set $S$ (the domain)
     to some set $T$ (the codomain)
@@ -354,7 +355,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A relation is left-total if
     $\forall x \in S : \exists y \in T : xRy$.
 \end{definition}
-\begin{definition}[Function (relation ver.)]
+\begin{definition}[Functions as relations]
     A function $f$ is some relation that is functional and left-total.
 \end{definition}
 %
@@ -409,8 +410,6 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     A function $f$ has an inverse if and only if $f$ is bijective.
 \end{theorem}
 %
-\section{Number Sets}
-\subsection{Rational Numbers}
 \begin{definition}[Equivalence class]
     Let $R$ be an equivalence relation on $S$ and $x \in S$.
     The equivalence class of $x$ is $[x] = \{y \in S : xRy\}$,
@@ -420,6 +419,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     There may be different representations of the same equivalence class.
 \end{definition}
 %
+\section{Number Sets}
+\subsection{Rational Numbers}
 \begin{definition}[Rational numbers]
     Define an equivalence relation $\sim$ on $\Z \times (\N\backslash\{0\}$
     as $(a,\: b) \sim (c,\: d) \iff ad=bc$.
@@ -525,7 +526,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     including $\emptyset$ and $X$.
 \end{definition}
 \begin{theorem}
-	The cardinality of $X$ is $2^{\abs{X}}$.
+    The cardinatility of $\mathscr{P}(X)$ is $2^{\abs{X}}$.
 \end{theorem}
 %
 \section{Proofs}
@@ -556,7 +557,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     \item Arrive at a contradiction.
     \item Since we arrive at a contradiction, the original assumption must have been wrong.
     \item Hence the original statement must be true.
-	\item The $\contradiction$ symbol is often used to show a contradiction.
+    \item The $\contradiction$ and $\implies\!\!\!\!\impliedby$ symbols
+            are often used to show a contradiction.
 \end{enumerate}
 %
 \subsection{Contrapositive}
@@ -568,11 +570,11 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{enumerate}
 %
 \subsection{Contradiction vs. Contrapositive}
-\underline{For the conditional statement: ``If $P$, then $Q$".}
+For the conditional statement: ``If $P$, then $Q$".
 
-\noindent\textbf{By contradiction:} Assume $P$ and $\neg{Q}$, and find some contradiction.
+\textbf{By contradiction:} Assume $P$ and $\neg{Q}$, and find some contradiction.
 
-\noindent\textbf{By contrapositive:} Assume $\neg{Q}$, and show $\neg{P}$.
+\textbf{By contrapositive:} Assume $\neg{Q}$, and show $\neg{P}$.
 %
 \subsection{Induction}
 \begin{enumerate}
@@ -632,7 +634,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	where $\lim_{n \to \infty}a_n = -\infty$.
 \end{theorem}
 %
-\begin{theorem}[Triangle Inequality]
+\begin{theorem}[Triangle inequality]
 	$\abs{a+b}\leqslant\abs{a}+\abs{b}$.
 \end{theorem}
 %
@@ -640,7 +642,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	A sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ if and only if the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
 \end{theorem}
 %
-\begin{theorem}[Squeeze Theorem for Sequences]
+\begin{theorem}[Squeeze theorem for sequences]
 	Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leqslant b_n \leqslant c_n$ for all $n>n_0$. If $\lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=d$, then .
 \end{theorem}
 %
@@ -744,7 +746,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     exist and are equal.
 \end{theorem}
 %
-\begin{theorem}[Squeeze theorem (function ver.)]
+\begin{theorem}[Squeeze theorem for functions]
     Let an interval $I$ contain $x_0$.
     If $f,\:g,\:h : I \to \R$ are functions such that
     $\forall x \in I\backslash\{x_0\},\; f(x)\leqslant g(x)\leqslant h(x)$
