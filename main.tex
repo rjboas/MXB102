@@ -239,13 +239,13 @@ These notes were compiled together as a succinct reference for the unit MXB102. 
 	\begin{tabular}{c >{$}c<{$} | >{$}c<{$}}
 	    \textbf{Name} & \text{\textbf{Symbol}} & \text{\textbf{Definition}} \\
 	    \midrule
-		Empty set      & \emptyset                & \text{A set with no elements:} \left\{\right\} \\
-		Intersection   & \setintersection         & S \setintersection T = \left\{x:x\in S \land x \in T\right\} \\
-		Union          & \setunion                & S \setunion T = \left\{x:x\in S \lor x \in T\right\} \\
-		Set difference & \backslash \text{ or } - & S - T = \left\{x:x\in S \land x \notin T\right\} \\
-		Subset         & \subset                  & \\
-		Strict subset  & \subseteq                & \\
-		Complement     & \overline{S}  & \text{If } S \subseteq T, \quad \overline{S}=T \backslash S
+		Empty set                 & \emptyset                & \text{A set with no elements:} \left\{\right\} \\
+		Intersection              & \setintersection         & S \setintersection T = \left\{x:x\in S \land x \in T\right\} \\
+		Union                     & \setunion                & S \setunion T = \left\{x:x\in S \lor x \in T\right\} \\
+		Set difference            & \backslash \text{ or } - & S - T = \left\{x:x\in S \land x \notin T\right\} \\
+		Subset                    & \subseteq                & \text{If } \#S=\#T, \quad S \subseteq T \equiv \forall x\in S:x \in T \\
+		Strict (or proper) subset & \subset                  & \text{If } \#S<\#T, \quad S \subset T \equiv \forall x\in S:x \in T \\
+		Complement                & \overline{S}             & \text{If } S \subseteq T, \quad \overline{S}=T \backslash S
 	\end{tabular}
 	% \caption{Set symbols}
 	\label{tab:Set Symbols}
