@@ -5,6 +5,8 @@
 \geometry{a4paper}
 \geometry{includeheadfoot, hmargin=1.5cm, vmargin=1.5cm}
 
+\usepackage{hyperref}
+
 \usepackage{multicol}
 \usepackage{changepage}
 \usepackage{physics}
@@ -98,17 +100,43 @@
 \newtheorem*{statement}{Statement}
 
 %% Title page
-\title{\textbf{Abstract Mathematical Reasoning} \\ {\large Exam Notes} \\ {\normalsize 2021, Semester 1}}
+\title{\textbf{Abstract Mathematical Reasoning}
+    \texorpdfstring{\\}{ } {\large Exam Notes}
+    \texorpdfstring{\\}{ } {\normalsize 2021, Semester 1}}
 \author{
     Rohan Boas \and Tarang Janawalkar \and Oliver Strong
 }
 \date{}
+
+\usepackage[
+    type={CC},
+    modifier={by},
+    version={4.0},
+    imagewidth={5em},
+]{doclicense}
 
 \begin{document}
 
 \begin{titlepage}
 \maketitle
 \thispagestyle{empty}
+\vfill
+\begin{adjustwidth}{4cm}{4cm}
+{\large\bf Preface}
+
+This document was initially created in the week preceeding the exam,
+hastily cobbled together by the three authors, Rohan Boas, Tarang Janawalkar and Oliver Strong.
+We hope this document might be of some use as
+exam notes or as a succinct reference for the subject.
+Huge thanks to the lecture notes and unit guide.
+This is by no means a replacement for either,
+and we greatly appreciate the support and teachings we have recieved.
+\end{adjustwidth}
+\vfill
+\begin{adjustwidth}{5cm}{5cm}
+\doclicenseThis
+\end{adjustwidth}
+\vfill
 \end{titlepage}
 
 \newpage
@@ -559,11 +587,23 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 	\end{mdframed}
 \end{figure}
 %
+\begin{note}[Disprove]
+    To disprove a statement is to prove its negation.
+\end{note}
+%
 \subsection{Direct Proof}
 \begin{enumerate}
     \item Use a definition, i.e. even/odd numbers.
     \item Show LHS = RHS.
     \item For an equivalence ($\iff$) statement, show that both forward ($\implies$) and backward ($\impliedby$) directions are true.
+\end{enumerate}
+%
+\subsection{Truth Table, Tautology, and Paradox}
+\begin{enumerate}
+    \item Draw a truth table for the statement.
+    \item For a proof by truth table, show that the truth tables are the same.
+    \item For a proof by tautology, show that the truth table is always true.
+    \item For a proof by paradox, show that the truth table is always false.
 \end{enumerate}
 %
 \subsection{Contradiction}
@@ -617,8 +657,10 @@ For the conditional statement: ``If $P$, then $Q$".
     \item Use the definition of the numbers, i.e. even and odd numbers.
     \item For rational numbers assume that $(a,b)$ is fully simplified, so that $a$ and $b$ are co-prime.
     \item When using strong induction, remember that $P(k), \ldots, P(n_0)$ are assumed to be true.
-    \item $a^b=e^{\ln{a^b}}=e^{b\ln{a}}$.
-    \item $a^k = a^k + b - b$.
+    \item $a^b=e^{\ln{a^b}}=e^{b\ln{a}}$
+    \item $a^k = a^k + b - b$
+    \item $a^{k+1} = a \cdot a^k$
+    \item $\sum_{i}^{k+1} a_i = a_{k+1} + \sum_{i}^{k} a_i$
 \end{enumerate}
 %
 \section{Sequences}
@@ -965,7 +1007,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	A convergent infinite series that diverges absolutely, converges conditionally.
 \end{definition}
 \section{Limits of Functions}
-\subsection{Limits of Functions on $\mathbb{R}$}
+\subsection{Limits of Functions on \texorpdfstring{$\mathbb{R}$}{the Reals}}
 \begin{definition}[Finite limits using the $\varepsilon$-$\delta$ definition]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
     (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
