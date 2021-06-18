@@ -76,6 +76,9 @@
 % Quotation in math mode
 \newcommand{\quo}[1]{\text{``}#1\text{"}}
 
+% Exponential e 
+\newcommand{\e}{\symbfup{e}}
+
 \newcommand{\contradiction}{
     \hspace{-1em}
 	{\hbox{
@@ -901,7 +904,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 		\begin{description}[style=sameline]
 			\item[Conditions] Pick $b_i$.
 		\end{description}
-		If $\displaystyle \sum_{i=i_0}^\infty$ converges
+		If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges
 		\begin{equation*}
 			\text{Is $0\leqslant a_i \leqslant b_i$?}\:
 			\begin{cases}
@@ -909,7 +912,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 				\text{NO} & \text{Inconclusive}
 			\end{cases}
 		\end{equation*}
-		If $\displaystyle \sum_{i=i_0}^\infty$ diverges
+		If $\displaystyle \sum_{i=i_0}^\infty b_i$ diverges
 		\begin{equation*}
 			\text{Is $0\leqslant b_i \leqslant a_i$?}\:
 			\begin{cases}
@@ -1160,4 +1163,38 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     L'H\^opital's rule also holds for left- and right-handed, and limits that approach $\pm\infty$.
 \end{note}
 
+\section{Table of Derivatives}
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+		f(x) & \dv{f}{x} \\
+		\midrule
+		c                                  & 0                                                 \\
+		x                                  & 1                                                 \\
+		x^n                                & n x^{n-1}                                         \\
+		a^x                                & a^x \ln(a)                                        \\
+		\e^x                               & \e^x                                              \\
+		\log_a{\left(x\right)}             & \frac{1}{x \ln(a)}                                \\
+		\ln{\left(x\right)}                & \frac{1}{x}                                       \\
+		\sqrt{x}                           & \frac{1}{2 \sqrt{x}}                              \\
+		\sqrt[n]{x}                        & \frac{x^{\frac{1}{n}-1}}{n}                       
+	\end{tabular}
+	\begin{tabular}{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+		f(x) & \dv{f}{x} \\
+		\midrule
+		\sin{\left(x\right)}               & \cos{\left(x\right)}                              \\
+		\cos{\left(x\right)}               & -\sin{\left(x\right)}                             \\
+		\tan{\left(x\right)}               & \sec^2{\left(x\right)}                            \\
+		\cot{\left(x\right)}               & -\csc^2{\left(x\right)}                           \\
+		\sec{\left(x\right)}               & \sec{\left(x\right)}\tan{\left(x\right)}          \\
+		\csc{\left(x\right)}               & -\csc{\left(x\right)}\cot{\left(x\right)}         \\
+		\arcsin{\left(\frac{x}{a}\right)}  & \frac{1}{\sqrt{a^2-x^2}}                          \\
+		\arccos{\left(\frac{x}{a}\right)}  & -\frac{1}{\sqrt{a^2-x^2}}                         \\
+		\arctan{\left(\frac{x}{a}\right)}  & \frac{a}{a^2+x^2}                                 \\
+		\arccot{\left(\frac{x}{a}\right)}  & -\frac{a}{a^2+x^2}                                \\
+		\arcsec{\left(\frac{x}{a}\right)}  & \frac{a}{\abs*{x} \sqrt{x^2-a^2}}                 \\
+		\arccsc{\left(\frac{x}{a}\right)}  & -\frac{a}{\abs*{x} \sqrt{x^2-a^2}}                
+	\end{tabular}
+\end{table}
 \end{document}
