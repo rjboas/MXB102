@@ -859,7 +859,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 
 		\begin{enumerate}
 			\item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
-			\item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum f_i \pm g_i$ is divergent.
+			\item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum c_i \pm d_i$ is divergent.
 			\item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
 			\begin{enumerate}
 				\item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
@@ -995,16 +995,16 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 		\end{equation*}
 	\end{mdframed}
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Root Test}]
-		\textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\sqrt[n]{a_i}\neq 1$.
+		\textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\sqrt[i]{a_i}\neq 1$.
 		\begin{equation*}
-			\text{Is $\lim_{i\to\infty}\sqrt[n]{a_i} < 1$?}\:
+			\text{Is $\lim_{i\to\infty}\sqrt[i]{a_i} < 1$?}\:
 			\begin{cases}
 				\text{YES} & \text{$\sum a_i$ Converges} \\
 				\text{NO} & \text{$\sum a_i$ Diverges}
 			\end{cases}
 		\end{equation*}
 		\begin{equation*}
-			\text{Is $\lim_{i\to\infty}\sqrt[n]{\abs{a_i}} < 1$?}\:
+			\text{Is $\lim_{i\to\infty}\sqrt[i]{\abs{a_i}} < 1$?}\:
 			\begin{cases}
 				\text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
 				\text{NO} & \text{$\sum a_i$ Diverges}
