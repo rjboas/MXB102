@@ -50,6 +50,8 @@
 \setmathfont{Latin Modern Math}
 \setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
 
+\usepackage[none]{hyphenat} % Disable hyphenation of long text
+
 %% Headers
 \fancyhead[L]{2021 Semester 1}
 \fancyhead[C]{Abstract Mathematical Reasoning Exam Notes}
@@ -76,8 +78,8 @@
 % Quotation in math mode
 \newcommand{\quo}[1]{\text{``}#1\text{"}}
 
-% Exponential e 
-\newcommand{\e}{\symbfup{e}}
+% Exponential e
+\newcommand{\e}{e}
 
 \newcommand{\contradiction}{
     \hspace{-1em}
@@ -1141,29 +1143,34 @@ $\displaystyle x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}$
 Let $a\in\R$ be a constant, and $n\in\Z\backslash\{0\}$.
 \begin{table}[H]
 	\centering
-	\renewcommand{\arraystretch}{2}
-	\begin{tabular}{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
-		f(x) & \dv{f}{x} \\
-		\midrule
-		a                                  & 0                                                 \\
-		x                                  & 1                                                 \\
-		x^n                                & n x^{n-1}                                         \\
-		a^x                                & a^x \ln(a)                                        \\
-		\e^x                               & \e^x                                              \\
-		\log_a{\left(x\right)}             & \frac{1}{x \ln(a)}                                \\
-		\ln{\left(x\right)}                & \frac{1}{x}                                       \\
-		\sqrt{x}                           & \frac{1}{2 \sqrt{x}}                              \\
-		\sqrt[n]{x}                        & \frac{x^{\frac{1}{n}-1}}{n}                       
+	\renewcommand{\arraystretch}{2.5}
+    \begin{tabular}[t]{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+        f(x) & \dv{f}{x} \\[1em]
+		\hline
+		a                      & 0                \\
+		x                      & 1                \\
+		x^n                    & n x^{n-1}        \\
+		\e^x                   & \e^x             \\
+        \e^{nx}                & n\e^{nx}         \\
+        \e^{g(x)}              & g'(x)\e^{g(x)}   \\
+		a^x                    & a^x \ln(a)
 	\end{tabular}
-	\begin{tabular}{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
-		f(x) & \dv{f}{x} \\
-		\midrule
-		\sin{\left(x\right)}               & \cos{\left(x\right)}                              \\
-		\cos{\left(x\right)}               & -\sin{\left(x\right)}                             \\
-		\tan{\left(x\right)}               & \sec^2{\left(x\right)}                            \\
-		\cot{\left(x\right)}               & -\csc^2{\left(x\right)}                           \\
-		\sec{\left(x\right)}               & \sec{\left(x\right)}\tan{\left(x\right)}          \\
-		\csc{\left(x\right)}               & -\csc{\left(x\right)}\cot{\left(x\right)}                
+    \quad
+    \begin{tabular}[t]{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+        f(x) & \dv{f}{x} \\[1em]
+		\hline
+		\ln{\left(x\right)}     & \frac{1}{x}                            \\
+		\log_a{\left(x\right)}  & \frac{1}{x \ln(a)}                     \\
+        \sqrt{x}                & \frac{1}{2 \sqrt{x}}                   \\[0.5em]
+		\sqrt[n]{x}             & \frac{x^{\frac{1}{n}-1}}{n}            \\
+	\end{tabular}
+    \quad
+    \begin{tabular}[t]{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+        f(x) & \dv{f}{x} \\[1em]
+		\hline
+		\sin{\left(x\right)}      & \cos{\left(x\right)}                \\
+		\cos{\left(x\right)}      & -\sin{\left(x\right)}               \\
+        \tan{\left(x\right)}      & \frac{1}{\cos^2{\left(x\right)}}    \\
 	\end{tabular}
 \end{table}
 \end{document}
