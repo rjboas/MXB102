@@ -604,7 +604,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \subsection{Truth Table, Tautology, and Paradox}
 \begin{enumerate}
     \item Draw a truth table for the statement.
-    \item For a proof by truth table, show that the truth tables are the same.
+    \item For a proof by truth table, show that two truth tables are the same.
     \item For a proof by tautology, show that the truth table is always true.
     \item For a proof by paradox, show that the truth table is always false.
 \end{enumerate}
@@ -832,7 +832,6 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \subsection{Convergence Tests}
 For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 \begin{multicols}{2}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Divergence Test}]
 		\begin{equation*}
 			\text{Does $\lim_{i\to\infty}a_i\neq0$?}\:
@@ -842,12 +841,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={$p$-Series}]
-		\begin{description}[style=sameline]
-			\item[Form] $i_0=1$ and $a_i = \frac{1}{i^p}$.
-		\end{description}
+		\textbf{Conditions} $i_0=1$ and $a_i = \frac{1}{i^p}$.
 		\begin{equation*}
 			\text{Is $p>1$?}\:
 			\begin{cases}
@@ -856,12 +851,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Geometric Series}]
-		\begin{description}[style=sameline]
-			\item[Form] $i_0=0$ and $a_i = a r^i$ or $i_0=1$ and $a_i = a r^{i-1}$.
-		\end{description}
+		\textbf{Conditions} $i_0=0$ and $a_i = a r^i$ or $i_0=1$ and $a_i = a r^{i-1}$.
 		\begin{equation*}
 			\text{Is $\abs{r}<1$?}\:
 			\begin{cases}
@@ -873,13 +864,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 	\begin{note}
 		The sequence of partial sums is given by $\displaystyle s_n=a\frac{1-r^{n+1}}{1-r}$.
 	\end{note}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Alternating Series}]
-		\begin{description}[style=sameline]
-			\item[Form] $a_i = \left( -1 \right)^i b_i$ or $a_i = \left( -1 \right)^{i+1} b_i$.
-			\item[Conditions] $b_i>0$.
-		\end{description}
+		\textbf{Conditions} $a_i = \left( -1 \right)^i b_i$ or $a_i = \left( -1 \right)^{i+1} b_i$. $b_i>0$.
 		\begin{equation*}
 			\text{Is $b_{i+1}\leqslant b_i$ \& $\lim_{n\to\infty}b_i=0$?}\:
 			\begin{cases}
@@ -888,12 +874,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Telescoping Series}]
-		\begin{description}[style=sameline]
-			\item[Conditions] Subsequent terms cancel out previous terms in the sum.
-		\end{description}
+		\textbf{Conditions} Subsequent terms cancel out previous terms in the sum.
 		\begin{equation*}
 			\text{Does $\lim_{n\to\infty}s_n=s$?}\:
 			\begin{cases}
@@ -902,35 +884,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
-	\begin{mdframed}[style=exampledefaultcols,frametitle={Comparison Test}]
-		\begin{description}[style=sameline]
-			\item[Conditions] Pick $b_i$.
-		\end{description}
-		\noindent If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges
-		\begin{equation*}
-			\text{Is $0\leqslant a_i \leqslant b_i$?}\:
-			\begin{cases}
-				\text{YES} & \text{$\sum a_i$ Converges} \\
-				\text{NO} & \text{Inconclusive}
-			\end{cases}
-		\end{equation*}
-		If $\displaystyle \sum_{i=i_0}^\infty b_i$ diverges
-		\begin{equation*}
-			\text{Is $0\leqslant b_i \leqslant a_i$?}\:
-			\begin{cases}
-				\text{YES} & \text{$\sum a_i$ Diverges} \\
-				\text{NO} & \text{Inconclusive}
-			\end{cases}
-		\end{equation*}
-	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Limit Comparison Test}]
-		\begin{description}[style=sameline]
-			\item[Conditions] Pick $b_i$ so that $\displaystyle \lim_{i\to\infty}\frac{a_i}{b_i}=c>0$ \& $a_i,\:b_n>0$.
-		\end{description}
+		\textbf{Conditions} Pick $b_i$ so that $\displaystyle \lim_{i\to\infty}\frac{a_i}{b_i}=c>0$ \& $a_i,\:b_n>0$.
 		\begin{equation*}
 			\text{Does $\sum_{i=i_0}^\infty b_i$ converge?}\:
 			\begin{cases}
@@ -939,12 +894,28 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Comparison Test}]
+		\textbf{Conditions} Pick $b_i$.
+
+		\noindent If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges:
+		\begin{equation*}
+			\text{Is $0\leqslant a_i \leqslant b_i$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{Inconclusive}
+			\end{cases}
+		\end{equation*}
+		If $\displaystyle \sum_{i=i_0}^\infty b_i$ diverges:
+		\begin{equation*}
+			\text{Is $0\leqslant b_i \leqslant a_i$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Diverges} \\
+				\text{NO} & \text{Inconclusive}
+			\end{cases}
+		\end{equation*}
+	\end{mdframed}
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Integral Test}]
-		\begin{description}[style=sameline]
-			\item[Conditions] Let $a_i=f(i)$, so that $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
-		\end{description}
+		\textbf{Conditions} Let $a_i=f(i)$, so that $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
 		\begin{equation*}
 			\text{Does $\int_a^\infty f(x) \dd{x}$ converge?}\:
 			\begin{cases}
@@ -953,12 +924,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
-		\begin{description}[style=sameline]
-			\item[Conditions] $\displaystyle \lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}}\neq 1$.
-		\end{description}
+		\textbf{Conditions} $\displaystyle \lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}}\neq 1$.
 		\begin{equation*}
 			\text{Is $\lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}} < 1$?}\:
 			\begin{cases}
@@ -967,12 +934,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Root Test}]
-		\begin{description}[style=sameline]
-			\item[Conditions] $\displaystyle \lim_{i\to\infty}\sqrt[n]{\abs{a_i}}\neq 1$.
-		\end{description}
+		\textbf{Conditions} $\displaystyle \lim_{i\to\infty}\sqrt[n]{\abs{a_i}}\neq 1$.
 		\begin{equation*}
 			\text{Is $\lim_{i\to\infty}\sqrt[n]{\abs{a_i}} < 1$?}\:
 			\begin{cases}
@@ -981,7 +944,6 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-% \end{figure}
 \end{multicols}
 %
 \begin{figure}[H]
