@@ -127,7 +127,8 @@
 \thispagestyle{empty}
 \vfill
 \begin{adjustwidth}{4cm}{4cm}
-{\large\bf Preface}
+{\Large\bf Preface}
+\vspace{0.7em}
 
 This document was initially created in the week preceeding the exam,
 hastily cobbled together by the three authors, Rohan Boas, Tarang Janawalkar and Oliver Strong.
@@ -536,6 +537,10 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 	If $a,\:b\in\R$ are such that $ab$ is irrational, then at least one of $a$ or $b$ is irrational.
 \end{theorem}
 %
+\begin{note}
+    Let $a,\: b\in \R$. If $ab\in\I$, then either $a\in\I$ or $b\in\I$.
+\end{note}
+%
 \begin{figure}[H]
 \begin{mdframed}[style=exampledefault,frametitle={Field Axioms}]
 	\begin{definition}[Field]
@@ -551,6 +556,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{figure}
 %
 \section{Cardinality}
+\nopagebreak
 \begin{multicols}{2}
 \begin{definition}[Cardinality]
     The cardinality of $X$ ($\#X$ or $\abs{X}$), is the number of elements in $X$.
@@ -669,16 +675,22 @@ For the conditional statement: ``If $P$, then $Q$".
     \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(n_0),\: \ldots,\: P(k)$ is true, then the principle of strong mathematical induction implies $P(n)$ is true for all $n\in \N_{\geqslant n_0}$.
 \end{enumerate}
 %
+\pagebreak
 \subsection{Useful Techniques}
+\nopagebreak
+\begin{multicols}{2}
 \begin{enumerate}
     \item Use the definition of the numbers, i.e. even and odd numbers.
+    \item The product of two odd numbers is also odd.
     \item For rational numbers assume that $(a,b)$ is fully simplified, so that $a$ and $b$ are co-prime.
     \item When using strong induction, remember that $P(k), \ldots, P(n_0)$ are assumed to be true.
+    \columnbreak
     \item $a^b=e^{\ln{a^b}}=e^{b\ln{a}}$
     \item $a^k = a^k + b - b$
     \item $a^{k+1} = a \cdot a^k$
     \item $\sum_{i}^{k+1} a_i = a_{k+1} + \sum_{i}^{k} a_i$
 \end{enumerate}
+\end{multicols}
 %
 \section{Sequences}
 An infinite sequence on $X$ is a function $a$ with domain $\N_{> 0}$ and codomain $X$. That is, $a:\N_{> 0}\to X$.
@@ -794,6 +806,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 		If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
 		then $a_n\to0$ as $n\to\infty$.
 	\end{note}
+    \columnbreak
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Derivative Test}]
 		\begin{theorem}[Derivative test]
 			If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
@@ -837,8 +850,6 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     If $\sum_{i=1}^{\infty}a_i$ converges, then $\lim_{i\to\infty}a_i=0$.
 \end{theorem}
 \end{multicols}
-%
-\pagebreak
 %
 \subsection{Convergence Tests}
 For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
