@@ -311,6 +311,12 @@ and we greatly appreciate the support and teachings we have recieved.
 		and $\mathrm{\quo{a} \ne \quo{0}}$
 		then $\mathrm{\quo{b} = \quo{c}}$
 \end{description}
+\begin{theorem}
+	$\forall n\in\N\backslash\{0\} : 2^n>n$.
+\end{theorem}
+\begin{theorem}
+	$\forall n\in\N\backslash\{0\} : 1+2+\cdots+n=\frac{n(n+1)}{2}$.
+\end{theorem}
 %
 \subsection{Cartesian Product}
 \begin{definition}[Cartesian product]
@@ -478,6 +484,9 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{definition}[Multiplication on rational numbers]
     $(a,\: b) \cdot (c,\: d) = (ac,\: bd)$
 \end{definition}
+\begin{theorem}
+	There is no smallest positive rational number.
+\end{theorem}
 %
 \section{Algebraic Structures}
 \begin{figure}[H]
@@ -523,6 +532,9 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{definition}[Irrational numbers]
     The irrational numbers ($\I$ or $\overline{\Q}$) are defined as $\R\backslash\Q$.
 \end{definition}
+\begin{theorem}
+	If $a,\:b\in\R$ are such that $ab$ is irrational, then at least one of $a$ or $b$ is irrational.
+\end{theorem}
 %
 \begin{figure}[H]
 \begin{mdframed}[style=exampledefault,frametitle={Field Axioms}]
@@ -756,7 +768,6 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \subsection{Monotonicty Tests}
 \nopagebreak
 \begin{multicols}{2}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Difference Test}]
 		\begin{theorem}[Difference test]
 			A sequence $\{a_n\}^\infty_{n=1}$ is
@@ -768,8 +779,6 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
 		\end{description}
 	\end{mdframed}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
 		\begin{theorem}[Ratio test]
 			A sequence $\{a_n\}^\infty_{n=1}$ where all $a_n$ are positive is
@@ -785,8 +794,6 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 		If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
 		then $a_n\to0$ as $n\to\infty$.
 	\end{note}
-% \end{figure}
-% \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Derivative Test}]
 		\begin{theorem}[Derivative test]
 			If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
@@ -800,7 +807,6 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant 1}$
 		\end{description}
 	\end{mdframed}
-% \end{figure}
 \end{multicols}
 %
 \section{Series}
@@ -927,7 +933,14 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 		\end{equation*}
 	\end{mdframed}
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
-		\textbf{Conditions} $\displaystyle \lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}}\neq 1$.
+		\textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\frac{a_{i+1}}{a_i}\neq 1$.
+		\begin{equation*}
+			\text{Is $\lim_{i\to\infty}\frac{a_{i+1}}{a_i} < 1$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
 		\begin{equation*}
 			\text{Is $\lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}} < 1$?}\:
 			\begin{cases}
@@ -937,7 +950,14 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 		\end{equation*}
 	\end{mdframed}
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Root Test}]
-		\textbf{Conditions} $\displaystyle \lim_{i\to\infty}\sqrt[n]{\abs{a_i}}\neq 1$.
+		\textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\sqrt[n]{a_i}\neq 1$.
+		\begin{equation*}
+			\text{Is $\lim_{i\to\infty}\sqrt[n]{a_i} < 1$?}\:
+			\begin{cases}
+				\text{YES} & \text{$\sum a_i$ Converges} \\
+				\text{NO} & \text{$\sum a_i$ Diverges}
+			\end{cases}
+		\end{equation*}
 		\begin{equation*}
 			\text{Is $\lim_{i\to\infty}\sqrt[n]{\abs{a_i}} < 1$?}\:
 			\begin{cases}
