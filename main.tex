@@ -1159,7 +1159,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
         and $\displaystyle \lim_{x\to x_0}g(x)=\pm\infty$,
     then
     $\lim_{x\to x_0}\frac{f(x)}{g(x)} = \lim_{x\to x_0}\frac{f'(x)}{g'(x)}$
-    (as long as the limit exists or is $\pm\infty$).
+    (as long as the limit exists, or diverges to $\pm\infty$).
 \end{theorem}
 %
 \begin{note}
@@ -1174,14 +1174,15 @@ $\displaystyle n! = \prod_{i=1}^{n} i = 1 \times 2 \times 3 \times \dots \times 
 \subsubsection{Quadratic Equation}
 $\displaystyle x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}$
 
-\section{Table of Derivatives}
+\subsection{Table of Derivatives}
+Let $a\in\R$ be a constant, and $n\in\Z\backslash\{0\}$.
 \begin{table}[H]
 	\centering
 	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
 		f(x) & \dv{f}{x} \\
 		\midrule
-		c                                  & 0                                                 \\
+		a                                  & 0                                                 \\
 		x                                  & 1                                                 \\
 		x^n                                & n x^{n-1}                                         \\
 		a^x                                & a^x \ln(a)                                        \\
@@ -1199,13 +1200,7 @@ $\displaystyle x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}$
 		\tan{\left(x\right)}               & \sec^2{\left(x\right)}                            \\
 		\cot{\left(x\right)}               & -\csc^2{\left(x\right)}                           \\
 		\sec{\left(x\right)}               & \sec{\left(x\right)}\tan{\left(x\right)}          \\
-		\csc{\left(x\right)}               & -\csc{\left(x\right)}\cot{\left(x\right)}         \\
-		\arcsin{\left(\frac{x}{a}\right)}  & \frac{1}{\sqrt{a^2-x^2}}                          \\
-		\arccos{\left(\frac{x}{a}\right)}  & -\frac{1}{\sqrt{a^2-x^2}}                         \\
-		\arctan{\left(\frac{x}{a}\right)}  & \frac{a}{a^2+x^2}                                 \\
-		\arccot{\left(\frac{x}{a}\right)}  & -\frac{a}{a^2+x^2}                                \\
-		\arcsec{\left(\frac{x}{a}\right)}  & \frac{a}{\abs*{x} \sqrt{x^2-a^2}}                 \\
-		\arccsc{\left(\frac{x}{a}\right)}  & -\frac{a}{\abs*{x} \sqrt{x^2-a^2}}                
+		\csc{\left(x\right)}               & -\csc{\left(x\right)}\cot{\left(x\right)}                
 	\end{tabular}
 \end{table}
 \end{document}
