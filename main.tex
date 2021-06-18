@@ -822,6 +822,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\end{mdframed}
 \end{multicols}
 %
+\pagebreak
 \section{Series}
 \subsection{Infinite Series}
 \begin{multicols}{2}
@@ -851,6 +852,37 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 \end{multicols}
 %
+\begin{figure}[H]
+	\begin{mdframed}[style=exampledefault]
+		\begin{theorem}
+			Similar to sequences, we can add and subtract convergent infinite series.
+		\end{theorem}
+
+		\begin{enumerate}
+			\item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
+			\item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum f_i \pm g_i$ is divergent.
+			\item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
+			\begin{enumerate}
+				\item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
+				\item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
+			\end{enumerate}
+		\end{enumerate}
+
+	\end{mdframed}
+\end{figure}
+%
+\begin{definition}[Absolute Convergence]
+	An infinite series $\sum a_i$ converges (or diverges) absolutely if the series of absolute values $\sum a_i$ also converges (or diverges).
+\end{definition}
+\begin{theorem}
+	If an infinite series is absolutely convergent, then it is also convergent.
+\end{theorem}
+%
+\begin{definition}[Conditional Convergence]
+	A convergent infinite series that diverges absolutely, converges conditionally.
+\end{definition}
+%
+\pagebreak
 \subsection{Convergence Tests}
 For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 \begin{multicols}{2}
@@ -981,36 +1013,8 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 		\end{equation*}
 	\end{mdframed}
 \end{multicols}
+\pagebreak
 %
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault]
-		\begin{theorem}
-			Similar to sequences, we can add and subtract convergent infinite series.
-		\end{theorem}
-
-		\begin{enumerate}
-			\item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
-			\item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum f_i \pm g_i$ is divergent.
-			\item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
-			\begin{enumerate}
-				\item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
-				\item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
-			\end{enumerate}
-		\end{enumerate}
-
-	\end{mdframed}
-\end{figure}
-%
-\begin{definition}[Absolute Convergence]
-	An infinite series $\sum a_i$ converges (or diverges) absolutely if the series of absolute values $\sum a_i$ also converges (or diverges).
-\end{definition}
-\begin{theorem}
-	If an infinite series is absolutely convergent, then it is also convergent.
-\end{theorem}
-%
-\begin{definition}[Conditional Convergence]
-	A convergent infinite series that diverges absolutely, converges conditionally.
-\end{definition}
 \section{Limits of Functions}
 \subsection{Limits of Functions on \texorpdfstring{$\mathbb{R}$}{the Reals}}
 \begin{definition}[Finite limits using the $\varepsilon$-$\delta$ definition]
@@ -1165,6 +1169,7 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
     L'H\^opital's rule also holds for left- and right-handed, and limits that approach $\pm\infty$.
 \end{note}
 %
+\pagebreak
 \section{Addenda}
 \subsection{Assumed Knowledge}
 \subsubsection{Factorials}
