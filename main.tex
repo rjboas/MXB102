@@ -830,6 +830,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \pagebreak
 %
 \subsection{Convergence Tests}
+For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 \begin{multicols}{2}
 % \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Divergence Test}]
@@ -845,7 +846,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 % \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={$p$-Series}]
 		\begin{description}[style=sameline]
-			\item[Form] $\displaystyle \sum_{i=1}^\infty \frac{1}{i^p}$.
+			\item[Form] $i_0=1$ and $a_i = \frac{1}{i^p}$.
 		\end{description}
 		\begin{equation*}
 			\text{Is $p>1$?}\:
@@ -859,7 +860,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 % \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Geometric Series}]
 		\begin{description}[style=sameline]
-			\item[Form] $\displaystyle \sum_{i=0}^\infty a r^i$ or $\displaystyle \sum_{i=1}^\infty a r^{i-1}$.
+			\item[Form] $i_0=0$ and $a_i = a r^i$ or $i_0=1$ and $a_i = a r^{i-1}$.
 		\end{description}
 		\begin{equation*}
 			\text{Is $\abs{r}<1$?}\:
@@ -876,7 +877,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 % \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Alternating Series}]
 		\begin{description}[style=sameline]
-			\item[Form] $\displaystyle \sum_{i=i_0}^\infty \left( -1 \right)^i b_i$ or $\displaystyle \sum_{i=i_0}^\infty \left( -1 \right)^{i+1} b_i$.
+			\item[Form] $a_i = \left( -1 \right)^i b_i$ or $a_i = \left( -1 \right)^{i+1} b_i$.
 			\item[Conditions] $b_i>0$.
 		\end{description}
 		\begin{equation*}
@@ -897,7 +898,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\text{Does $\lim_{n\to\infty}s_n=s$?}\:
 			\begin{cases}
 				\text{YES} & \text{$\sum a_i$ Converges to $s$} \\
-				\text{NO} & \text{$\sum a_i$ Diverges to $s$}
+				\text{NO} & \text{$\sum a_i$ Diverges}
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
@@ -907,7 +908,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 		\begin{description}[style=sameline]
 			\item[Conditions] Pick $b_i$.
 		\end{description}
-		If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges
+		\noindent If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges
 		\begin{equation*}
 			\text{Is $0\leqslant a_i \leqslant b_i$?}\:
 			\begin{cases}
@@ -942,12 +943,12 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 % \begin{figure}[H]
 	\begin{mdframed}[style=exampledefaultcols,frametitle={Integral Test}]
 		\begin{description}[style=sameline]
-			\item[Conditions] Let $a_i=f(i)$, and $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
+			\item[Conditions] Let $a_i=f(i)$, so that $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
 		\end{description}
 		\begin{equation*}
-			\text{Does $\int_a^\infty$ converge?}\:
+			\text{Does $\int_a^\infty f(x) \dd{x}$ converge?}\:
 			\begin{cases}
-				\text{YES} & \text{$\sum_i=a^\infty a_i$ Converges} \\
+				\text{YES} & \text{$\sum_{i=a}^\infty a_i$ Converges} \\
 				\text{NO} & \text{$\sum a_i$ Diverges}
 			\end{cases}
 		\end{equation*}
