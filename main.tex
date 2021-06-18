@@ -3,6 +3,7 @@
 
 \usepackage{geometry}
 \geometry{a4paper}
+\geometry{includeheadfoot, hmargin=1.5cm, vmargin=1.5cm}
 
 \usepackage{multicol}
 \usepackage{changepage}
@@ -19,6 +20,13 @@
 	rightline=true,
 	innerleftmargin=10,innerrightmargin=10,
 	leftmargin=20,rightmargin=20,
+	topline=false,bottomline=false,
+	frametitlefont=\bf\large
+}
+\mdfdefinestyle{exampledefaultcols}{%
+	rightline=false,leftline=true,
+	innerleftmargin=5,innerrightmargin=5,
+	leftmargin=0,rightmargin=0,
 	topline=false,bottomline=false,
 	frametitlefont=\bf\large
 }
@@ -42,7 +50,7 @@
 
 %% Headers
 \fancyhead[L]{2021 Semester 1}
-\fancyhead[C]{MXB102 Exam Notes}
+\fancyhead[C]{Abstract Mathematical Reasoning Exam Notes}
 \fancyhead[R]{\thepage}
 
 % Number Sets
@@ -498,6 +506,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \end{figure}
 %
 \section{Cardinality}
+\begin{multicols}{2}
 \begin{definition}[Cardinality]
     The cardinality of $X$ ($\#X$ or $\abs{X}$), is the number of elements in $X$.
     If there is a bijection between two sets $X$ and $Y$,
@@ -520,6 +529,8 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
     then $X$ is countably infinite, else uncountably infinite.
 \end{definition}
 %
+\columnbreak
+%
 \begin{theorem}$\#\N = \#\Z$\end{theorem}
 \begin{theorem}$\#(\N\times\N) = \#\N$\end{theorem}
 \begin{theorem}$\#\Q = \#\N$\end{theorem}
@@ -532,6 +543,7 @@ $\neg{\left(\exists x:P(x)\right)} \iff \forall x:\neg P(x)$
 \begin{theorem}
     The cardinality of $\mathscr{P}(X)$ is $2^{\abs{X}}$.
 \end{theorem}
+\end{multicols}
 %
 \section{Proofs}
 \begin{figure}[H]
@@ -695,8 +707,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \end{theorem}
 %
 \subsection{Monotonicty Tests}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Difference Test}]
+\begin{multicols}{2}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Difference Test}]
 		\begin{theorem}[Difference test]
 			A sequence $\{a_n\}^\infty_{n=1}$ is
 		\end{theorem}
@@ -707,9 +720,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
 		\end{description}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Ratio Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
 		\begin{theorem}[Ratio test]
 			A sequence $\{a_n\}^\infty_{n=1}$ where all $a_n$ are positive is
 		\end{theorem}
@@ -724,9 +737,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 		If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
 		then $a_n\to0$ as $n\to\infty$.
 	\end{note}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Derivative Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Derivative Test}]
 		\begin{theorem}[Derivative test]
 			If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
 			$a(x)$ is differentiable for $x\in\R_{\geqslant1}$,
@@ -739,10 +752,12 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant 1}$
 		\end{description}
 	\end{mdframed}
-\end{figure}
+% \end{figure}
+\end{multicols}
 %
 \section{Series}
 \subsection{Infinite Series}
+\begin{multicols}{2}
 \begin{definition}[Infinite Series]
 	An infinite series is an expansion that can be written as
 	\begin{equation*}
@@ -754,19 +769,22 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	The sequence of partial sums $\{s_n\}_{n=1}^\infty$ is defined as
 	\begin{equation*}
 		s_n = \sum_{i=1}^n a_i
-	\end{equation*} 
+	\end{equation*}
 	where $s_n$ is the $n$th partial sum of the infinite series.
 \end{definition}
+\columnbreak
 \begin{definition}[Convergence of series]
 	The infinite series $\sum_{i=1}^\infty a_i$ converges to $A$ if the associated sequence of partial sums $\{s_n\}_{n=1}^\infty$ converges to $A$.
 \end{definition}
 \begin{definition}[Divergence of series]
 	The infinite series $\sum_{i=1}^\infty a_i$ diverges to $\pm\infty$, if the associated sequence of partial sums $\{s_n\}_{n=1}^\infty$ diverges to $\pm\infty$.
 \end{definition}
+\end{multicols}
 %
 \subsection{Convergence Tests}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Divergence Test}]
+\begin{multicols}{2}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Divergence Test}]
 		\begin{equation*}
 			\text{Does $\lim_{i\to\infty}a_i\neq0$?}\:
 			\begin{cases}
@@ -775,9 +793,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={$p$-Series}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={$p$-Series}]
 		\begin{description}[style=sameline]
 			\item[Form] $\displaystyle \sum_{i=1}^\infty \frac{1}{i^p}$.
 		\end{description}
@@ -789,9 +807,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Geometric Series}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Geometric Series}]
 		\begin{description}[style=sameline]
 			\item[Form] $\displaystyle \sum_{i=0}^\infty a r^i$ or $\displaystyle \sum_{i=1}^\infty a r^{i-1}$.
 		\end{description}
@@ -806,9 +824,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	\begin{note}
 		The sequence of partial sums is given by $\displaystyle s_n=a\frac{1-r^{n+1}}{1-r}$.
 	\end{note}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Alternating Series}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Alternating Series}]
 		\begin{description}[style=sameline]
 			\item[Form] $\displaystyle \sum_{i=i_0}^\infty \left( -1 \right)^i b_i$ or $\displaystyle \sum_{i=i_0}^\infty \left( -1 \right)^{i+1} b_i$.
 			\item[Conditions] $b_i>0$.
@@ -821,9 +839,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Telescoping Series}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Telescoping Series}]
 		\begin{description}[style=sameline]
 			\item[Conditions] Subsequent terms cancel out previous terms in the sum.
 		\end{description}
@@ -835,9 +853,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Comparison Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Comparison Test}]
 		\begin{description}[style=sameline]
 			\item[Conditions] Pick $b_i$.
 		\end{description}
@@ -858,9 +876,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Limit Comparison Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Limit Comparison Test}]
 		\begin{description}[style=sameline]
 			\item[Conditions] Pick $b_i$ so that $\displaystyle \lim_{i\to\infty}\frac{a_i}{b_i}=c>0$ \& $a_i,\:b_n>0$.
 		\end{description}
@@ -872,9 +890,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Integral Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Integral Test}]
 		\begin{description}[style=sameline]
 			\item[Conditions] Let $a_i=f(i)$, and $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
 		\end{description}
@@ -886,9 +904,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Ratio Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
 		\begin{description}[style=sameline]
 			\item[Conditions] $\displaystyle \lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}}\neq 1$.
 		\end{description}
@@ -900,9 +918,9 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
-\begin{figure}[H]
-	\begin{mdframed}[style=exampledefault,frametitle={Root Test}]
+% \end{figure}
+% \begin{figure}[H]
+	\begin{mdframed}[style=exampledefaultcols,frametitle={Root Test}]
 		\begin{description}[style=sameline]
 			\item[Conditions] $\displaystyle \lim_{i\to\infty}\sqrt[n]{\abs{a_i}}\neq 1$.
 		\end{description}
@@ -914,18 +932,19 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 			\end{cases}
 		\end{equation*}
 	\end{mdframed}
-\end{figure}
+% \end{figure}
+\end{multicols}
 %
 \begin{figure}[H]
 	\begin{mdframed}[style=exampledefault]
 		\begin{theorem}
 			Similar to sequences, we can add and subtract convergent infinite series.
 		\end{theorem}
-		
+
 		\begin{enumerate}
 			\item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
 			\item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum f_i \pm g_i$ is divergent.
-			\item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$. 
+			\item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
 			\begin{enumerate}
 				\item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
 				\item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
@@ -939,11 +958,11 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	An infinite series $\sum a_i$ converges (or diverges) absolutely if the series of absolute values $\sum a_i$ also converges (or diverges).
 \end{definition}
 \begin{theorem}
-	If an infinite series is absolutely convergent, then it is also convergent. 
+	If an infinite series is absolutely convergent, then it is also convergent.
 \end{theorem}
 %
 \begin{definition}[Conditional Convergence]
-	A convergent infinite series that diverges absolutely, converges conditionally. 
+	A convergent infinite series that diverges absolutely, converges conditionally.
 \end{definition}
 \section{Limits of Functions}
 \subsection{Limits of Functions on $\mathbb{R}$}
@@ -972,22 +991,19 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 	These are trivially extended to
 	division (if the divisor is non-zero),
 	subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
-	\begin{equation*}
-		\lim_{x\to x_0}\left(f(x) - g(x)\right)
-	= \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
-	\end{equation*}
-	\begin{equation*}
-	\lim_{x\to x_0}\frac{f(x)}{g(x)}
-	= \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
-	\end{equation*}
-	\begin{equation*}
-	\lim_{x\to x_0}\left(f(x)\right)^n
-	= \left(\lim_{x\to x_0}f(x)\right)^n
-	\end{equation*}
-	\begin{equation*}
-	\lim_{x\to x_0} c \cdot f(x)
-	= c \cdot \lim_{x\to x_0}f(x)
-	\end{equation*}
+	\begin{align*}
+    &\lim_{x\to x_0}\left(f(x) - g(x)\right)
+        = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
+    &\qquad
+    &\lim_{x\to x_0}\frac{f(x)}{g(x)}
+        = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
+    \\
+         &\lim_{x\to x_0}\left(f(x)\right)^n
+        = \left(\lim_{x\to x_0}f(x)\right)^n
+    &\qquad
+    &\lim_{x\to x_0} c \cdot f(x)
+        = c \cdot \lim_{x\to x_0}f(x)
+	\end{align*}
 \end{mdframed}
 \end{figure}
 %
