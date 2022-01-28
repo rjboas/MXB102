@@ -1,10 +1,13 @@
 *.aux
+*.bbl
+*.blg
 *.fdb_latexmk
 *.fls
+*.lof
 *.log
-*.synctex*
-*.pdf
+*.synctex(busy)
+*.synctex.gz
+*.toc
 *.xdv
-*.dvi
-*.out
 *.vscode
+*.zip
