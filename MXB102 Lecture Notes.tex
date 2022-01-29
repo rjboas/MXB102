@@ -1,0 +1,1212 @@
+%!TEX program = xelatex
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{includeheadfoot, hmargin=1.5cm, vmargin=1.5cm}
+
+\usepackage{hyperref}
+
+\usepackage{multicol}
+\usepackage{changepage}
+\usepackage{physics}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Create nice frames
+\usepackage{mdframed}
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfdefinestyle{exampledefault}{%
+	rightline=true,
+	innerleftmargin=10,innerrightmargin=10,
+	leftmargin=20,rightmargin=20,
+	topline=false,bottomline=false,
+	frametitlefont=\bf\large
+} 
+\mdfdefinestyle{exampledefaultcols}{%
+	rightline=false,leftline=true,
+	innerleftmargin=5,innerrightmargin=5,
+	leftmargin=0,rightmargin=0,
+	topline=false,bottomline=false,
+	frametitlefont=\bf\large
+}
+
+% Tables and figures
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+
+\usepackage{enumitem}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhf{}
+
+\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage[none]{hyphenat} % Disable hyphenation of long text
+
+%% Headers
+\fancyhead[L]{2021 Semester 1}
+\fancyhead[C]{Abstract Mathematical Reasoning Exam Notes}
+\fancyhead[R]{\thepage}
+
+% Number Sets
+\newcommand*{\N}{\mathbb{N}}
+\newcommand*{\Z}{\mathbb{Z}}
+\newcommand*{\Q}{\mathbb{Q}}
+\newcommand*{\I}{\mathbb{I}}
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\C}{\mathbb{C}}
+
+% Table Cell Stretch
+\setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+
+% Set symbols
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\DeclareMathOperator{\setunion}{\cup} % defined for clarity/consistency
+\DeclareMathOperator{\setintersection}{\cap}
+
+% Quotation in math mode
+\newcommand{\quo}[1]{\text{``}#1\text{"}}
+
+% Exponential e
+\newcommand{\e}{e}
+
+\newcommand{\contradiction}{
+    \hspace{-1em}
+	{\hbox{
+	\setbox0=\hbox{$\mkern-3mu{\times}\mkern-3mu$}
+	\setbox1=\hbox to0pt{\hss\copy0\hss}
+	\copy0\raisebox{0.5\wd0}{\copy1}\raisebox{-0.5\wd0}{\box1}\box0}}
+}
+
+%% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\numberwithin{theorem}{subsection}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\numberwithin{definition}{subsection}
+
+\theoremstyle{remark}
+\newtheorem{note}{Note}[section]
+\numberwithin{note}{subsection}
+
+\newtheorem*{statement}{Statement}
+
+%% Title page
+\title{\textbf{Abstract Mathematical Reasoning}
+    \texorpdfstring{\\}{ } {\large Exam Notes}
+    \texorpdfstring{\\}{ } {\normalsize 2021, Semester 1}}
+\author{
+    Rohan Boas \and Tarang Janawalkar \and Oliver Strong
+}
+\date{}
+
+\usepackage[
+    type={CC},
+    modifier={by},
+    version={4.0},
+    imagewidth={5em},
+]{doclicense}
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    \thispagestyle{empty}
+    \vspace*{\fill}
+    \begin{adjustwidth}{4cm}{4cm}
+        {\Large\bf Preface}
+        \vspace{0.7em}
+
+        This document is a succinct reference for the unit MXB102.
+        We hope this document is useful, particularly to those undertaking this unit's final exam.
+        This document is not intended to be a replacement for the lecture notes and unit guide.
+        We would personally like to thank our lecturer, Dr Adrianne Jenner,
+        and all of the tutors for the great amount of support and teachings
+        that we have been able to receive over the course of this unit.
+    \end{adjustwidth}
+    \vspace*{\fill}
+    \doclicenseThis
+    \thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+
+\section{Logic}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c >{$}c<{$} | c}
+        \textbf{Name}         & \text{\textbf{Symbol}}  & \textbf{Truth Table} \\
+        \midrule
+        Negation (NOT)        & \neg                    &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c|c}
+            $P$            & $\neg{P}$      \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}}
+        \end{tabular}
+        \endgroup
+        \\
+        Conjunction (AND)     & \land                   &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c|c}
+            $P$            & $Q$            & $P\land Q$     \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
+        \end{tabular}
+        \endgroup
+        \\
+        Disjunction (OR)      & \lor                    &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c|c}
+            $P$            & $Q$            & $P\lor Q$      \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{T}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
+        \end{tabular}
+        \endgroup
+        \\
+        Conditional (IF-THEN) & \implies                &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c|c}
+            $P$            & $Q$            & $P\implies Q$  \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
+        \end{tabular}
+        \endgroup
+        \\
+        Equivalence (IFF)     & \iff \text{ or } \equiv &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c|c}
+            $P$            & $Q$            & $P\iff Q$      \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
+        \end{tabular}
+        \endgroup
+    \end{tabular}
+    \caption{Boolean operators in order of precedence.}
+    \label{tab:Logic Symbols}
+\end{table}
+\begin{theorem}[de Morgan's Law]
+    $\neg{\left(P \land Q\right)} \iff \neg{P} \lor \neg{Q}$.
+\end{theorem}
+%
+\begin{definition}[Tautology]
+    A tautology is a statement that is always true.
+\end{definition}
+%
+\begin{definition}[Paradox]
+    A paradox is a statement that is always false.
+\end{definition}
+%
+\begin{definition}[Converse]
+    The converse of the statement $P\implies Q$	is the statement $Q\implies P$.
+\end{definition}
+%
+\begin{definition}[Contrapositive]
+    The contrapositive of $P\implies Q$	is the statement $\neg{Q}\implies \neg{P}$.
+\end{definition}
+%
+\section{Sets}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c >{$}c<{$} | >{$}c<{$}}
+        \textbf{Name}             & \text{\textbf{Symbol}}   & \text{\textbf{Definition}}                                            \\
+        \midrule
+        Empty set                 & \emptyset                & \text{A set with no elements:} \left\{\right\}                        \\
+        Intersection              & \setintersection         & S \setintersection T = \left\{x:x\in S \land x \in T\right\}          \\
+        Union                     & \setunion                & S \setunion T = \left\{x:x\in S \lor x \in T\right\}                  \\
+        Set difference            & \backslash \text{ or } - & S - T = \left\{x:x\in S \land x \notin T\right\}                      \\
+        Subset                    & \subseteq                & \text{If } \#S=\#T, \quad S \subseteq T \equiv \forall x\in S:x \in T \\
+        Strict (or proper) subset & \subset                  & \text{If } \#S<\#T, \quad S \subset T \equiv \forall x\in S:x \in T   \\
+        Complement                & \overline{S}             & \text{If } S \subseteq T, \quad \overline{S}=T \backslash S
+    \end{tabular}
+    % \caption{Set symbols}
+    \label{tab:Set Symbols}
+\end{table}
+%
+\begin{definition}[Disjoint]
+    If $S \setintersection T = \emptyset$, then $S$ and $T$ are disjoint
+    (i.e. two sets are disjoint if their intersection is empty).
+\end{definition}
+%
+\subsection{Construction of the Natural Numbers}
+\begin{definition}[$\quo{0}$]
+    $\quo{0}$ is defined as the empty set, $\emptyset$ or $\left\{\right\}$, which is the first element of the natural numbers.
+\end{definition}
+%
+\begin{definition}[Successor function]
+    The successor function, $S(n)$, is defined as $n \setunion \{n\}$.
+\end{definition}
+%
+\begin{definition}[Addition]
+    Addition ($+$) is defined recursively by the following axioms:
+    \begin{enumerate}[label={(A\arabic*)}, leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+        \item $\mathrm{\quo{a} + \quo{0} = \quo{a}}$
+        \item $\mathrm{\quo{a} + S(\quo{b}) = S(\quo{a} + \quo{b})}$
+    \end{enumerate}
+\end{definition}
+%
+\begin{definition}[Multiplication]
+    Multiplication ($\cdot$) is defined recursively by the following axioms:
+    \begin{enumerate}[label={(M\arabic*)}, leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+        \item $\mathrm{\quo{a} \cdot \quo{0} = \quo{0}}$
+        \item $\mathrm{\quo{a} \cdot S(\quo{b}) = \quo{a} + (\quo{a} \cdot \quo{b})}$
+    \end{enumerate}
+\end{definition}
+%
+\begin{definition}[Exponentiation]
+    Exponentiation ($\uparrow$) is defined recursively by the following axioms:
+    \begin{enumerate}[label={(E\arabic*)}, leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+        \item $\mathrm{\quo{a} \uparrow \quo{0} = \quo{1}}$
+        \item $\mathrm{\quo{a} \uparrow S(\quo{b}) = \quo{a} \cdot (\quo{a} \uparrow \quo{b})}$
+    \end{enumerate}
+\end{definition}
+%
+\subsubsection{Properties of Natural Numbers}
+\begin{description}[style=sameline]
+    \item[Commutativity of addition]
+        $\mathrm{ \quo{a} + \quo{b} = \quo{b} + \quo{a}}$
+    \item[Associativity of addition]
+        $\mathrm{(\quo{a} + \quo{b}) + \quo{c} = \quo{a} + (\quo{b} + \quo{c})}$
+    \item[Commutativity of multiplication]
+        $\mathrm{\quo{a} \cdot \quo{b} = \quo{b} \cdot \quo{a}}$
+    \item[Associativity of multiplication]
+        $\mathrm{(\quo{a} \cdot \quo{b}) \cdot \quo{c} = \quo{a} \cdot (\quo{b} \cdot \quo{c})}$
+    \item[Distributivity of multiplication over addition]
+        $\mathrm{\quo{a} \cdot  (\quo{b} + \quo{c}) = (\quo{a} \cdot \quo{b}) + (\quo{a} \cdot \quo{c})}$
+    \item[Cancellation law]
+        If $\mathrm{\quo{a} \cdot \quo{b} = \quo{a} \cdot \quo{c}}$
+        and $\mathrm{\quo{a} \ne \quo{0}}$
+        then $\mathrm{\quo{b} = \quo{c}}$
+\end{description}
+\begin{theorem}
+    $\forall n\in\N\backslash\{0\} : 2^n>n$.
+\end{theorem}
+\begin{theorem}
+    $\forall n\in\N\backslash\{0\} : 1+2+\cdots+n=\frac{n(n+1)}{2}$.
+\end{theorem}
+%
+\subsection{Cartesian Product}
+\begin{definition}[Cartesian product]
+    The Cartesian product of two sets $S$ and $T$ is the set
+    $S\times T$ consisting of all ordered pairs $(x, y)$ where
+    $x \in S$ and $y \in T$.
+\end{definition}
+%
+\subsection{Quantifiers}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c >{$}c<{$} | >{$}c<{$}}
+        \textbf{Name}                             & \text{\textbf{Symbol}} & \text{\textbf{Usage}} \\
+        \midrule
+        Universal Quantification (For All)        & \forall                & \forall x:P(x)        \\
+        Existential Quantification (There Exists) & \exists                & \exists x:P(x)        \\
+    \end{tabular}
+    % \caption{Quantifiers}
+    \label{tab:Quantifiers}
+\end{table}
+%
+\begin{theorem}
+    $\neg{\left(\forall x:P(x)\right)} \equiv \exists x:\neg P(x)$
+\end{theorem}
+%
+\begin{theorem}
+    $\neg{\left(\exists x:P(x)\right)} \equiv \forall x:\neg P(x)$
+\end{theorem}
+%
+\begin{definition}[Greater than ($>$)]
+    $x > y \iff \exists a \in \N\backslash\{0\} : x=y+a$
+\end{definition}
+%
+\begin{definition}[Greater than or equal to ($\geqslant$)]
+    $x \geqslant y \iff \exists a \in \N : x=y+a$
+\end{definition}
+%
+\section{Relations}
+\begin{definition}[Binary relation]
+    A binary relation $R$ on $S$ is the subset $S\times S$.
+    If $a, \: b \in S$ and  $(a, \: b) \in R$,
+    then $aRb$ (``$a$ is related to $b$ under $R$")
+\end{definition}
+%
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Relation Properties}]
+        \begin{description}[style=sameline]
+            \item[Reflexive]
+                $\forall x \in S : xRx$
+            \item[Symmetric]
+                $\forall x,\: y \in S : xRy \implies yRx$
+            \item[Antisymmetric]
+                $\forall_\text{distinct} \: x,\: y \in S : xRy \implies \neg (yRx)$
+            \item[Transitive]
+                $\forall x,\: y, \: z \in S : (xRy \land yRz) \implies xRz$
+        \end{description}
+        \begin{definition}[Equivalence relation]
+            A relation is an equivalence relation if it is
+            reflexive, symmetric, and transitive.
+        \end{definition}
+    \end{mdframed}
+\end{figure}
+%
+\begin{definition}[Functions as rules]
+    A function $f$ is a rule which maps
+    from some set $S$ (the domain)
+    to some set $T$ (the codomain)
+    (i.e. $f: S \to T$) where each $x \in S$ maps to a unique $f(x) \in T$.
+\end{definition}
+\begin{definition}[Image]
+    The image of a function $f: S \to T$ is the set $f(S)$,
+    which is equal to $\{f(x):x \in S\}$.
+\end{definition}
+\begin{definition}[Functional]
+    A relation is functional if
+    $\forall x \in S \land \forall y,\: z \in T
+        : (xRy \, \land \, yRz) \implies y=z$.
+\end{definition}
+\begin{note}
+    The functional property corresponds to the vertical line test.
+\end{note}
+\begin{definition}[Left-total]
+    A relation is left-total if
+    $\forall x \in S : \exists y \in T : xRy$.
+\end{definition}
+\begin{definition}[Functions as relations]
+    A function $f$ is some relation that is functional and left-total.
+\end{definition}
+%
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Function Properties}]
+        \begin{description}[style=sameline]
+            \item[Injective (one-to-one)]
+                $\forall x,\: z \in S : \forall y \in T
+                    : (xRy \,\land\, zRy) \implies x = z$
+
+                Put in words, every element in the codomain ($T$)
+                is being mapped to by \textit{at most} one element from the domain ($S$).
+            \item[Surjective (onto)]
+                $\forall y \in T : \exists x \in S : xRy$
+
+                Put in words, every element in the codomain ($T$)
+                is being mapped to by \textit{at least} one element from the domain ($S$).
+            \item[Bijective]
+                $R$ is injective and surjective.
+        \end{description}
+    \end{mdframed}
+\end{figure}
+%
+\begin{definition}[Equal functions]
+    Two functions are equal if they have the same domain and codomain
+    for all $x$, so that $f(x) = g(x)$.
+\end{definition}
+%
+\begin{definition}[Function composition]
+    The composition of two functions $f:X \to Y$ and $g:Y \to Z$,
+    denoted $g \circ f$, maps $X$ to $Z$, and is defined as
+    $(g \circ f)(x) = g(f(x))$.
+\end{definition}
+%
+\begin{theorem}
+    For $f:X \to Y$ and $g:Y \to Z$ and  $h:Z \to W$,
+    $h \circ (g \circ f) = (h \circ g) \circ f$.
+\end{theorem}
+%
+\begin{definition}[Identity function]
+    The identity function of $X$ is $1_X:X \to X$ and is defined as
+    $1_X (x)=x$ for all $x \in X$.
+\end{definition}
+%
+\begin{definition}[Inverse function]
+    If $f:X \to Y$ and $g:Y \to X$ are functions where
+    $g \circ f = 1_X$ and $f \circ g = 1_Y$,
+    then $g$ is the inverse of $f$, denoted $f^{-1}$.
+\end{definition}
+%
+\begin{theorem}
+    A function $f$ has an inverse if and only if $f$ is bijective.
+\end{theorem}
+%
+\begin{definition}[Equivalence class]
+    Let $R$ be an equivalence relation on $S$ and $x \in S$.
+    The equivalence class of $x$ is $[x] = \{y \in S : xRy\}$,
+    i.e. the set of all elements in $S$ that are related to $x$.
+
+    $x$ is a representative of the equivalence class $[x]$.
+    There may be different representations of the same equivalence class.
+\end{definition}
+%
+\section{Number Sets}
+\subsection{Rational Numbers}
+\begin{definition}[Rational numbers]
+    Define an equivalence relation $\sim$ on $\Z \times (\N\backslash\{0\}$
+    as $(a,\: b) \sim (c,\: d) \iff ad=bc$.
+    The equivalence classes of $\sim$ are rational numbers.
+    $[(a,\: b)] = \frac{a}{b}$.
+    The set of all rational numbers is
+    $\Q = \left\{ \frac{a}{b} : a\in \Z, b\in \N_{>0} \right\}$.
+\end{definition}
+%
+\begin{definition}[Addition on rational numbers]
+    $(a,\: b) + (c,\: d) = (ad+bc,\: bd)$
+\end{definition}
+%
+\begin{definition}[Multiplication on rational numbers]
+    $(a,\: b) \cdot (c,\: d) = (ac,\: bd)$
+\end{definition}
+\begin{theorem}
+    There is no smallest positive rational number.
+\end{theorem}
+%
+\section{Algebraic Structures}
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Ring Axioms}]
+        \begin{definition}[Commutativite ring with identity]
+            A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
+        \end{definition}
+        \begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+            \item[(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
+            \item[(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
+            \item[(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
+            \item[(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
+            \item[(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
+            \item[(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
+            \item[(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
+            \item[(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
+            \item[(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
+            \item[(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
+        \end{enumerate}
+    \end{mdframed}
+    \begin{note}
+        $\Z$, $\Q$, $\R$, and $\C$ are rings.
+    \end{note}
+\end{figure}
+% \marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
+%
+\begin{definition}[Integers]
+    The set of integers ($\Z$) is the smallest ring containing the natural numbers.
+\end{definition}
+\begin{note}
+    The integers are the closure of the natural numbers in regards to the ring axioms.
+\end{note}
+%
+\begin{definition}[Real numbers]
+    Let $D = \Z \times \{\text{sequence of digits $0\ldots 9$}\}$.
+    Define an equivalence relation on $D$ such that
+    \begin{equation*}
+        x_0 . x_1 x_2 \dots x_{k-1} x_k \overline{000} = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)\overline{999}
+    \end{equation*}
+    The real numbers ($\R$) is the set of the equivalence classes of D using the equivalence relation above.
+\end{definition}
+%
+\begin{definition}[Irrational numbers]
+    The irrational numbers ($\I$ or $\overline{\Q}$) are defined as $\R\backslash\Q$.
+\end{definition}
+\begin{theorem}
+    If $a,\:b\in\R$ are such that $ab$ is irrational, then at least one of $a$ or $b$ is irrational.
+\end{theorem}
+%
+\begin{note}
+    Let $a,\: b\in \R$. If $ab\in\I$, then either $a\in\I$ or $b\in\I$.
+\end{note}
+%
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Field Axioms}]
+        \begin{definition}[Field]
+            A field is a set $S$ which is a commutative ring with identity so that it satisfies all ring axioms and also the following axiom.
+        \end{definition}
+        \begin{enumerate}
+            \item[(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
+        \end{enumerate}
+    \end{mdframed}
+    \begin{note}
+        $\Q$, $\R$, and $\C$ are fields.
+    \end{note}
+\end{figure}
+%
+\section{Cardinality}
+\nopagebreak
+\begin{multicols}{2}
+    \begin{definition}[Cardinality]
+        The cardinality of $X$ ($\#X$ or $\abs{X}$), is the number of elements in $X$.
+        If there is a bijection between two sets $X$ and $Y$,
+        then $\#X=\#Y$ or equivalently, $\abs{X} = \abs{Y}$.
+    \end{definition}
+    %
+    \begin{definition}[$\N_{<n}$]
+        The subset of $\N$ containing all naturals less than $n$.
+    \end{definition}
+    %
+    \begin{definition}[Finite and infinite sets]
+        If a set $X$ is such that $\#X=\#\N_{<n}$,
+        then the number of elements in $X$ is $n$ and $X$ is a finite set.
+        If there is no $n$ such that there is a bijection between $X$ and $\N_{<n}$,
+        then $X$ is an infinite set.
+    \end{definition}
+    %
+    \begin{definition}[Countable and uncountable infinities]
+        If there exists a bijection between an infinite set $X$ and $\N$,
+        then $X$ is countably infinite, else uncountably infinite.
+    \end{definition}
+    %
+    \columnbreak
+    %
+    \begin{theorem}$\#\N = \#\Z$\end{theorem}
+    \begin{theorem}$\#(\N\times\N) = \#\N$\end{theorem}
+    \begin{theorem}$\#\Q = \#\N$\end{theorem}
+    \begin{theorem}$\#\N \ne \#\R$\end{theorem}
+    %
+    \begin{definition}[Power set]
+        The power set of $X$, $\mathscr{P}(X)$, is the set of all subsets of $X$,
+        including $\emptyset$ and $X$.
+    \end{definition}
+    \begin{theorem}
+        The cardinality of $\mathscr{P}(X)$ is $2^{\abs{X}}$.
+    \end{theorem}
+\end{multicols}
+%
+\section{Proofs}
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Proof Structure}]
+        \begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+            \item State the proof method that will be used.
+            \item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
+            \item Clearly state any assumptions and definitions as required by the proof.
+            \item Apply the proof method.
+            \item Write a sentence summarising the proof method.
+            \item Conclude the proof with QED, $\square$, or $\blacksquare$.
+        \end{enumerate}
+    \end{mdframed}
+\end{figure}
+%
+\begin{note}[Disprove]
+    To disprove a statement is to prove its negation.
+\end{note}
+%
+\subsection{Direct Proof}
+\begin{enumerate}
+    \item Use a definition, i.e. even/odd numbers.
+    \item Show LHS = RHS.
+    \item For an equivalence ($\iff$) statement, show that both forward ($\implies$) and backward ($\impliedby$) directions are true.
+\end{enumerate}
+%
+\subsection{Truth Table, Tautology, and Paradox}
+\begin{enumerate}
+    \item Draw a truth table for the statement.
+    \item For a proof by truth table, show that two truth tables are the same.
+    \item For a proof by tautology, show that the truth table is always true.
+    \item For a proof by paradox, show that the truth table is always false.
+\end{enumerate}
+%
+\subsection{Contradiction}
+\begin{enumerate}
+    \item Assume that the statement is false.
+    \item Make a sequence of logical statements that follow from the assumption.
+    \item Arrive at a contradiction.
+    \item Since we arrive at a contradiction, the original assumption must have been wrong.
+    \item Hence the original statement must be true.
+    \item The $\contradiction$ and $\implies\!\!\!\!\impliedby$ symbols
+          are often used to show a contradiction.
+\end{enumerate}
+%
+\subsection{Contrapositive}
+\begin{enumerate}
+    \item Write the original statement as a conditional statement.
+    \item Rewrite the statement in the contrapositive form.
+    \item Try to prove the contrapositive statement, usually a direct proof.
+    \item By proving the contrapositive, you have also proved the original statement.
+\end{enumerate}
+%
+\subsection{Contradiction vs. Contrapositive}
+For the conditional statement: ``If $P$, then $Q$".
+
+\textbf{By contradiction:} Assume $P$ and $\neg{Q}$, and find some contradiction.
+
+\textbf{By contrapositive:} Assume $\neg{Q}$, and show $\neg{P}$.
+%
+\subsection{Induction}
+\begin{enumerate}
+    \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geqslant n_0}$".
+    \item Prove the base case is true: $P(n)$ is true for $n=n_0$.
+    \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n=k$".
+    \item Write the inductive step: ``$P(n)$ is true for $n=k+1$".
+    \item Prove the inductive step is true, usually a direct proof. Remember to utilise the inductive hypothesis.
+    \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(k)$ is true, then the principle of mathematical induction implies $P(n)$ is true for all $n\in \N_{\geqslant n_0}$.
+\end{enumerate}
+%
+\subsection{Strong Induction}
+\begin{enumerate}
+    \item Find the logical statement $P(n)$ so that the theorem can be written in the form: ``Show $P(n)$ is true for all $n \in \N_{\geqslant n_0}$".
+    \item Prove the base case is true: $P(n)$ is true for $n=n_0$.
+    \item Write the inductive hypothesis: ``Assume $P(n)$ is true for $n\leqslant k$".
+    \item Write the inductive step: ``$P(n)$ is true for $n=k+1$".
+    \item Prove the inductive step is true, usually a direct proof. Remember to utilise the inductive hypothesis.
+    \item Conclusion: Since $P(n_0)$ is true, and $P(k+1)$ is true whenever $P(n_0),\: \ldots,\: P(k)$ is true, then the principle of strong mathematical induction implies $P(n)$ is true for all $n\in \N_{\geqslant n_0}$.
+\end{enumerate}
+%
+\pagebreak
+\subsection{Useful Techniques}
+\nopagebreak
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item Use the definition of the numbers, i.e. even and odd numbers.
+        \item The product of two odd numbers is also odd.
+        \item For rational numbers assume that $(a,b)$ is fully simplified, so that $a$ and $b$ are co-prime.
+        \item When using strong induction, remember that $P(k), \ldots, P(n_0)$ are assumed to be true.
+              \columnbreak
+        \item $a^b=e^{\ln{a^b}}=e^{b\ln{a}}$
+        \item $a^k = a^k + b - b$
+        \item $a^{k+1} = a \cdot a^k$
+        \item $\sum_{i}^{k+1} a_i = a_{k+1} + \sum_{i}^{k} a_i$
+    \end{enumerate}
+\end{multicols}
+%
+\section{Sequences}
+An infinite sequence on $X$ is a function $a$ with domain $\N_{> 0}$ and codomain $X$. That is, $a:\N_{> 0}\to X$.
+
+For infinite sequences we write $a_n$ and the sequence can be represented as $\left\{a_n\right\}_{n=1}^\infty$, where $n$ is the index of the sequence.
+%
+\subsection{Convergence}
+\begin{theorem}
+    A sequence $\left\{a_n\right\}_{n=1}^\infty$ converges to $a\in \R$ if
+    \begin{equation*}
+        \lim_{n \to \infty}a_n = a \iff \forall \varepsilon > 0 : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : \abs{a_n - a} < \varepsilon
+    \end{equation*}
+\end{theorem}
+%
+\begin{theorem}
+    A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $+\infty$ if
+    \begin{equation*}
+        \lim_{n \to \infty}a_n = +\infty \iff \forall N \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n > N
+    \end{equation*}
+\end{theorem}
+%
+\begin{theorem}
+    A sequence $\left\{a_n\right\}_{n=1}^\infty$ diverges to $-\infty$ if
+    \begin{equation*}
+        \lim_{n \to \infty}a_n = -\infty \iff \forall M \in \R : \exists n_0 \in \N_{> 0}:\forall n \geqslant n_0 : a_n < M
+    \end{equation*}
+\end{theorem}
+%
+\begin{theorem}[Triangle inequality]
+    $\abs{a+b}\leqslant\abs{a}+\abs{b}$.
+\end{theorem}
+%
+\begin{theorem}
+    The sequence $\left\{ a_n \right\}_{n=1}^\infty$ converges to $a$ if and only if the sequences $\left\{ a_{2n} \right\}_{n=1}^\infty$ and $\left\{ a_{2n-1} \right\}_{n=1}^\infty$ both converge to $a$.
+\end{theorem}
+%
+\begin{theorem}[Squeeze theorem for sequences]
+    Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leqslant b_n \leqslant c_n$ for all $n>n_0$. If $\lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=d$, then .
+\end{theorem}
+%
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Limit Laws for Sequences}]
+        \begin{theorem}
+            Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$ respectively, and let $c\in\R$ be a constant, then
+            \begin{enumerate}[label=\normalfont\alph*)]
+                \item $\lim_{n\to\infty}c=c$.
+                \item $\lim_{n\to\infty}ca_n=ca$.
+                \item $\lim_{n\to\infty}\left( a_n + b_n \right)=a+b$.
+                \item $\lim_{n\to\infty}\left( a_n - b_n \right)=a-b$.
+                \item $\lim_{n\to\infty}\left( a_nb_n \right)=ab$.
+                \item $\lim_{n\to\infty}\left( \frac{a_n}{b_n} \right)=\frac{a}{b}$, ($b\neq 0$).
+            \end{enumerate}
+        \end{theorem}
+    \end{mdframed}
+\end{figure}
+%
+\subsection{Cauchy Sequences}
+\begin{definition}[Cauchy sequence]
+    A sequence $\{a_n\}_{n=1}^\infty$ on $\R$ is a Cauchy sequence if
+    \begin{equation*}
+        \forall \varepsilon > 0:\exists n_0\in\N_{>0}:\forall n,\: m \geqslant n_0:\abs{a_n-a_m}<\varepsilon
+    \end{equation*}
+\end{definition}
+\begin{theorem}
+    A sequence on $\R$ is convergent if and only if is a Cauchy sequence.
+\end{theorem}
+\subsection{Monotonicity}
+%
+\begin{definition}[Monotone]
+    A sequence is (strictly) monotone if it is
+    (strictly) increasing or (strictly) decreasing.
+\end{definition}
+%
+\begin{definition}[Eventually]
+    If after removing a finite number of terms from the beginning from a sequence
+    it has a certain property, the original sequence has that property eventually.
+\end{definition}
+%
+\begin{definition}[Bounded]
+    An infinite sequence is bounded if $L \leqslant a_n \leqslant K$ for all $n$.
+\end{definition}
+%
+\begin{theorem}
+    Every bounded eventually monotone sequence converges.
+\end{theorem}
+%
+\subsection{Monotonicity Tests}
+\nopagebreak
+\begin{multicols}{2}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Difference Test}]
+        \begin{theorem}[Difference test]
+            A sequence $\{a_n\}^\infty_{n=1}$ is
+        \end{theorem}
+        \begin{description}[style=sameline]
+            \item[Strictly increasing] if $a_{n+1} - a_n > 0$ for all $n$
+            \item[Increasing] if $a_{n+1} - a_n \geqslant 0$ for all $n$
+            \item[Strictly decreasing] if $a_{n+1} - a_n < 0$ for all $n$
+            \item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
+        \end{description}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
+        \begin{theorem}[Ratio test]
+            A sequence $\{a_n\}^\infty_{n=1}$ where all $a_n$ are positive is
+        \end{theorem}
+        \begin{description}[style=sameline]
+            \item[Strictly increasing] if $a_{n+1} \div a_n > 1$ for all $n$
+            \item[Increasing] if $a_{n+1} \div a_n \geqslant 1$ for all $n$
+            \item[Strictly decreasing] if $a_{n+1} \div a_n < 1$ for all $n$
+            \item[Decreasing] if $a_{n+1} \div a_n \leqslant 1$ for all $n$
+        \end{description}
+    \end{mdframed}
+    \begin{note}
+        If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
+        then $a_n\to0$ as $n\to\infty$.
+    \end{note}
+    \columnbreak
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Derivative Test}]
+        \begin{theorem}[Derivative test]
+            If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
+            $a(x)$ is differentiable for $x\in\R_{\geqslant1}$,
+            then $\{a_n\}^\infty_{n=1}$ is
+        \end{theorem}
+        \begin{description}[style=sameline]
+            \item[Strictly increasing] if $a'(x) > 0$ for all $x\in\R_{\geqslant 1}$
+            \item[Increasing] if $a'(x) \geqslant 0$ for all $x\in\R_{\geqslant 1}$
+            \item[Strictly decreasing] if $a'(x) < 0$ for all $x\in\R_{\geqslant 1}$
+            \item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant 1}$
+        \end{description}
+    \end{mdframed}
+\end{multicols}
+%
+\pagebreak
+\section{Series}
+\subsection{Infinite Series}
+\begin{multicols}{2}
+    \begin{definition}[Infinite Series]
+        An infinite series is an expansion that can be written as
+        \begin{equation*}
+            \sum_{i=1}^\infty a_i = a_1 + a_2 + a_3 + \cdots
+        \end{equation*}
+        The numbers $a_i$ are the terms of the series.
+    \end{definition}
+    \begin{definition}[Partial Sums]
+        The sequence of partial sums $\{s_n\}_{n=1}^\infty$ is defined as
+        \begin{equation*}
+            s_n = \sum_{i=1}^n a_i
+        \end{equation*}
+        where $s_n$ is the $n$th partial sum of the infinite series.
+    \end{definition}
+    \columnbreak
+    \begin{definition}[Convergence of series]
+        The infinite series $\sum_{i=1}^\infty a_i$ converges to $A$ if the associated sequence of partial sums $\{s_n\}_{n=1}^\infty$ converges to $A$.
+    \end{definition}
+    \begin{definition}[Divergence of series]
+        The infinite series $\sum_{i=1}^\infty a_i$ diverges to $\pm\infty$, if the associated sequence of partial sums $\{s_n\}_{n=1}^\infty$ diverges to $\pm\infty$.
+    \end{definition}
+    \begin{theorem}
+        If $\sum_{i=1}^{\infty}a_i$ converges, then $\lim_{i\to\infty}a_i=0$.
+    \end{theorem}
+\end{multicols}
+%
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault]
+        \begin{theorem}
+            Similar to sequences, we can add and subtract convergent infinite series.
+        \end{theorem}
+
+        \begin{enumerate}
+            \item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
+            \item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum c_i \pm d_i$ is divergent.
+            \item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
+                  \begin{enumerate}
+                      \item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
+                      \item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
+                  \end{enumerate}
+        \end{enumerate}
+
+    \end{mdframed}
+\end{figure}
+%
+\begin{definition}[Absolute Convergence]
+    An infinite series $\sum a_i$ converges (or diverges) absolutely if the series of absolute values $\sum a_i$ also converges (or diverges).
+\end{definition}
+\begin{theorem}
+    If an infinite series is absolutely convergent, then it is also convergent.
+\end{theorem}
+%
+\begin{definition}[Conditional Convergence]
+    A convergent infinite series that diverges absolutely, converges \linebreak conditionally.
+\end{definition}
+%
+\pagebreak
+\subsection{Convergence Tests}
+For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
+\begin{multicols}{2}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Divergence Test}]
+        \begin{equation*}
+            \text{Does $\lim_{i\to\infty}a_i\neq0$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Diverges} \\
+                \text{NO}  & \text{Inconclusive}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={$p$-Series}]
+        \textbf{Conditions} $i_0=1$ and $a_i = \frac{1}{i^p}$.
+        \begin{equation*}
+            \text{Is $p>1$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Geometric Series}]
+        \textbf{Conditions} $i_0=0$ and $a_i = a r^i$ or $i_0=1$ and $a_i = a r^{i-1}$.
+        \begin{equation*}
+            \text{Is $\abs{r}<1$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges to $\frac{a}{1-r}$} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{note}
+        The sequence of partial sums is given by $\displaystyle s_n=a\frac{1-r^{n+1}}{1-r}$.
+    \end{note}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Alternating Series}]
+        \textbf{Conditions} $a_i = \left( -1 \right)^i b_i$ or $a_i = \left( -1 \right)^{i+1} b_i$. $b_i>0$.
+        \begin{equation*}
+            \text{Is $b_{i+1}\leqslant b_i$ \& $\lim_{i\to\infty}b_i=0$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges} \\
+                \text{NO}  & \text{Inconclusive}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Telescoping Series}]
+        \textbf{Conditions} Subsequent terms cancel out previous terms in the sum.
+        \begin{equation*}
+            \text{Does $\lim_{n\to\infty}s_n=s$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges to $s$} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Limit Comparison Test}]
+        \textbf{Conditions} Pick $b_i$ so that $\displaystyle \lim_{i\to\infty}\frac{a_i}{b_i}=c>0$ \& $a_i,\:b_n>0$.
+        \begin{equation*}
+            \text{Does $\sum_{i=i_0}^\infty b_i$ converge?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Comparison Test}]
+        \textbf{Conditions} Pick $b_i$.
+
+        \noindent If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges:
+        \begin{equation*}
+            \text{Is $0\leqslant a_i \leqslant b_i$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges} \\
+                \text{NO}  & \text{Inconclusive}
+            \end{cases}
+        \end{equation*}
+        If $\displaystyle \sum_{i=i_0}^\infty b_i$ diverges:
+        \begin{equation*}
+            \text{Is $0\leqslant b_i \leqslant a_i$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Diverges} \\
+                \text{NO}  & \text{Inconclusive}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Integral Test}]
+        \textbf{Conditions} Let $a_i=f(i)$, so that $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
+        \begin{equation*}
+            \text{$\int_a^\infty f(x) \dd{x}$ converges?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum_{i=a}^\infty a_i$ Converges} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
+        \textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\frac{a_{i+1}}{a_i}\neq 1$.
+        \begin{equation*}
+            \text{Is $\lim_{i\to\infty}\frac{a_{i+1}}{a_i} < 1$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+        \begin{equation*}
+            \text{Is $\lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}} < 1$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+    \begin{mdframed}[style=exampledefaultcols,frametitle={Root Test}]
+        \textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\sqrt[i]{a_i}\neq 1$.
+        \begin{equation*}
+            \text{Is $\lim_{i\to\infty}\sqrt[i]{a_i} < 1$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+        \begin{equation*}
+            \text{Is $\lim_{i\to\infty}\sqrt[i]{\abs{a_i}} < 1$?}\:
+            \begin{cases}
+                \text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
+                \text{NO}  & \text{$\sum a_i$ Diverges}
+            \end{cases}
+        \end{equation*}
+    \end{mdframed}
+\end{multicols}
+\pagebreak
+%
+\section{Limits of Functions}
+\subsection{Limits of Functions on \texorpdfstring{$\mathbb{R}$}{the Reals}}
+\begin{definition}[Finite limits using the $\varepsilon$-$\delta$ definition]
+    Let a function $f(x)$ be defined for all $x$ in an open interval $I$
+    (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
+    \begin{equation*}
+        \lim_{x\to x_0} f(x) = L \iff \forall\varepsilon>0: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta \implies \abs{f(x)-L}<\varepsilon
+    \end{equation*}
+\end{definition}
+%
+\begin{figure}[H]
+    \begin{mdframed}[style=exampledefault,frametitle={Limit Laws for Functions}]
+        \begin{theorem} The limit of a sum equals the sum of the limits, i.e.
+            \begin{equation*}
+                \lim_{x\to x_0}\left(f(x)+g(x)\right)
+                = \left(\lim_{x\to x_0}f(x)\right) + \left(\lim_{x\to x_0}g(x)\right)
+            \end{equation*}
+        \end{theorem}
+        \begin{theorem} The limit of a product equals the product of the limits, i.e.
+            \begin{equation*}
+                \lim_{x\to x_0}\left(f(x)\cdot g(x)\right)
+                = \left(\lim_{x\to x_0}f(x)\right) \cdot \left(\lim_{x\to x_0}g(x)\right)
+            \end{equation*}
+        \end{theorem}
+        These are trivially extended to
+        division (if the divisor is non-zero),
+        subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
+        \begin{align*}
+             & \lim_{x\to x_0}\left(f(x) - g(x)\right)
+            = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
+             & \qquad
+             & \lim_{x\to x_0}\frac{f(x)}{g(x)}
+            = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
+            \\
+             & \lim_{x\to x_0}\left(f(x)\right)^n
+            = \left(\lim_{x\to x_0}f(x)\right)^n
+             & \qquad
+             & \lim_{x\to x_0} c \cdot f(x)
+            = c \cdot \lim_{x\to x_0}f(x)
+        \end{align*}
+    \end{mdframed}
+\end{figure}
+%
+\begin{definition}[Limits towards $\pm\infty$ using the $\varepsilon$-$\delta$ definition]
+    Let a function $f(x)$ be defined for all $x$ in an open interval $I$
+    (which contains $x_0 \in \R$), except for $x_0$ which may or may not be defined.
+    \begin{equation*}
+        \lim_{x\to x_0} f(x) = +\infty \iff \forall M \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta \implies f(x) > M
+    \end{equation*}
+    \begin{equation*}
+        \lim_{x\to x_0} f(x) = -\infty \iff \forall N \in \R: \exists\delta>0: \forall x \in I: 0<\abs{x-x_0}<\delta \implies f(x) < N
+    \end{equation*}
+\end{definition}
+%
+\begin{definition}[Limits towards $\pm\infty$]
+    Let a function $f(x)$ be defined for all $x$ in an infinite open interval $I$
+    extending in the positive $x$ direction.
+    \begin{equation*}
+        \lim_{x\to\infty} f(x) = L \iff \forall \varepsilon>0: \exists M \in I: x>M \implies \abs{f(x)-L}<\varepsilon
+    \end{equation*}
+    Let a function $g(x)$ be defined for all $x$ in an infinite open interval $I$
+    extending in the negative $x$ direction.
+    \begin{equation*}
+        \lim_{x\to-\infty} g(x) = L \iff \forall \varepsilon>0: \exists N \in I: x<N \implies \abs{g(x)-L}<\varepsilon
+    \end{equation*}
+\end{definition}
+%
+\begin{theorem}
+    $\displaystyle\lim_{x\to x_0} f(x)$ exists if and only if
+    $\displaystyle\lim_{x\to {x_0}^+} f(x)$ and $\displaystyle\lim_{x\to {x_0}^-} f(x)$
+    exist and are equal.
+\end{theorem}
+%
+\begin{theorem}[Squeeze theorem for functions]
+    Let an interval $I$ contain $x_0$.
+    If $f,\:g,\:h : I \to \R$ are functions such that
+    $\forall x \in I\backslash\{x_0\},\; f(x)\leqslant g(x)\leqslant h(x)$
+    and
+    $\displaystyle\lim_{x\to x_0} f(x) = \lim_{x\to x_0} h(x) = L$,
+    then
+    $\displaystyle\lim_{x\to x_0} g(x) = L$.
+\end{theorem}
+%
+\begin{note}
+    The squeeze theorem holds for left- and right-handed and limits to $\pm\infty$.
+\end{note}
+%
+\begin{definition}[Function continuity using the $\varepsilon$-$\delta$ definition]
+    A function $f(x):I\to\R$ is continuous at $c \in I$, if
+    \begin{equation*}
+        \forall\varepsilon>0: \exists\delta>0: \forall x\in I:0<\abs{x-c}<\delta \implies \abs{f(x)-f(c)}<\varepsilon
+    \end{equation*}
+    $f(x)$ is continuous on $I$ if $f(x)$ is continuous for all $x \in I$.
+\end{definition}
+%
+\begin{definition}[Function continuity as a sequence]
+    A function $f(x):I\to\R$ is continuous at $c \in I$, if
+    for every sequence $\{a_n\}^{\infty}_{n=1}$ in $I$ that converges to $c$,
+    $\{f(a_n)\}^{\infty}_{n=1}$ converges to $f(c)$.
+\end{definition}
+%
+\begin{note}
+    ``$f(x)$ is continuous at $c$'' is equivalent to
+    ``$\displaystyle \lim_{x\to c} f(x) = f(c)$''.
+\end{note}
+%
+\begin{note}
+    Polynomials are continuous everywhere.
+\end{note}
+%
+\begin{note}
+    $\sin$ and $\cos$ are continuous everywhere.
+\end{note}
+%
+\begin{theorem}
+    For a function $f$ continuous at $L$
+    and another function $g$ where $\displaystyle \lim_{x\to c}g(x) = L$,
+    $\displaystyle \lim_{x\to c} (f \circ g)(x) = f(L)$.
+\end{theorem}
+\begin{note}
+    The above theorem still applies when $c$ is $c^\pm$ or $\pm\infty$.
+\end{note}
+%
+\begin{theorem}
+    For two functions $f$ and $g$ that are continuous at $c$,
+    \begin{enumerate}[label=\normalfont\alph*)]
+        \item $f(x) + g(x)$ is continuous at $c$;
+        \item $f(x) - g(x)$ is continuous at $c$;
+        \item $f(x) \cdot g(x)$ is continuous at $c$; and
+        \item $\dfrac{f(x)}{g(x)}$ is continuous at $c$ when $g(c)\ne0$.
+    \end{enumerate}
+\end{theorem}
+%
+\begin{theorem}
+    For a function $g(x)$ which is continuous at $c$ and
+    a function $h(x)$ which is continuous at $g(c)$,
+    $h \circ g$ is continuous at $c$.
+\end{theorem}
+%
+\begin{theorem}[L'H\^opital rule]
+    For two differentiable (and therefore continuous) functions $f(x)$ and $g(x)$
+    except possibly at $x_0$.
+    If $\displaystyle \lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0$,
+    or $\displaystyle \lim_{x\to x_0}f(x)=\pm\infty$
+    and $\displaystyle \lim_{x\to x_0}g(x)=\pm\infty$,
+    then
+    $\lim_{x\to x_0}\frac{f(x)}{g(x)} = \lim_{x\to x_0}\frac{f'(x)}{g'(x)}$
+    (as long as the limit exists, or diverges to $\pm\infty$).
+\end{theorem}
+%
+\begin{note}
+    L'H\^opital's rule also holds for left- and right-handed, and limits that approach $\pm\infty$.
+\end{note}
+%
+\pagebreak
+\section{Addenda}
+\subsection{Assumed Knowledge}
+\subsubsection{Factorials}
+$\displaystyle n! = \prod_{i=1}^{n} i = 1 \times 2 \times 3 \times \dots \times (n-1) \times n$
+
+\subsubsection{Quadratic Equation}
+$\displaystyle x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+
+\subsection{Table of Derivatives}
+Let $a\in\R$ be a constant, and $n\in\Z\backslash\{0\}$.
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}[t]{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+        f(x)      & \dv{f}{x}      \\[1em]
+        \hline
+        a         & 0              \\
+        x         & 1              \\
+        x^n       & n x^{n-1}      \\
+        \e^x      & \e^x           \\
+        \e^{nx}   & n\e^{nx}       \\
+        \e^{g(x)} & g'(x)\e^{g(x)} \\
+        a^x       & a^x \ln(a)
+    \end{tabular}
+    \quad
+    \begin{tabular}[t]{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+        f(x)                   & \dv{f}{x}                   \\[1em]
+        \hline
+        \ln{\left(x\right)}    & \frac{1}{x}                 \\
+        \log_a{\left(x\right)} & \frac{1}{x \ln(a)}          \\
+        \sqrt{x}               & \frac{1}{2 \sqrt{x}}        \\[0.5em]
+        \sqrt[n]{x}            & \frac{x^{\frac{1}{n}-1}}{n} \\
+    \end{tabular}
+    \quad
+    \begin{tabular}[t]{>{$\displaystyle}c<{$} | >{$\displaystyle}c<{$}}
+        f(x)                 & \dv{f}{x}                        \\[1em]
+        \hline
+        \sin{\left(x\right)} & \cos{\left(x\right)}             \\
+        \cos{\left(x\right)} & -\sin{\left(x\right)}            \\
+        \tan{\left(x\right)} & \frac{1}{\cos^2{\left(x\right)}} \\
+    \end{tabular}
+\end{table}
+\end{document}
