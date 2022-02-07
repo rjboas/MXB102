@@ -936,38 +936,36 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
     \end{equation*}
 \end{definition}
 %
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Limit Laws for Functions}]
-        \begin{theorem} The limit of a sum equals the sum of the limits, i.e.
-            \begin{equation*}
-                \lim_{x\to x_0}\left(f(x)+g(x)\right)
-                = \left(\lim_{x\to x_0}f(x)\right) + \left(\lim_{x\to x_0}g(x)\right)
-            \end{equation*}
-        \end{theorem}
-        \begin{theorem} The limit of a product equals the product of the limits, i.e.
-            \begin{equation*}
-                \lim_{x\to x_0}\left(f(x)\cdot g(x)\right)
-                = \left(\lim_{x\to x_0}f(x)\right) \cdot \left(\lim_{x\to x_0}g(x)\right)
-            \end{equation*}
-        \end{theorem}
-        These are trivially extended to
-        division (if the divisor is non-zero),
-        subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
-        \begin{align*}
-             & \lim_{x\to x_0}\left(f(x) - g(x)\right)
-            = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
-             & \qquad
-             & \lim_{x\to x_0}\frac{f(x)}{g(x)}
-            = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
-            \\
-             & \lim_{x\to x_0}\left(f(x)\right)^n
-            = \left(\lim_{x\to x_0}f(x)\right)^n
-             & \qquad
-             & \lim_{x\to x_0} c \cdot f(x)
-            = c \cdot \lim_{x\to x_0}f(x)
-        \end{align*}
-    \end{mdframed}
-\end{figure}
+\begin{tcolorboxlarge}[title={Limit Laws for Functions}]
+    \begin{theorem} The limit of a sum equals the sum of the limits, i.e.
+        \begin{equation*}
+            \lim_{x\to x_0}\left(f(x)+g(x)\right)
+            = \left(\lim_{x\to x_0}f(x)\right) + \left(\lim_{x\to x_0}g(x)\right)
+        \end{equation*}
+    \end{theorem}
+    \begin{theorem} The limit of a product equals the product of the limits, i.e.
+        \begin{equation*}
+            \lim_{x\to x_0}\left(f(x)\cdot g(x)\right)
+            = \left(\lim_{x\to x_0}f(x)\right) \cdot \left(\lim_{x\to x_0}g(x)\right)
+        \end{equation*}
+    \end{theorem}
+    These are trivially extended to
+    division (if the divisor is non-zero),
+    subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
+    \begin{align*}
+            & \lim_{x\to x_0}\left(f(x) - g(x)\right)
+        = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
+            & \qquad
+            & \lim_{x\to x_0}\frac{f(x)}{g(x)}
+        = \frac{\lim_{x\to x_0}f(x)}{\lim_{x\to x_0}g(x)}
+        \\
+            & \lim_{x\to x_0}\left(f(x)\right)^n
+        = \left(\lim_{x\to x_0}f(x)\right)^n
+            & \qquad
+            & \lim_{x\to x_0} c \cdot f(x)
+        = c \cdot \lim_{x\to x_0}f(x)
+    \end{align*}
+\end{tcolorboxlarge}
 %
 \begin{definition}[Limits towards $\pm\infty$ using the $\varepsilon$-$\delta$ definition]
     Let a function $f(x)$ be defined for all $x$ in an open interval $I$
