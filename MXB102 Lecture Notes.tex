@@ -1,108 +1,28 @@
 %!TEX program = xelatex
 \documentclass{article}
 
+% Execute before loading fancyhdr
 \usepackage{geometry}
+%% Geometry
 \geometry{a4paper}
-\geometry{includeheadfoot, hmargin=1.5cm, vmargin=1.5cm}
+\geometry{includeheadfoot, margin=15mm}
 
-\usepackage{hyperref}
+\usepackage{LaTeX-Submodule/template}
 
-\usepackage{multicol}
-\usepackage{changepage}
-\usepackage{physics}
+% Additional packages & macros
+\usepackage{changepage} % Modify page width
+\usepackage{multicol} % Use multiple columns
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-
-% Create nice frames
-\usepackage{mdframed}
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
-\mdfdefinestyle{exampledefault}{%
-	rightline=true,
-	innerleftmargin=10,innerrightmargin=10,
-	leftmargin=20,rightmargin=20,
-	topline=false,bottomline=false,
-	frametitlefont=\bf\large
-} 
-\mdfdefinestyle{exampledefaultcols}{%
-	rightline=false,leftline=true,
-	innerleftmargin=5,innerrightmargin=5,
-	leftmargin=0,rightmargin=0,
-	topline=false,bottomline=false,
-	frametitlefont=\bf\large
-}
-
-% Tables and figures
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{float}
-
-\usepackage{enumitem}
-
-% Headers and footers
-\usepackage{fancyhdr}
-\setlength{\headheight}{15.2pt}
-\pagestyle{fancy}
-\fancyhf{}
-
-\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
-\setmathfont{Latin Modern Math}
-\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
-
-\usepackage[none]{hyphenat} % Disable hyphenation of long text
-
-%% Headers
-\fancyhead[L]{2021 Semester 1}
-\fancyhead[C]{Abstract Mathematical Reasoning Exam Notes}
-\fancyhead[R]{\thepage}
-
-% Number Sets
-\newcommand*{\N}{\mathbb{N}}
-\newcommand*{\Z}{\mathbb{Z}}
-\newcommand*{\Q}{\mathbb{Q}}
-\newcommand*{\I}{\mathbb{I}}
-\newcommand*{\R}{\mathbb{R}}
-\newcommand*{\C}{\mathbb{C}}
-
-% Table Cell Stretch
+%% Table Cell Stretch
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.5} % Default value: 1
 
-% Set symbols
-\let\oldemptyset\emptyset
-\let\emptyset\varnothing
+%% Set symbols
 \DeclareMathOperator{\setunion}{\cup} % defined for clarity/consistency
 \DeclareMathOperator{\setintersection}{\cap}
 
-% Quotation in math mode
+%% Quotation in math mode
 \newcommand{\quo}[1]{\text{``}#1\text{"}}
-
-% Exponential e
-\newcommand{\e}{e}
-
-\newcommand{\contradiction}{
-    \hspace{-1em}
-	{\hbox{
-	\setbox0=\hbox{$\mkern-3mu{\times}\mkern-3mu$}
-	\setbox1=\hbox to0pt{\hss\copy0\hss}
-	\copy0\raisebox{0.5\wd0}{\copy1}\raisebox{-0.5\wd0}{\box1}\box0}}
-}
-
-%% Theorem environments
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
-\numberwithin{theorem}{subsection}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\numberwithin{definition}{subsection}
-
-\theoremstyle{remark}
-\newtheorem{note}{Note}[section]
-\numberwithin{note}{subsection}
-
-\newtheorem*{statement}{Statement}
 
 %% Title page
 \title{\textbf{Abstract Mathematical Reasoning}
@@ -111,8 +31,16 @@
 \author{
     Rohan Boas \and Tarang Janawalkar \and Oliver Strong
 }
-\date{}
 
+% Header and footer
+\setlength\headheight{15.2pt}
+
+\fancyhead[L]{2021 Semester 1}
+\fancyhead[C]{Abstract Mathematical Reasoning Exam Notes}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+
+% Copyright
 \usepackage[
     type={CC},
     modifier={by},
@@ -120,8 +48,10 @@
     imagewidth={5em},
 ]{doclicense}
 
-\begin{document}
+\date{}
 
+\begin{document}
+%
 \begin{titlepage}
     \maketitle
     \thispagestyle{empty}
@@ -141,9 +71,9 @@
     \doclicenseThis
     \thispagestyle{empty}
 \end{titlepage}
-
+%
 \newpage
-
+%
 \section{Logic}
 \begin{table}[H]
     \centering
@@ -359,24 +289,22 @@
     then $aRb$ (``$a$ is related to $b$ under $R$")
 \end{definition}
 %
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Relation Properties}]
-        \begin{description}[style=sameline]
-            \item[Reflexive]
-                $\forall x \in S : xRx$
-            \item[Symmetric]
-                $\forall x,\: y \in S : xRy \implies yRx$
-            \item[Antisymmetric]
-                $\forall_\text{distinct} \: x,\: y \in S : xRy \implies \neg (yRx)$
-            \item[Transitive]
-                $\forall x,\: y, \: z \in S : (xRy \land yRz) \implies xRz$
-        \end{description}
-        \begin{definition}[Equivalence relation]
-            A relation is an equivalence relation if it is
-            reflexive, symmetric, and transitive.
-        \end{definition}
-    \end{mdframed}
-\end{figure}
+\begin{tcolorboxlarge}[title={Relation Properties}]
+    \begin{description}[style=sameline]
+        \item[Reflexive]
+            $\forall x \in S : xRx$
+        \item[Symmetric]
+            $\forall x,\: y \in S : xRy \implies yRx$
+        \item[Antisymmetric]
+            $\forall_\text{distinct} \: x,\: y \in S : xRy \implies \neg (yRx)$
+        \item[Transitive]
+            $\forall x,\: y, \: z \in S : (xRy \land yRz) \implies xRz$
+    \end{description}
+    \begin{definition}[Equivalence relation]
+        A relation is an equivalence relation if it is
+        reflexive, symmetric, and transitive.
+    \end{definition}
+\end{tcolorboxlarge}
 %
 \begin{definition}[Functions as rules]
     A function $f$ is a rule which maps
@@ -404,25 +332,23 @@
     A function $f$ is some relation that is functional and left-total.
 \end{definition}
 %
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Function Properties}]
-        \begin{description}[style=sameline]
-            \item[Injective (one-to-one)]
-                $\forall x,\: z \in S : \forall y \in T
-                    : (xRy \,\land\, zRy) \implies x = z$
+\begin{tcolorboxlarge}[title={Function Properties}]
+    \begin{description}[style=sameline]
+        \item[Injective (one-to-one)]
+            $\forall x,\: z \in S : \forall y \in T
+                : (xRy \,\land\, zRy) \implies x = z$
 
-                Put in words, every element in the codomain ($T$)
-                is being mapped to by \textit{at most} one element from the domain ($S$).
-            \item[Surjective (onto)]
-                $\forall y \in T : \exists x \in S : xRy$
+            Put in words, every element in the codomain ($T$)
+            is being mapped to by \textit{at most} one element from the domain ($S$).
+        \item[Surjective (onto)]
+            $\forall y \in T : \exists x \in S : xRy$
 
-                Put in words, every element in the codomain ($T$)
-                is being mapped to by \textit{at least} one element from the domain ($S$).
-            \item[Bijective]
-                $R$ is injective and surjective.
-        \end{description}
-    \end{mdframed}
-\end{figure}
+            Put in words, every element in the codomain ($T$)
+            is being mapped to by \textit{at least} one element from the domain ($S$).
+        \item[Bijective]
+            $R$ is injective and surjective.
+    \end{description}
+\end{tcolorboxlarge}
 %
 \begin{definition}[Equal functions]
     Two functions are equal if they have the same domain and codomain
@@ -487,28 +413,26 @@
 \end{theorem}
 %
 \section{Algebraic Structures}
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Ring Axioms}]
-        \begin{definition}[Commutativite ring with identity]
-            A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
-        \end{definition}
-        \begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
-            \item[(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
-            \item[(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
-            \item[(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
-            \item[(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
-            \item[(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
-            \item[(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
-            \item[(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
-            \item[(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
-            \item[(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
-            \item[(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
-        \end{enumerate}
-    \end{mdframed}
-    \begin{note}
-        $\Z$, $\Q$, $\R$, and $\C$ are rings.
-    \end{note}
-\end{figure}
+\begin{tcolorboxlarge}[title={Ring Axioms}]
+    \begin{definition}[Commutativite ring with identity]
+        A commutative ring with identity is a set $S$ with two binary operations $+$ and $\cdot$ such that the following ring axioms are satisfied.
+    \end{definition}
+    \begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+        \item[(C1)] $+$ is closed: $\forall a,\:b \in S: a+b \in S$.
+        \item[(A1)] $+$ is associative: $\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)$.
+        \item[(A2)] $+$ is commutative: $\forall a,\:b \in S: a+b=b+a$.
+        \item[(A3)] additive identity: $\forall a\in S:\exists z \in S:a+z=a$.
+        \item[(A4)] additive inverse: $\forall a \in S, \exists b\in S: a+b = z$ (denoted ``0").
+        \item[(C2)] $\cdot$ is closed: $\forall a,\:b \in S: a \cdot b \in S$.
+        \item[(M1)] $\cdot$ is associative: $\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c$.
+        \item[(M2)] $\cdot$ is commutative: $\forall a,\:b \in S:a \cdot b = b \cdot a$.
+        \item[(M3)] multiplicative identity: $\forall a \in S:\exists e \in S:a \cdot e = a$ (denoted ``1").
+        \item[(D)] distributivity: $\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
+    \end{enumerate}
+\end{tcolorboxlarge}
+\begin{note}
+    $\Z$, $\Q$, $\R$, and $\C$ are rings.
+\end{note}
 % \marginpar{\raggedright\footnotesize The definition of rings and fields has been excluded from this document for brevity}
 %
 \begin{definition}[Integers]
@@ -538,19 +462,17 @@
     Let $a,\: b\in \R$. If $ab\in\I$, then either $a\in\I$ or $b\in\I$.
 \end{note}
 %
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Field Axioms}]
-        \begin{definition}[Field]
-            A field is a set $S$ which is a commutative ring with identity so that it satisfies all ring axioms and also the following axiom.
-        \end{definition}
-        \begin{enumerate}
-            \item[(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
-        \end{enumerate}
-    \end{mdframed}
-    \begin{note}
-        $\Q$, $\R$, and $\C$ are fields.
-    \end{note}
-\end{figure}
+\begin{tcolorboxlarge}[title={Field Axioms}]
+    \begin{definition}[Field]
+        A field is a set $S$ which is a commutative ring with identity so that it satisfies all ring axioms and also the following axiom.
+    \end{definition}
+    \begin{enumerate}
+        \item[(M4)] multiplicative inverse: $\forall a \in S \ \{0\}:\exists b \in S: a\cdot b=e$.
+    \end{enumerate}
+\end{tcolorboxlarge}
+\begin{note}
+    $\Q$, $\R$, and $\C$ are fields.
+\end{note}
 %
 \section{Cardinality}
 \nopagebreak
@@ -594,19 +516,16 @@
 \end{multicols}
 %
 \section{Proofs}
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Proof Structure}]
-        \begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
-            \item State the proof method that will be used.
-            \item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
-            \item Clearly state any assumptions and definitions as required by the proof.
-            \item Apply the proof method.
-            \item Write a sentence summarising the proof method.
-            \item Conclude the proof with QED, $\square$, or $\blacksquare$.
-        \end{enumerate}
-    \end{mdframed}
-\end{figure}
-%
+\begin{tcolorboxlarge}[title={Proof Structure}]
+    \begin{enumerate}[leftmargin=3.5em, itemsep=0.2em, topsep=0.35em]
+        \item State the proof method that will be used.
+        \item If the proof method has conditions show that these conditions have been satisfied before using the proof method.
+        \item Clearly state any assumptions and definitions as required by the proof.
+        \item Apply the proof method.
+        \item Write a sentence summarising the proof method.
+        \item Conclude the proof with QED, $\square$, or $\blacksquare$.
+    \end{enumerate}
+\end{tcolorboxlarge}
 \begin{note}[Disprove]
     To disprove a statement is to prove its negation.
 \end{note}
@@ -728,21 +647,19 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     Let $\left\{ a_n \right\}_{n=1}^\infty$, $\left\{ b_n \right\}_{n=1}^\infty$, and $\left\{ c_n \right\}_{n=1}^\infty$ be infinite sequences such that $a_n \leqslant b_n \leqslant c_n$ for all $n>n_0$. If $\lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=d$, then .
 \end{theorem}
 %
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault,frametitle={Limit Laws for Sequences}]
-        \begin{theorem}
-            Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$ respectively, and let $c\in\R$ be a constant, then
-            \begin{enumerate}[label=\normalfont\alph*)]
-                \item $\lim_{n\to\infty}c=c$.
-                \item $\lim_{n\to\infty}ca_n=ca$.
-                \item $\lim_{n\to\infty}\left( a_n + b_n \right)=a+b$.
-                \item $\lim_{n\to\infty}\left( a_n - b_n \right)=a-b$.
-                \item $\lim_{n\to\infty}\left( a_nb_n \right)=ab$.
-                \item $\lim_{n\to\infty}\left( \frac{a_n}{b_n} \right)=\frac{a}{b}$, ($b\neq 0$).
-            \end{enumerate}
-        \end{theorem}
-    \end{mdframed}
-\end{figure}
+\begin{tcolorboxlarge}[title={Limit Laws for Sequences}]
+    \begin{theorem}
+        Suppose that $\left\{a_n\right\}$ and $\left\{b_n\right\}$ are convergent infinite sequences on $\R$ that converge to $a$ and $b$ respectively, and let $c\in\R$ be a constant, then
+        \begin{enumerate}[label=\normalfont\alph*)]
+            \item $\lim_{n\to\infty}c=c$.
+            \item $\lim_{n\to\infty}ca_n=ca$.
+            \item $\lim_{n\to\infty}\left( a_n + b_n \right)=a+b$.
+            \item $\lim_{n\to\infty}\left( a_n - b_n \right)=a-b$.
+            \item $\lim_{n\to\infty}\left( a_nb_n \right)=ab$.
+            \item $\lim_{n\to\infty}\left( \frac{a_n}{b_n} \right)=\frac{a}{b}$, ($b\neq 0$).
+        \end{enumerate}
+    \end{theorem}
+\end{tcolorboxlarge}
 %
 \subsection{Cauchy Sequences}
 \begin{definition}[Cauchy sequence]
@@ -777,7 +694,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \subsection{Monotonicity Tests}
 \nopagebreak
 \begin{multicols}{2}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Difference Test}]
+    \begin{tcolorboxcols}[title={Difference Test}]
         \begin{theorem}[Difference test]
             A sequence $\{a_n\}^\infty_{n=1}$ is
         \end{theorem}
@@ -787,8 +704,8 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
             \item[Strictly decreasing] if $a_{n+1} - a_n < 0$ for all $n$
             \item[Decreasing] if $a_{n+1} - a_n \leqslant 0$ for all $n$
         \end{description}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Ratio Test}]
         \begin{theorem}[Ratio test]
             A sequence $\{a_n\}^\infty_{n=1}$ where all $a_n$ are positive is
         \end{theorem}
@@ -798,13 +715,13 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
             \item[Strictly decreasing] if $a_{n+1} \div a_n < 1$ for all $n$
             \item[Decreasing] if $a_{n+1} \div a_n \leqslant 1$ for all $n$
         \end{description}
-    \end{mdframed}
+    \end{tcolorboxcols}
     \begin{note}
         If $\lim_{n\to\infty}a_{n+1}\div a_n < 1$,
         then $a_n\to0$ as $n\to\infty$.
     \end{note}
     \columnbreak
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Derivative Test}]
+    \begin{tcolorboxcols}[title={Derivative Test}]
         \begin{theorem}[Derivative test]
             If $\{a_n\}^\infty_{n=1}$ is an infinite sequence on $\R$ and
             $a(x)$ is differentiable for $x\in\R_{\geqslant1}$,
@@ -816,7 +733,7 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
             \item[Strictly decreasing] if $a'(x) < 0$ for all $x\in\R_{\geqslant 1}$
             \item[Decreasing] if $a'(x) \leqslant 0$ for all $x\in\R_{\geqslant 1}$
         \end{description}
-    \end{mdframed}
+    \end{tcolorboxcols}
 \end{multicols}
 %
 \pagebreak
@@ -849,24 +766,20 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
     \end{theorem}
 \end{multicols}
 %
-\begin{figure}[H]
-    \begin{mdframed}[style=exampledefault]
-        \begin{theorem}
-            Similar to sequences, we can add and subtract convergent infinite series.
-        \end{theorem}
-
-        \begin{enumerate}
-            \item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
-            \item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum c_i \pm d_i$ is divergent.
-            \item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
-                  \begin{enumerate}
-                      \item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
-                      \item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
-                  \end{enumerate}
-        \end{enumerate}
-
-    \end{mdframed}
-\end{figure}
+\begin{tcolorboxlarge}
+    \begin{theorem}
+        Similar to sequences, we can add and subtract convergent infinite series.
+    \end{theorem}
+    \begin{enumerate}
+        \item Suppose $\sum a_i$ and $\sum b_i$ are both convergent infinite series with the same starting index. Then $\sum a_i \pm b_i$ is also convergent.
+        \item Suppose $\sum c_i$ is a convergent infinite series and $\sum d_i$ is a divergent infinite series with the same starting index. Then $\sum c_i \pm d_i$ is divergent.
+        \item Let $\sum e_i$ be an infinite series and let $d\in\R$ be a constant, and $K\in\N$.
+                \begin{enumerate}
+                    \item $\sum e_i$ and $\sum d e_i$ both converge or both diverge.
+                    \item $\sum_{i=i_0}^\infty e_i$ and $\sum_{i=K}^\infty e_i$ both converge or both diverge.
+                \end{enumerate}
+    \end{enumerate}
+\end{tcolorboxlarge}
 %
 \begin{definition}[Absolute Convergence]
     An infinite series $\sum a_i$ converges (or diverges) absolutely if the series of absolute values $\sum a_i$ also converges (or diverges).
@@ -883,74 +796,74 @@ For infinite sequences we write $a_n$ and the sequence can be represented as $\l
 \subsection{Convergence Tests}
 For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 \begin{multicols}{2}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Divergence Test}]
+    \begin{tcolorboxcols}[title={Divergence Test}]
         \begin{equation*}
-            \text{Does $\lim_{i\to\infty}a_i\neq0$?}\:
+            \text{$\lim_{i\to\infty}a_i\neq0$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Diverges} \\
                 \text{NO}  & \text{Inconclusive}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={$p$-Series}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={$p$-Series}]
         \textbf{Conditions} $i_0=1$ and $a_i = \frac{1}{i^p}$.
         \begin{equation*}
-            \text{Is $p>1$?}\:
+            \text{$p>1$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Geometric Series}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Geometric Series}]
         \textbf{Conditions} $i_0=0$ and $a_i = a r^i$ or $i_0=1$ and $a_i = a r^{i-1}$.
         \begin{equation*}
-            \text{Is $\abs{r}<1$?}\:
+            \text{$\abs{r}<1$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges to $\frac{a}{1-r}$} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
+    \end{tcolorboxcols}
     \begin{note}
         The sequence of partial sums is given by $\displaystyle s_n=a\frac{1-r^{n+1}}{1-r}$.
     \end{note}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Alternating Series}]
+    \begin{tcolorboxcols}[title={Alternating Series}]
         \textbf{Conditions} $a_i = \left( -1 \right)^i b_i$ or $a_i = \left( -1 \right)^{i+1} b_i$. $b_i>0$.
         \begin{equation*}
-            \text{Is $b_{i+1}\leqslant b_i$ \& $\lim_{i\to\infty}b_i=0$?}\:
+            \text{$b_{i+1}\leqslant b_i$ \& $\lim_{i\to\infty}b_i=0$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges} \\
                 \text{NO}  & \text{Inconclusive}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Telescoping Series}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Telescoping Series}]
         \textbf{Conditions} Subsequent terms cancel out previous terms in the sum.
         \begin{equation*}
-            \text{Does $\lim_{n\to\infty}s_n=s$?}\:
+            \text{$\lim_{n\to\infty}s_n=s$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges to $s$} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Limit Comparison Test}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Limit Comparison Test}]
         \textbf{Conditions} Pick $b_i$ so that $\displaystyle \lim_{i\to\infty}\frac{a_i}{b_i}=c>0$ \& $a_i,\:b_n>0$.
         \begin{equation*}
-            \text{Does $\sum_{i=i_0}^\infty b_i$ converge?}\:
+            \text{$\sum_{i=i_0}^\infty b_i$ convergent?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Comparison Test}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Comparison Test}]
         \textbf{Conditions} Pick $b_i$.
 
         \noindent If $\displaystyle \sum_{i=i_0}^\infty b_i$ converges:
         \begin{equation*}
-            \text{Is $0\leqslant a_i \leqslant b_i$?}\:
+            \text{$0\leqslant a_i \leqslant b_i$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges} \\
                 \text{NO}  & \text{Inconclusive}
@@ -958,57 +871,58 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
         \end{equation*}
         If $\displaystyle \sum_{i=i_0}^\infty b_i$ diverges:
         \begin{equation*}
-            \text{Is $0\leqslant b_i \leqslant a_i$?}\:
+            \text{$0\leqslant b_i \leqslant a_i$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Diverges} \\
                 \text{NO}  & \text{Inconclusive}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Integral Test}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Integral Test}]
         \textbf{Conditions} Let $a_i=f(i)$, so that $f(x)$ is continuous, positive and decreasing on $\left[a,\:\infty\right)$.
+        
+        \noindent If $\displaystyle\int_a^\infty f(x) \dd{x}$ converges:
         \begin{equation*}
-            \text{$\int_a^\infty f(x) \dd{x}$ converges?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum_{i=a}^\infty a_i$ Converges} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Ratio Test}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Ratio Test}]
         \textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\frac{a_{i+1}}{a_i}\neq 1$.
         \begin{equation*}
-            \text{Is $\lim_{i\to\infty}\frac{a_{i+1}}{a_i} < 1$?}\:
+            \text{$\lim_{i\to\infty}\frac{a_{i+1}}{a_i} < 1$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
         \begin{equation*}
-            \text{Is $\lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}} < 1$?}\:
+            \text{$\lim_{i\to\infty}\abs{\frac{a_{i+1}}{a_i}} < 1$?}\:
             \begin{cases}
-                \text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
+                \text{YES} & \text{$\sum a_i$ Converges Abs.} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
-    \begin{mdframed}[style=exampledefaultcols,frametitle={Root Test}]
+    \end{tcolorboxcols}
+    \begin{tcolorboxcols}[title={Root Test}]
         \textbf{Conditions} $\forall i:a_i>0$ and $\displaystyle \lim_{i\to\infty}\sqrt[i]{a_i}\neq 1$.
         \begin{equation*}
-            \text{Is $\lim_{i\to\infty}\sqrt[i]{a_i} < 1$?}\:
+            \text{$\lim_{i\to\infty}\sqrt[i]{a_i} < 1$?}\:
             \begin{cases}
                 \text{YES} & \text{$\sum a_i$ Converges} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
         \begin{equation*}
-            \text{Is $\lim_{i\to\infty}\sqrt[i]{\abs{a_i}} < 1$?}\:
+            \text{$\lim_{i\to\infty}\sqrt[i]{\abs{a_i}} < 1$?}\:
             \begin{cases}
-                \text{YES} & \text{$\sum a_i$ Converges Absolutely} \\
+                \text{YES} & \text{$\sum a_i$ Converges Abs.} \\
                 \text{NO}  & \text{$\sum a_i$ Diverges}
             \end{cases}
         \end{equation*}
-    \end{mdframed}
+    \end{tcolorboxcols}
 \end{multicols}
 \pagebreak
 %
@@ -1151,7 +1065,7 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
     $h \circ g$ is continuous at $c$.
 \end{theorem}
 %
-\begin{theorem}[L'H\^opital rule]
+\begin{theorem}[L'Hôpital rule]
     For two differentiable (and therefore continuous) functions $f(x)$ and $g(x)$
     except possibly at $x_0$.
     If $\displaystyle \lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0$,
@@ -1163,7 +1077,7 @@ For any infinite series of the form $\displaystyle\sum_{i=i_0}^\infty a_i$.
 \end{theorem}
 %
 \begin{note}
-    L'H\^opital's rule also holds for left- and right-handed, and limits that approach $\pm\infty$.
+    L'Hôpital's rule also holds for left- and right-handed, and limits that approach $\pm\infty$.
 \end{note}
 %
 \pagebreak
