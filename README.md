@@ -4,7 +4,7 @@
 
 ### Semester 1, 2021
 
-Thanks to [Tarang74](https://github.com/Tarang74) for the collaboration.
+Thanks to [rjboas](https://github.com/rjboas) and [Tarang74](https://github.com/Tarang74) for the collaboration.
 
 ---
 
