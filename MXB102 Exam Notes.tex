@@ -80,75 +80,63 @@
 \newpage
 %
 \section{Logic}
+Negation (NOT) \(neg\)
 \begin{table}[H]
-    \centering
-    \begin{tabular}{c >{\(}c<{\)} c}
-        \textbf{Name}         & \text{\textbf{Symbol}}  & \textbf{Truth Table} \\
+    % \renewcommand{\arraystretch}{1}
+    \begin{tabular}{c c}
+        \(P\)          & \(\neg{P}\)    \\
         \midrule
-        Negation (NOT)        & \neg                    &
-        \begingroup
-        \renewcommand{\arraystretch}{1}
-        \begin{tabular}{c c}
-            \(P\)          & \(\neg{P}\)    \\
-            \midrule
-            {\sffamily{T}} & {\sffamily{F}} \\
-            {\sffamily{F}} & {\sffamily{T}}
-        \end{tabular}
-        \endgroup
-        \\
-        Conjunction (AND)     & \land                   &
-        \begingroup
-        \renewcommand{\arraystretch}{1}
-        \begin{tabular}{c c c}
-            \(P\)          & \(Q\)          & \(P\land Q\)   \\
-            \midrule
-            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
-            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
-            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
-            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
-        \end{tabular}
-        \endgroup
-        \\
-        Disjunction (OR)      & \lor                    &
-        \begingroup
-        \renewcommand{\arraystretch}{1}
-        \begin{tabular}{c c c}
-            \(P\)          & \(Q\)          & \(P\lor Q\)    \\
-            \midrule
-            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
-            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{T}} \\
-            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
-            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
-        \end{tabular}
-        \endgroup
-        \\
-        Conditional (IF-THEN) & \implies                &
-        \begingroup
-        \renewcommand{\arraystretch}{1}
-        \begin{tabular}{c c c}
-            \(P\)          & \(Q\)          & \(P\implies Q\) \\
-            \midrule
-            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}}  \\
-            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}}  \\
-            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}}  \\
-            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
-        \end{tabular}
-        \endgroup
-        \\
-        Equivalence (IFF)     & \iff \text{ or } \equiv &
-        \begingroup
-        \renewcommand{\arraystretch}{1}
-        \begin{tabular}{c c c}
-            \(P\)          & \(Q\)          & \(P\iff Q\)    \\
-            \midrule
-            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
-            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
-            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
-            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
-        \end{tabular}
-        \endgroup
-    \end{tabular}\label{tab:Logic Symbols}
-    \caption{Boolean operators in order of precedence.}
+        {\sffamily{T}} & {\sffamily{F}} \\
+        {\sffamily{F}} & {\sffamily{T}}
+    \end{tabular}
+\end{table}
+Conjunction (AND) \(\land\)
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1} 
+    \begin{tabular}{c c c}
+        \(P\)          & \(Q\)          & \(P\land Q\)   \\
+        \midrule
+        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
+        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
+    \end{tabular} 
+\end{table}
+Disjunction (OR) \(\lor\)
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1}
+    \begin{tabular}{c c c}
+        \(P\)          & \(Q\)          & \(P\lor Q\)    \\
+        \midrule
+        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{T}} \\
+        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
+        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
+    \end{tabular}
+\end{table}
+Conditional (IF-THEN) \(\implies\)
+\begin{table}[H]
+\renewcommand{\arraystretch}{1}
+    \begin{tabular}{c c c}
+        \(P\)          & \(Q\)          & \(P\implies Q\) \\
+        \midrule
+        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}}  \\
+        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}}  \\
+        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}}  \\
+        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
+    \end{tabular}
+\end{table}
+Equivalence (IFF) \(\iff\) or \(\equiv\)
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1}
+    \begin{tabular}{c c c}
+        \(P\)          & \(Q\)          & \(P\iff Q\)    \\
+        \midrule
+        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
+        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
+    \end{tabular}
 \end{table}
 \begin{theorem}[de Morgan's Law]
     \(\neg{\left(P \land Q\right)} \iff \neg{P} \lor \neg{Q}\).
@@ -321,7 +309,7 @@
 \begin{definition}[Functional]
     A relation is functional if
     \(\forall x \in S \land \forall y,\: z \in T
-        : (xRy \, \land \, xRz) \implies y=z\).
+    : (xRy \, \land \, xRz) \implies y=z\).
 \end{definition}
 \begin{note}
     The functional property corresponds to the vertical line test.
@@ -338,7 +326,7 @@
     \begin{description}[style=sameline]
         \item[Injective (one-to-one)]
             \(\forall x,\: z \in S : \forall y \in T
-                : (xRy \,\land\, zRy) \implies x = z\)
+            : (xRy \,\land\, zRy) \implies x = z\)
 
             Put in words, every element in the codomain (\(T\))
             is being mapped to by \textit{at most} one element from the domain (\(S\)).
@@ -424,11 +412,11 @@
         \item[(A1)] \(+\) is associative: \(\forall a,\:b,\:c \in S: (a+b)+c = a+(b+c)\).
         \item[(A2)] \(+\) is commutative: \(\forall a,\:b \in S: a+b=b+a\).
         \item[(A3)] additive identity: \(\forall a\in S:\exists z \in S:a+z=a\).
-        \item[(A4)] additive inverse: \(\forall a \in S, \exists b\in S: a+b = z\) (denoted ``0'').
+        \item[(A4)] additive inverse: \(\forall a \in S, \exists b\in S: a+b = z\) (denoted ``\(0\)'').
         \item[(C2)] \(\cdot\) is closed: \(\forall a,\:b \in S: a \cdot b \in S\).
         \item[(M1)] \(\cdot\) is associative: \(\forall a,\:b,\:c \in S:a \cdot (b \cdot c) = (a \cdot c) \cdot c\).
         \item[(M2)] \(\cdot\) is commutative: \(\forall a,\:b \in S:a \cdot b = b \cdot a\).
-        \item[(M3)] multiplicative identity: \(\forall a \in S:\exists e \in S:a \cdot e = a\) (denoted ``1'').
+        \item[(M3)] multiplicative identity: \(\forall a \in S:\exists e \in S:a \cdot e = a\) (denoted ``\(1\)'').
         \item[(D)] distributivity: \(\forall a,\:b,\:c \in S: a \cdot (b + c) = (a \cdot b) + (a \cdot c)\).
     \end{enumerate}
 \end{tcolorboxlarge}
@@ -445,7 +433,7 @@
 \end{note}
 %
 \begin{definition}[Real numbers]
-    Let \(D = \Z \times \{\text{sequence of digits 0\ldots 9}\}\).
+    Let \(D = \Z \times \{\mathrm{sequence\ of\ digits\ 0\dots 9}\}\).
     Define an equivalence relation on \(D\) such that
     \begin{equation*}
         x_0 . x_1 x_2 \dots x_{k-1} x_k \overline{000} = x_0 . x_1 x_2 \dots x_{k-1} \left(x_k - 1\right)\overline{999}
@@ -883,7 +871,7 @@ For any infinite series of the form \(\displaystyle\sum_{i=i_0}^\infty a_i\).
     \begin{tcolorboxcols}[title={Integral Test}]
         \textbf{Conditions} Let \(a_i=f(i)\), so that \(f(x)\) is continuous, positive and decreasing on \(\left[a,\:\infty\right)\). % chktex 9
 
-        \noindent If \(\displaystyle\int_a^\infty f(x) \dd{x}\) converges:
+        \noindent If \(\displaystyle\int_a^\infty f(x) \odif{x}\) converges:
         \begin{equation*}
             \begin{cases}
                 \text{YES} & \text{\(\sum_{i=a}^\infty a_i\) Converges} \\
@@ -1095,19 +1083,19 @@ Let \(a\in\R\) be a constant, and \(n\in\Z\backslash\{0\}\).
     \centering
     \renewcommand{\arraystretch}{2.5}
     \begin{tabular}[t]{c c}
-        \(f(x)\)      & \(\dv{f}{x}\)      \\[1em]
+        \(f(x)\)     & \(\odv{f}{x}\)     \\[1em]
         \midrule
-        \(a\)         & \(0\)              \\
-        \(x\)         & \(1\)              \\
-        \(x^n\)       & \(n x^{n-1}\)      \\
+        \(a\)        & \(0\)             \\
+        \(x\)        & \(1\)             \\
+        \(x^n\)      & \(n x^{n-1}\)     \\
         \(e^x\)      & \(e^x\)           \\
         \(e^{nx}\)   & \(ne^{nx}\)       \\
         \(e^{g(x)}\) & \(g'(x)e^{g(x)}\) \\
-        \(a^x\)       & \(a^x \ln(a)\)     
+        \(a^x\)      & \(a^x \ln(a)\)
     \end{tabular}
     \quad
     \begin{tabular}[t]{c c}
-        \(f(x)\)                   & \(\dv{f}{x}\)                   \\[1em]
+        \(f(x)\)                   & \(\odv{f}{x}\)                   \\[1em]
         \midrule
         \(\ln{\left(x\right)}\)    & \(\frac{1}{x}\)                 \\
         \(\log_a{\left(x\right)}\) & \(\frac{1}{x \ln(a)}\)          \\
@@ -1116,7 +1104,7 @@ Let \(a\in\R\) be a constant, and \(n\in\Z\backslash\{0\}\).
     \end{tabular}
     \quad
     \begin{tabular}[t]{c c}
-        \(f(x)\)                 & \(\dv{f}{x}\)                        \\[1em]
+        \(f(x)\)                 & \(\odv{f}{x}\)                        \\[1em]
         \midrule
         \(\sin{\left(x\right)}\) & \(\cos{\left(x\right)}\)             \\
         \(\cos{\left(x\right)}\) & \(-\sin{\left(x\right)}\)            \\
