@@ -4,6 +4,12 @@
 
 ### Semester 1, 2021
 
+---
+
+## Downloads
+
+Exam notes download: [MXB102 Exam Notes PDF](MXB102%20Exam%20Notes.pdf)
+
 Thanks to [Tarang74](https://github.com/Tarang74) for the collaboration.
 
 ---
