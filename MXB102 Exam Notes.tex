@@ -80,63 +80,75 @@
 \newpage
 %
 \section{Logic}
-Negation (NOT) \(neg\)
 \begin{table}[H]
-    % \renewcommand{\arraystretch}{1}
-    \begin{tabular}{c c}
-        \(P\)          & \(\neg{P}\)    \\
-        \midrule
-        {\sffamily{T}} & {\sffamily{F}} \\
-        {\sffamily{F}} & {\sffamily{T}}
-    \end{tabular}
-\end{table}
-Conjunction (AND) \(\land\)
-\begin{table}[H]
-    \renewcommand{\arraystretch}{1} 
+    \centering
     \begin{tabular}{c c c}
-        \(P\)          & \(Q\)          & \(P\land Q\)   \\
+        \textbf{Name}         & \textbf{Symbol}  & \textbf{Truth Table} \\
         \midrule
-        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
-        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
-        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
-        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
-    \end{tabular} 
-\end{table}
-Disjunction (OR) \(\lor\)
-\begin{table}[H]
-    \renewcommand{\arraystretch}{1}
-    \begin{tabular}{c c c}
-        \(P\)          & \(Q\)          & \(P\lor Q\)    \\
-        \midrule
-        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
-        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{T}} \\
-        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
-        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
-    \end{tabular}
-\end{table}
-Conditional (IF-THEN) \(\implies\)
-\begin{table}[H]
-\renewcommand{\arraystretch}{1}
-    \begin{tabular}{c c c}
-        \(P\)          & \(Q\)          & \(P\implies Q\) \\
-        \midrule
-        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}}  \\
-        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}}  \\
-        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}}  \\
-        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
-    \end{tabular}
-\end{table}
-Equivalence (IFF) \(\iff\) or \(\equiv\)
-\begin{table}[H]
-    \renewcommand{\arraystretch}{1}
-    \begin{tabular}{c c c}
-        \(P\)          & \(Q\)          & \(P\iff Q\)    \\
-        \midrule
-        {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
-        {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
-        {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
-        {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
-    \end{tabular}
+        Negation (NOT)        & \(\neg\)                    &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c}
+            \(P\)          & \(\neg{P}\)    \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}}
+        \end{tabular}
+        \endgroup
+        \\
+        Conjunction (AND)     & \(\land\)                   &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c c}
+            \(P\)          & \(Q\)          & \(P\land Q\)   \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
+        \end{tabular}
+        \endgroup
+        \\
+        Disjunction (OR)      & \(\lor\)                    &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c c}
+            \(P\)          & \(Q\)          & \(P\lor Q\)    \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{T}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{F}}
+        \end{tabular}
+        \endgroup
+        \\
+        Conditional (IF-THEN) & \(\implies\)                &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c c}
+            \(P\)          & \(Q\)          & \(P\implies Q\) \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}}  \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}}  \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{T}}  \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
+        \end{tabular}
+        \endgroup
+        \\
+        Equivalence (IFF)     & \(\iff\) or \(\equiv\) &
+        \begingroup
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c c c}
+            \(P\)          & \(Q\)          & \(P\iff Q\)    \\
+            \midrule
+            {\sffamily{T}} & {\sffamily{T}} & {\sffamily{T}} \\
+            {\sffamily{T}} & {\sffamily{F}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{T}} & {\sffamily{F}} \\
+            {\sffamily{F}} & {\sffamily{F}} & {\sffamily{T}}
+        \end{tabular}
+        \endgroup
+    \end{tabular}\label{tab:Logic Symbols}
+    \caption{Boolean operators in order of precedence.}
 \end{table}
 \begin{theorem}[de Morgan's Law]
     \(\neg{\left(P \land Q\right)} \iff \neg{P} \lor \neg{Q}\).
@@ -1083,7 +1095,7 @@ Let \(a\in\R\) be a constant, and \(n\in\Z\backslash\{0\}\).
     \centering
     \renewcommand{\arraystretch}{2.5}
     \begin{tabular}[t]{c c}
-        \(f(x)\)     & \(\odv{f}{x}\)     \\[1em]
+        \(f(x)\)     & \(\odv{f}{x}\)    \\[1em]
         \midrule
         \(a\)        & \(0\)             \\
         \(x\)        & \(1\)             \\
@@ -1095,7 +1107,7 @@ Let \(a\in\R\) be a constant, and \(n\in\Z\backslash\{0\}\).
     \end{tabular}
     \quad
     \begin{tabular}[t]{c c}
-        \(f(x)\)                   & \(\odv{f}{x}\)                   \\[1em]
+        \(f(x)\)                   & \(\odv{f}{x}\)                  \\[1em]
         \midrule
         \(\ln{\left(x\right)}\)    & \(\frac{1}{x}\)                 \\
         \(\log_a{\left(x\right)}\) & \(\frac{1}{x \ln(a)}\)          \\
@@ -1104,7 +1116,7 @@ Let \(a\in\R\) be a constant, and \(n\in\Z\backslash\{0\}\).
     \end{tabular}
     \quad
     \begin{tabular}[t]{c c}
-        \(f(x)\)                 & \(\odv{f}{x}\)                        \\[1em]
+        \(f(x)\)                 & \(\odv{f}{x}\)                       \\[1em]
         \midrule
         \(\sin{\left(x\right)}\) & \(\cos{\left(x\right)}\)             \\
         \(\cos{\left(x\right)}\) & \(-\sin{\left(x\right)}\)            \\
