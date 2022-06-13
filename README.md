@@ -8,7 +8,7 @@
 
 ## Downloads
 
-Exam notes download: [MXB102 Exam Notes PDF](MXB102%20Exam%20Notes.pdf)
+Exam notes download: [MXB102 Exam Notes PDF](https://www.github.com/rjboas/MXB102/raw/main/MXB102%20Exam%20Notes.pdf)
 
 Thanks to [Tarang74](https://github.com/Tarang74) for the collaboration.
 
@@ -39,4 +39,3 @@ This repository provides **exam notes** for **MXB102 - Abstract Mathematical Rea
 ![Copyright](https://licensebuttons.net/l/by/4.0/88x31.png)
 
 This work is licensed under a [Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
- 
