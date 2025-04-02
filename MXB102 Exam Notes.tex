@@ -1,4 +1,5 @@
-%!TEX program = xelatex
+%!TEX TS-program = xelatex
+%!TEX options = -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1 "%DOC%"
 \documentclass{article}
 
 % Execute before loading fancyhdr
@@ -7,7 +8,7 @@
 \geometry{a4paper}
 \geometry{includeheadfoot, margin=15mm}
 
-\usepackage{LaTeX-Submodule/template}
+\input{LaTeX-Submodule/template}
 
 % Additional packages & macros
 \usepackage{changepage} % Modify page width
@@ -69,7 +70,7 @@
         We hope this document is useful, particularly to those undertaking this unit's final exam.
         This document is not intended to be a replacement for the lecture notes and unit guide.
         We would personally like to thank our lecturer, Dr Adrianne Jenner,
-        and all of the tutors for the great amount of support and teachings
+        and all the tutors for the great amount of support and teachings
         that we have been able to receive over the course of this unit.
     \end{adjustwidth}
     \vspace*{\fill}
@@ -441,7 +442,7 @@
     The set of integers (\(\Z\)) is the smallest ring containing the natural numbers.
 \end{definition}
 \begin{note}
-    The integers are the closure of the natural numbers in regards to the ring axioms.
+    The integers are the closure of the natural numbers with regard to the ring axioms.
 \end{note}
 %
 \begin{definition}[Real numbers]
@@ -553,7 +554,7 @@
     \item Make a sequence of logical statements that follow from the assumption.
     \item Arrive at a contradiction.
     \item Since we arrive at a contradiction, the original assumption must have been wrong.
-    \item Hence the original statement must be true.
+    \item Hence, the original statement must be true.
     \item The \(\contradiction\) and \(\implies\!\!\!\!\impliedby\) symbols
           are often used to show a contradiction.
 \end{enumerate}
@@ -953,7 +954,7 @@ For any infinite series of the form \(\displaystyle\sum_{i=i_0}^\infty a_i\).
     \end{theorem}
     These are trivially extended to
     division (if the divisor is non-zero),
-    subtraction, exponentiation, and moving constants in or outside of a limit, i.e.
+    subtraction, exponentiation, and moving constants in or outside a limit, i.e.
     \begin{align*}
          & \lim_{x\to x_0}\left(f(x) - g(x)\right)
         = \left(\lim_{x\to x_0}f(x)\right) - \left(\lim_{x\to x_0}g(x)\right)
